@@ -8,18 +8,43 @@
         "type": "tabs",
         "children": [
           {
-            "id": "718cbdf3e6d6943e",
+            "id": "04c2efa2593d4a88",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "css.md",
+                "file": "¿Qué es AJAX?.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7b77e75381d733cc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "¿Cómo funciona AJAX?.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "185d170389c02bea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ReadyState y códigos de respuesta.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -85,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "css.md",
+                "file": "ReadyState y códigos de respuesta.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "css.md",
+                "file": "ReadyState y códigos de respuesta.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "css.md"
+                "file": "ReadyState y códigos de respuesta.md"
               }
             }
           }
@@ -147,15 +172,19 @@
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "718cbdf3e6d6943e",
+  "active": "185d170389c02bea",
   "lastOpenFiles": [
+    "image/ReadyState y códigos de respuesta-1682803276602.jpeg",
+    "image/ReadyState y códigos de respuesta-1682803167510.jpeg",
+    "¿Cómo funciona AJAX?.md",
+    "ReadyState y códigos de respuesta.md",
     "css.md",
-    "css.md",
-    "css.md",
+    "image",
+    "image/¿Cómo funciona AJAX?-1682802959097.jpeg",
+    "¿Qué es AJAX?.md",
     "image/Untitled-1679689968429.jpeg",
     "image/css-1679689964273.jpeg",
     "image/css-1679689917933.jpeg",
-    "image",
     "image/css-1679689898630.jpeg",
     "Pasted image 20230324173015.png",
     "Pasted image 20230324173003.png",
