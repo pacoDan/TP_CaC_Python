@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            font-family: Verdana;
+        }
+    </style>
+    <title>Eventos</title>
+</head>
+
+<body>
+    <h2>Eventos de HTML para JavaScript</h2>
+    <button onClick="enviarMensaje()">Haz clic aquí!</button>
+    <span>A través de un <b>atributo</b> HTML, asociando al mismo una función.</span><br>
+
+    <button id="segundo">Haz clic nuevamente!</button>
+    <span>A través de una propiedad de JavaScript, a la que asociamos la función.</span>
+
+    <h2 onclick="cambiarTexto(this)">Haz clic en este texto!</h2>
+
+    <script>
+        //A través de un atributo HTML, asociando al mismo una función.
+        const enviarMensaje = () => alert("Hola alumnos!") //Función flecha
+        
+        //A través de una propiedad de JavaScript, a la que asociamos la función.
+        const boton = document.querySelector("#segundo")
+        boton.onclick = () => alert("Hola de nuevo!")
+
+        function cambiarTexto(id) {
+            id.innerHTML = "Texto cambiado!"
+        }
+
+        //A través del método addEventListener() , que permite crear un "atendedor" de eventos.
+        
+    </script>
+</body>
+
+</html>

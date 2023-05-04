@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage y sessionStorage</title>
+    <style>
+        *{font-family: Arial;}
+        .session{
+            color: darkblue;
+            background: lightblue;
+        }
+        .local{
+            color: green;
+            background: lightgreen;
+        }
+        .boton_ls{
+            font-weight: bold;
+            color: green;
+            background: lightgreen;
+            border: 2px solid;
+            padding: 5px;
+            margin-left: 5px;
+            box-shadow: 2px 2px black;
+        }
+        .boton_ss{
+            font-weight: bold;
+            color: blue;
+            background: lightblue;
+            border: 2px solid;
+            padding: 5px;
+            margin-left: 5px;
+            box-shadow: 2px 2px black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Web Storage</h1>
+    <p>Los objetos localStorage y sessionStorage permiten guardar pares clave / valor desde el navegador web.</p>
+    <h2 class="session">Session storage</h2>
+    <p><b>A nivel de sesión:</b> Al finalizar la sesión la información almacenada se elimina.</p>
+    <button class="boton_ss" onclick="crear_ss()">Crear</button>
+    <button class="boton_ss" onclick="mostrar_ss()">Mostrar</button>
+    <button class="boton_ss" onclick="modificar_ss()">Modificar</button>
+    <button class="boton_ss" onclick="eliminar_ss()">Eliminar</button>
+    
+    <h2 class="local">Local storage</h2>
+    <p><b>A nivel local:</b> Al cerrar el navegador la información permanece en el dispositivo, y puede ser recuperada en una sesión posterior.</p>
+    <button class="boton_ls" onclick="crear_ls()">Crear</button>
+    <button class="boton_ls" onclick="mostrar_ls()">Mostrar</button>
+    <button class="boton_ls" onclick="modificar_ls()">Modificar</button>
+    <button class="boton_ls" onclick="eliminar_ls()">Eliminar</button>
+    
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="8Flexbox-gap.css">
+    <title>Flex 8 - Huecos (gaps)</title>
+</head>
+
+<body>
+
+    <h1>Flexbox | Huecos (gaps)</h1>
+
+    <p>Las propiedades <span class="codigo">row-gap</span> y <span class="codigo">column-gap</span> permiten establecer el tamaño de un «hueco» entre ítems hijos directamente desde el elemento padre (contenedor), y sin necesidad de estar utilizando padding o margin en los elementos hijos.</p>
+    
+    <p>Ten en cuenta que sólo una de las dos propiedades tendrá efecto, dependiendo de si la propiedad <span class="codigo">flex-direction</span> se establece en <span class="codigo">column</span> o en <span class="codigo">row.</span>.</p>
+
+    <h2>row-gap</h2>  
+    <div class="flex-containerh">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>       
+    </div> 
+
+    <h2>column-gap</h2>  
+    <div class="flex-containerv">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+    </div>
+
+    <p>Por último, es posible usar ambas propiedades si tenemos la propiedad <span class="codigo">flex-wrap</span> definida como <span class="codigo">wrap</span>, permitiendo el uso de "multicolumnas":</p>
+    <h2>column-gap + row-gap + flex-wrap: wrap</h2>  
+    <div class="flex-container">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+        <div>Item4</div>
+        <div>Item5</div>
+        <div>Item6</div>
+        <div>Item7</div>
+        <div>Item8</div>
+        <div>Item9</div>                
+    </div>
+    <p id="firma">Ejemplo desarrollado por el <b> Prof. Ariel Palazzesi</b> <br>
+        Adaptación: Juan Pablo Nardone</p>
+</body>
+
+</html>

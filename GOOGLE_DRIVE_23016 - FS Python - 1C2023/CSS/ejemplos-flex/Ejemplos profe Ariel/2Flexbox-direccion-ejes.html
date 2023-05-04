@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="2Flexbox-direccion-ejes.css">
+    <title>Flex 2 - Dirección de los ejes</title>
+</head>
+
+<body>
+
+    <h1>Flexbox | Dirección de los ejes</h1>
+
+    <p>Existen dos propiedades principales para manipular la dirección y comportamiento de los ítems a lo largo del eje principal del contenedor.</p>
+    <p>Una es <span class="codigo">flex-direction</span>. Podemos modificar la dirección del eje principal del contenedor para que se oriente en horizontal (por defecto) o en vertical. </p>
+
+    <h3>Horizontal:</h3>    
+    <div class="flex-containerh">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+    </div>
+
+    <h3>Horizontal con row-reverse:</h3>
+    <p>Además, también podemos incluir el sufijo <span class="codigo">-reverse</span> para indicar que coloque los ítems en orden inverso. 
+    <div class="flex-reverseh">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+    </div>
+
+    <h3>Vertical:</h3> 
+    <div class="flex-containerv">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+    </div>
+
+    <h3>Vertical con row-reverse:</h3>
+    <p>Además, también podemos incluir el sufijo <span class="codigo">-reverse</span> para indicar que coloque los ítems en orden inverso. 
+    <div class="flex-reversev">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+    </div>
+
+    <h3>Propiedad flex-wrap:</h3>
+
+    <p><span class="codigo">flex-wrap: wrap;</span> y <span class="codigo">flex-wrap: wrap-reverse;</span> permiten el "desbordamiento" hacia la linea (o columna) siguiente. En la práctica, gracias a esto podemos tener tener contenedores multilinea / multicolumna. El valor por defecto es <span class="codigo">flex-wrap: nowrap;</span></p>
+  
+    <h4>flex-wrap: nowrap;</h4>
+    <div class="flex-containerh-nowrap">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+        <div>Item4</div>
+        <div>Item5</div>
+        <div>Item6</div>
+        <div>Item7</div>
+        <div>Item8</div>
+        <div>Item9</div>
+        <div>Item10</div>
+        <div>Item11</div>
+        <div>Item12</div>
+    </div>
+
+    <h4>flex-wrap: wrap;</h4>
+    <div class="flex-containerh-wrap">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+        <div>Item4</div>
+        <div>Item5</div>
+        <div>Item6</div>
+        <div>Item7</div>
+        <div>Item8</div>
+        <div>Item9</div>
+        <div>Item10</div>
+        <div>Item11</div>
+        <div>Item12</div>
+    </div>
+    <p>Esto nos permite tener un control muy alto sobre el orden de los elementos en una página.</p>
+    <p id="firma">Ejemplo desarrollado por el <b> Prof. Ariel Palazzesi</b> <br>
+        Adaptación: Juan Pablo Nardone</p>    
+
+</body>
+
+</html>

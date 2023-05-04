@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana;
+}
+
+.padre{
+    background-color: lightblue;
+    border: 2px solid blue;
+    width: 80%;
+    height: 500px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: flex-start; */
+    /* align-items: baseline; */
+    /* align-content: stretch; */
+}
+.hijo{
+    background-color: navy;
+    border: 2px dashed white;
+    width: 200px;
+    height: 100px;
+    color: white;
+    margin: 30px;
+    padding: 20px;
+    font-size: 40px;
+    text-align: center;
+    /* flex-grow: 1; */
+    /* flex-shrink: 0; */
+    /* flex: 1 1 auto; */
+    /* order: 2; */
+}
+/* .grande{font-size: 60px;}
+.chico{font-size: 10px;} */
+.otrohijo{
+    /* order: 3; */
+    align-self: stretch;
+    height: auto;
+}

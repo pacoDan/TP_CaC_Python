@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores de fondo</title>
+    <!-- https://www.w3schools.com/css/css_background.asp -->
+    <!-- https://www.w3schools.com/css/css_background_image.asp -->
+    <!-- https://www.w3schools.com/cssref/pr_background-image.asp -->
+
+    <style>
+        .fondo{
+            background-color: rgb(173, 216, 230);
+            width: 800px;
+            margin: 0 auto;
+            padding: 50px;
+            text-align: center;
+            font-family: Verdana;
+            font-size: 30px;
+        }
+        .fondo-imagen{
+            background-image: url("fondo.jpg");
+            width: 800px;
+            margin: 0 auto;
+            padding: 50px;
+        }
+        .texto-imagen{
+            background-color: rgba(255,255,255,75%);
+            padding: 5px;
+            text-align: center;
+            font-size: 30px;
+            font-family: Verdana;
+        }
+    </style>
+</head>
+<body>
+    <div class="fondo">
+        Soy un div con un fondo celeste!
+    </div>
+    <br>
+    <div class="fondo-imagen">
+    </div>
+    <br>
+    <div class="fondo-imagen">    
+        <div class="texto-imagen">
+            Soy un div con un fondo de imagen!
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+body{
+    font-family: Arial;
+}
+div {
+    border: 1px solid black;
+    background-color: lightblue;
+}
+.ejemplo_1, .ejemplo_2, .ejemplo_3, .ejemplo_4, .ejemplo_5{
+    background-color:coral;
+}
+.ejemplo_1{
+    margin-top: 10px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    margin-left: 100px;
+}
+.ejemplo_2{
+    margin: 10px;
+}
+.ejemplo_3{
+    margin: 25px 60px;
+}
+.ejemplo_4{
+    margin: 50px 15px 25px;
+}
+.ejemplo_5{
+    margin: 100px 75px 50px 25px;
+}
+.ejemplo_6{
+    width: 300px;
+    margin: auto;
+    background-color:coral;
+    border: 2px solid red;
+}

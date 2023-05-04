@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON a JS</title>
+</head>
+
+<body>
+    <!-- Convirtiendo de JSON a JavaScript: -->
+    <script>
+
+        var jsonTexto = '{"color":"blanco","km":100000,"esNuevo":false}'
+        console.log(jsonTexto)
+        var coche = JSON.parse(jsonTexto) //Convertimos a JS
+        console.log(coche)
+        for (let i in coche){//Recorremos propiedades del objeto JS
+            console.log(i + ": " + coche[i])
+        }
+    </script>
+</body>
+
+</html>

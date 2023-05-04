@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="9Flexbox-orden.css">
+    <title>Flex 9 - Orden de los ítems</title>
+</head>
+
+<body>
+
+    <h1>Flexbox | Orden de los ítems</h1>
+
+    <p>Por último, y quizás una de las propiedades más interesantes, es <span class="codigo">order</span>, que modifica y establece el orden de los ítems según una secuencia numérica.
+        Por defecto, todos los ítems flex tienen un <span class="codigo">order: 0</span> implícito, aunque no se especifique. Si indicamos un <span class="codigo">order</span> con un valor numérico, irá recolocando los ítems según su número, colocando antes los ítems con número más pequeño (incluso valores negativos) y después los ítems con números más altos. <mark>De esta forma podemos recolocar fácilmente los ítems incluso utilizando media queries o responsive design.</mark></p>
+       
+    <h3>Orden por defecto:</h3>
+    <div class="flex-containerh">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+        <div>Item4</div>
+        <div>Item5</div>                
+    </div>
+
+    <h3>Orden alterado: 3 2 1 4 5</h3>
+    <div class="flex-containerh" >
+        <div style="order: 4">Item1</div>
+        <div style="order: 3;">Item2</div>
+        <div style="order: 2;">Item3</div>
+        <div style="order: 5;">Item4</div>
+        <div style="order: 6;">Item5</div>                
+    </div>
+
+    <h3>Orden alterado (parcial): algunos elementos no están explícitamente ordenados</h3>  
+    <div class="flex-containerh" >
+        <div style="order: 3;">Item1</div>
+        <div style="order: 2;">Item2</div>
+        <div style="order: 1;">Item3</div>
+        <div>Item4</div>
+        <div>Item5</div>                
+    </div>
+    
+    <h3>Orden alterado (valor negativo)</h3> 
+    <div class="flex-containerh" >
+        <div>Item1</div>
+        <div>Item2</div>
+        <div style="order: -1;">Item3</div>
+        <div>Item4</div>
+        <div>Item5</div>                
+    </div>
+    <p id="firma">Ejemplo desarrollado por el <b> Prof. Ariel Palazzesi</b> <br>
+        Adaptación: Juan Pablo Nardone</p>    
+    
+</body>
+
+</html>

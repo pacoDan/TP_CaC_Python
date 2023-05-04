@@ -1,0 +1,18 @@
+body{
+    font-family: Arial;
+    font-size: 20px;
+}
+h1{background-color: lightgreen;}
+div{
+    background-color: lightblue;
+    /* width: 800px; */
+    /* height: 300px; */
+    max-width: 1000px;
+    min-width: 600px;
+}
+.caja{
+    border: 2px dotted red; /*borde*/
+    padding: 30px; /*relleno*/
+    margin: 20px; /*margen*/
+    background-color: violet; /*color de relleno*/
+}
