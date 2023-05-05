@@ -5,9 +5,9 @@
 }
 
 main {
-    background-image: linear-gradient(to bottom, rgba(250, 250, 250, 1) 0%, rgba(250, 250, 250, 0.5) 100%), url(/img/logo_561.jpg);
+    background-image:linear-gradient(to bottom, rgba(250, 250, 250, 1) 0%, rgba(250, 250, 250, 0.5) 100%), url('../img/logo_561.jpg');
     background-size: 30%;
-    background-repeat: repeat-y;
+    background-repeat:no-repeat
 
 }
 
