@@ -1,183 +1,695 @@
-/*@media only screen and (max-width: 600px) {}
-
-@media only screen and (min-width: 600px) {}
-
-@media only screen and (min-width: 1000px) {*/
 body {
     background-color: rgb(255, 255, 255);
     margin: 0;
 }
 
-.contenedor {
-    width: 95%;
-    margin: 0px;
-    /* box-sizing: border-box;*/
-    display: grid;
-    grid-template-areas: 'miAreac miArea miArea miArea'
-        'miArea2 miArea2 miArea2 miArea2'
-        'miArea3 miArea4 miArea5  miArea6'
-        'miArea8 miArea9 miArea10  miArea11'
-        'miArea7 miArea7  miArea7  miArea7';
-    grid-template-columns: 30% 20% 30% 20%;
-    gap: 10px;
-    /*grid-template-rows: auto 5vh auto auto auto;*/
-    /*justify-content: center;*/
+@media screen and (max-width: 600px) {
+    .contenedor {
+       /* background-color: rgb(240, 228, 5);*//*para darse cuenta cuando cambia pantalla*/
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        max-width: 1000px;
+        display: grid;
+        grid-template-areas: 'miAreac miArea'
+            'miAreac miArea'
+            'miAreac miArea'
+            'miAreac miArea'
+            'miArea2 miArea2'
+            'miArea3 miArea4'
+            'miArea5  miArea6'
+            'miArea8 miArea9'
+            'miArea10  miArea11'
+            'miArea7 miArea7';
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 5vh 5vh 5vh 5vh 10vh 10vh 10vh 15vh 15vh auto;
+        gap: 10px;
+    }
+
+    .cabecera {
+        grid-area: miAreac;
+    }
+
+    .navegacion {
+        display: block;
+        grid-area: miArea;
+    }
+
+    .navegacion ul li {
+        display: block;
+        margin-left: 0%;
+        text-align: left;
+    }
+
+    .navegacion ul li a {
+        font-weight: bold;
+        text-decoration: none;
+        font-family: 'Calligraffitti', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+        font-size: 4vw;
+        color: black;
+        margin-top: 0;
+        align-content: center;
+        vertical-align: top;
+    }
+
+    .navegacion ul li a:hover,
+    .submenu3 a:hover,
+    .submenu4 a:hover,
+    .submenu5 a:hover,
+    .submenu6 a:hover {
+        color: rgb(125, 125, 125);
+    }
+
+    .navegacion a :visited,
+    .submenu3 a:visited,
+    .submenu4 a:visited,
+    .submenu5 a:visited,
+    .submenu6 a:visited {
+        text-decoration: none;
+    }
+
+    .cabecera {
+        background-image: url("../img/logo_560.jpg");
+        background-position: top left;
+        background-size: 30vw;
+        background-repeat: no-repeat;
+    }
+
+    .titulo {
+        /* box-sizing: border-box;*/
+        grid-area: miArea2;
+        text-align: center;
+        margin-top: 0;
+        font-weight: bold;
+        text-decoration: none;
+        font-family: 'Calligraffitti', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+        font-size: 6vw;
+        line-height: 0;
+        color: black;
+        /* height: fit-content;*/
+    }
+
+    .contenido {
+        display: inline-flex;
+        width: 100%;
+    }
+
+    .submenu3 {
+        grid-area: miArea3;
+        text-align: center;
+    }
+
+    .submenu4 {
+        grid-area: miArea4;
+        text-align: center;
+    }
+
+    .submenu5 {
+        grid-area: miArea5;
+        text-align: center;
+
+    }
+
+    .submenu6 {
+        grid-area: miArea6;
+        text-align: center;
+    }
+
+    .submenu8 {
+        grid-area: miArea8;
+        background-image: url("../img/menu1_small.jpg");
+        background-position: center;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+
+    }
+
+    .submenu9 {
+        grid-area: miArea9;
+        background-image: url("../img/menu2_small.jpg");
+        background-position: center;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+
+
+    }
+
+    .submenu10 {
+        grid-area: miArea10;
+        background-image: url("../img/menu3_small.jpg");
+        background-position: center;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+    }
+
+    .submenu11 {
+        grid-area: miArea11;
+        background-image: url("../img/menu4_small.jpg");
+        background-position: center;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+    }
+
+    .submenu3 a,
+    .submenu4 a,
+    .submenu5 a,
+    .submenu6 a {
+        font-weight: bold;
+        text-decoration: none;
+        font-family: 'Calligraffitti', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+        font-size: 6vw;
+        line-height: 1;
+        color: rgb(0, 0, 0);
+        align-content: center;
+    }
+
+
+    .submenu3 p,
+    .submenu4 p,
+    .submenu5 p,
+    .submenu6 p {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+        font-weight: lighter;
+        text-decoration: none;
+        font-size: 2.5vw;
+        line-height: 0;
+        color: rgb(125, 125, 125);
+        align-content: center;
+    }
+    .transparente {
+        cursor: pointer;
+        fill-opacity: 0%;
+        border: 0;
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+    }
+    @keyframes cambiarColor {
+        from {
+            filter: brightness(100%);
+        }
+
+        to {
+            filter: brightness(400%);
+        }
+    }
+    
+
+    /* .contenido img {
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url("img/menu-trago-02.jpg");
+   
+    }*/
+
+    .submenu8 a:hover,
+    .submenu9 a:hover,
+    .submenu10 a:hover,
+    .submenu11 a:hover {
+        animation: cambiarColor 1s linear 0.5s 4 normal forwards running;
+    }
+
+    .pie {
+        grid-area: miArea7;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        /*  text-align: center; font-weight: bold;*/
+        text-decoration: none;
+        font-size: 3vw;
+        color: black;
+        align-content: center;
+    }
+
+    .pie img {
+        width: 3vw;
+        margin: 5px;
+        vertical-align: middle;
+    }
+
+    .pie img:hover {
+        opacity: 50%;
+        scale: 120%;
+    }
 }
 
-.cabecera {
-    grid-area: miAreac;
+
+@media screen and (min-width: 601px) { 
+
+    /*pantalla media*/
+    .contenedor {
+       /* background-color: rgb(255, 127, 227);*//*para darse cuenta cuando cambia pantalla*/
+        
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        max-width: 1000px;
+        display: grid;
+        grid-template-areas: 'miAreac miArea miArea miArea'
+            'miAreac miArea2 miArea2 miArea2'
+            'miArea3 miArea4 miArea5  miArea6'
+            'miArea8 miArea9 miArea10  miArea11'
+            'miArea7 miArea7  miArea7  miArea7';
+        grid-template-columns: 30% 20% 30% 20%;
+        grid-template-rows: 10vh 15vh 15vh 40vh auto;
+        gap: 0px;
+
+    }
+
+    .cabecera {
+        grid-area: miAreac;
+            background-image: url("../img/logo_560.jpg");
+        background-position: top left;
+        background-size: 50%;
+        background-repeat: no-repeat;
+        margin-left: 15px ;
+    }
+   /*.cabecera img {
+        width: 30%;
+        margin: 10px;
+    }*/
+
+    .navegacion {
+        display: inline;
+        grid-area: miArea;
+    }
+
+    .navegacion ul li {
+        display: inline;
+        margin-left: 10%;
+        text-align: center;
+    }
+
+    .navegacion ul li a {
+        font-weight: bold;
+        text-decoration: none;
+        font-family: 'Calligraffitti', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+        font-size: 1.5vw;
+        color: black;
+        margin-top: 0;
+        align-content: center;
+        vertical-align: top;
+    }
+
+    .navegacion ul li a:hover,
+    .submenu3 a:hover,
+    .submenu4 a:hover,
+    .submenu5 a:hover,
+    .submenu6 a:hover {
+        color: rgb(125, 125, 125);
+    }
+
+    .navegacion a :visited,
+    .submenu3 a:visited,
+    .submenu4 a:visited,
+    .submenu5 a:visited,
+    .submenu6 a:visited {
+        text-decoration: none;
+    }
+
+ 
+    .titulo {
+        /* box-sizing: border-box;*/
+        grid-area: miArea2;
+        margin-top: 0;
+        font-weight: bold;
+        text-decoration: none;
+        font-family: 'Calligraffitti', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+        font-size: 2vw;
+        line-height: 0;
+        color: black;
+        text-align: center;
+        /* height: fit-content;*/
+    }
+
+    .contenido {
+        display: inline-flex;
+        width: 100%;
+    }
+
+    .submenu3 {
+        grid-area: miArea3;
+        text-align: center;
+    }
+
+    .submenu4 {
+        grid-area: miArea4;
+        text-align: center;
+    }
+
+    .submenu5 {
+        grid-area: miArea5;
+        text-align: center;
+
+    }
+
+    .submenu6 {
+        grid-area: miArea6;
+        text-align: center;
+    }
+
+    .submenu8 {
+        grid-area: miArea8;
+
+        background-image: url("../img/menu-trago-02.jpg");
+        background-position: top center;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+    }
+
+    .submenu9 {
+        grid-area: miArea9;
+        background-image: url("../img/menu-cafe.jpg");
+        background-position: top center;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+    }
+
+    .submenu10 {
+        grid-area: miArea10;
+        background-image: url("../img/menu-mila.jpg");  background-position: top center;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+    }
+
+    .submenu11 {
+        grid-area: miArea11;
+        background-image: url("../img/menu-playa.jpg");  background-position: top center;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+    }
+
+
+    .submenu3 a,
+    .submenu4 a,
+    .submenu5 a,
+    .submenu6 a {
+        font-weight: bold;
+        text-decoration: none;
+        font-family: 'Calligraffitti', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+        font-size: 2.5vw;
+        color: rgb(0, 0, 0);
+        align-content: center;
+    }
+
+
+    .submenu3 p,
+    .submenu4 p,
+    .submenu5 p,
+    .submenu6 p {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+        font-weight: lighter;
+        text-decoration: none;
+        font-size: 2vw;
+        line-height: 0.25vw;
+        color: rgb(125, 125, 125);
+        align-content: center;
+    }
+
+    @keyframes cambiarColor {
+
+        /*animación de las imágenes*/
+        from {
+            filter: brightness(100%);
+        }
+
+        to {
+            filter: brightness(400%);
+        }
+    }
+
+   /* .contenido img {
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        scale: 20%;
+    }*/
+    .transparente {
+        cursor: pointer;
+        fill-opacity: 0%;
+        border: 0;
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+    }
+
+    .submenu8 a:hover,
+    .submenu9 a:hover,
+    .submenu10 a:hover,
+    .submenu11 a:hover {
+        animation: cambiarColor 1s linear 0.5s 4 normal forwards running;
+    }
+
+    .pie {
+        grid-area: miArea7;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        /*  text-align: center; font-weight: bold;*/
+        text-decoration: none;
+        font-size: 2vw;
+        color: black;
+        align-content: center;
+    }
+
+    .pie img {
+        width: 2vw;
+        margin: 5px;
+        vertical-align: middle;
+    }
+
+    .pie img:hover {
+        opacity: 50%;
+        scale: 120%;
+    }
 }
 
-.navegacion {
-    display: inline;
-    grid-area: miArea;
-}
-
-.navegacion ul li {
-    display: inline;
-    margin-left: 10%;
-    text-align: center;
-}
-
-.navegacion ul li a {
-    font-weight: bold;
-    text-decoration: none;
-    font-family: 'Calligraffitti', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
-    font-size: 1.5vw;
-    color: black;
-    margin-top: 0;
-    align-content: center;
-    vertical-align: top;
-}
-
-.navegacion ul li a:hover, .submenu3 a:hover, .submenu4 a:hover, .submenu5 a:hover, .submenu6 a:hover {
-    color: rgb(125, 125, 125);
-}
-
-.navegacion a :visited, .submenu3 a:visited,
-.submenu4 a:visited,
-.submenu5 a:visited,
-.submenu6 a:visited {
-    text-decoration: none;
-}
-
-.cabecera img {
-    width: 30%;
-    margin: 10px;
-}
-
-.titulo {
-    /* box-sizing: border-box;*/
-    grid-area: miArea2;
-    margin-top: 0;
-    font-weight: bold;
-    text-decoration: none;
-    font-family: 'Calligraffitti', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
-    font-size: 3vw;
-    line-height: 0;
-    color: black;
-    text-align: center;
-    /* height: fit-content;*/
-}
-
-.contenido {
-    display: inline-flex;
-    width: 100%;
-}
-
-.submenu3 {
-    grid-area: miArea3;
-    text-align: center;
-}
-
-.submenu4 {
-    grid-area: miArea4;
-    text-align: center;
-}
-
-.submenu5 {
-    grid-area: miArea5;
-    text-align: center;
-
-}
-
-.submenu6 {
-    grid-area: miArea6;
-    text-align: center;
-}
-
-.submenu8 {
-    grid-area: miArea8;
-}
-
-.submenu9 {
-    grid-area: miArea9;
-}
-
-.submenu10 {
-    grid-area: miArea10;
-}
-
-.submenu11 {
-    grid-area: miArea11;
-}
-
-.submenu3 a,
-.submenu4 a,
-.submenu5 a,
-.submenu6 a {
-    font-weight: bold;
-    text-decoration: none;
-    font-family: 'Calligraffitti', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
-    font-size: 2vw;
-    color: rgb(0, 0, 0);
-    align-content: center;
-}
+@media only screen and (min-width: 1000px) {
 
 
-.submenu3 p,
-.submenu4 p,
-.submenu5 p,
-.submenu6 p {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-align: center;
-    font-weight: lighter;
-    text-decoration: none;
-    font-size: 1vw;
-    color: rgb(125, 125, 125);
-    align-content: center;
-}
+    .contenedor {
+       /* background-color: aquamarine;*/ /*para darse cuenta cuando cambia pantalla*/
+    
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        max-width: 1280px;
+        /* box-sizing: border-box;*/
+        display: grid;
+        grid-template-areas: 'miAreac miArea miArea miArea'
+            'miAreac miArea2 miArea2 miArea2'
+            'miArea3 miArea4 miArea5  miArea6'
+            'miArea8 miArea9 miArea10  miArea11'
+            'miArea7 miArea7  miArea7  miArea7';
+        grid-template-columns: 30% 20% 30% 20%;
+        gap: 0px;
+        grid-template-rows: 10vh 15vh 15vh 55vh auto;
+        /**/
+        /*justify-content: center;*/
+    }
 
-@keyframes cambiarColor {
-    from {filter:brightness(100%);}
-    to {filter:brightness(400%);}
-}
+    .cabecera {
+        grid-area: miAreac;
+            background-image: url("../img/logo_560.jpg");
+            background-position: top left;
+            margin-left: 15px ;
+            background-size: 50%;
+            background-repeat: no-repeat;
+    
+    }
 
-.contenido img {
-    align-self: stretch;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.submenu8 a:hover, .submenu9 a:hover, .submenu10 a:hover, .submenu11 a:hover{ animation: cambiarColor 1s linear 0.5s 4 normal forwards running;}
+    .navegacion {
+        display: inline;
+        grid-area: miArea;
+    }
 
-.pie {
-    grid-area: miArea7;
-    text-align: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    /*  text-align: center; font-weight: bold;*/
-    text-decoration: none;
-    font-size: 1vw;
-    color: black;
-    align-content: center;
-}
+    .navegacion ul li {
+        display: inline;
+        margin-left: 10%;
+        text-align: center;
+    }
 
-.pie img {
-    width: 1.5vw;
-    margin: 5px;
-    vertical-align: middle;
-}
-.pie img:hover {
-    opacity: 50%;
-    scale: 120%;
+    .navegacion ul li a {
+        font-weight: bold;
+        text-decoration: none;
+        font-family: 'Calligraffitti', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+        font-size: 1vw;
+        color: black;
+        margin-top: 0;
+        align-content: center;
+        vertical-align: top;
+    }
+
+    .navegacion ul li a:hover,
+    .submenu3 a:hover,
+    .submenu4 a:hover,
+    .submenu5 a:hover,
+    .submenu6 a:hover {
+        color: rgb(125, 125, 125);
+    }
+
+    .navegacion a :visited,
+    .submenu3 a:visited,
+    .submenu4 a:visited,
+    .submenu5 a:visited,
+    .submenu6 a:visited {
+        text-decoration: none;
+    }
+
+  
+
+    .titulo {
+        /* box-sizing: border-box;*/
+        grid-area: miArea2;
+        margin-top: 0;
+        font-weight: bold;
+        text-decoration: none;
+        font-family: 'Calligraffitti', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+        font-size: 3vw;
+        line-height: 0;
+        color: black;
+        text-align: center;
+        /* height: fit-content;*/
+    }
+
+    .contenido {
+        display: inline-flex;
+        width: 100%;
+    }
+
+    .submenu3 {
+        grid-area: miArea3;
+        text-align: center;
+    }
+
+    .submenu4 {
+        grid-area: miArea4;
+        text-align: center;
+    }
+
+    .submenu5 {
+        grid-area: miArea5;
+        text-align: center;
+
+    }
+
+    .submenu6 {
+        grid-area: miArea6;
+        text-align: center;
+    }
+
+    .submenu8 {
+        grid-area: miArea8;
+
+        background-image: url("../img/menu-trago-02.jpg");  background-position: top center;
+        background-size:auto 100%;
+
+    }
+
+    .submenu9 {
+        grid-area: miArea9;
+        background-image: url("../img/menu-cafe.jpg");  background-position: top center;
+        background-size:auto 100%;
+
+    }
+
+    .submenu10 {
+        grid-area: miArea10;
+        background-image: url("../img/menu-mila.jpg");  background-position: top center;
+        background-size: auto 100%;
+    }
+
+    .submenu11 {
+        grid-area: miArea11;
+        background-image: url("../img/menu-playa.jpg");  background-position: top center;
+        background-size:auto 100%;
+    }
+
+    .submenu3 a,
+    .submenu4 a,
+    .submenu5 a,
+    .submenu6 a {
+        font-weight: bold;
+        text-decoration: none;
+        font-family: 'Calligraffitti', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
+        font-size: 2vw;
+        color: rgb(0, 0, 0);
+        align-content: center;
+    }
+
+
+    .submenu3 p,
+    .submenu4 p,
+    .submenu5 p,
+    .submenu6 p {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+        font-weight: lighter;
+        text-decoration: none;
+        font-size: 1vw;
+        color: rgb(125, 125, 125);
+        align-content: center;
+    }
+
+    @keyframes cambiarColor {
+        from {
+            filter: brightness(100%);
+        }
+
+        to {
+            filter: brightness(400%);
+        }
+    }
+
+    /*.contenido img {
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }*/
+    .transparente {
+        cursor: pointer;
+        fill-opacity: 0%;
+        border: 0;
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+    }
+
+    .transparente a:hover {
+        animation: cambiarColor 1s linear 0.5s 4 normal forwards running;
+    }
+
+
+    /*.submenu8 a:hover,
+    .submenu9 a:hover,
+    .submenu10 a:hover,
+    .submenu11 a:hover {
+        animation: cambiarColor 1s linear 0.5s 4 normal forwards running;
+    }*/
+
+    .pie {
+        grid-area: miArea7;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        /*  text-align: center; font-weight: bold;*/
+        text-decoration: none;
+        font-size: 1vw;
+        color: black;
+        align-content: center;
+    }
+
+    .pie img {
+        width: 1.5vw;
+        margin: 5px;
+        vertical-align: middle;
+    }
+
+    .pie img:hover {
+        opacity: 50%;
+        scale: 120%;
+    }
 }
