@@ -34,13 +34,12 @@ body {
 
 .imagen {
     grid-area: imagen;
-    width: 100%;
+    width: 90%;
 }
 
 .imagen img {
     width: 100%;
     margin-left: 0%;
-    margin-top: 5%;
 }
 
 
@@ -50,9 +49,12 @@ body {
         'formulario mapa imagen'
         'mensaje mensaje imagen';
     grid-template-columns: 20% 20% 50%;
-    grid-template-rows: 25% 25% 50%;
+    grid-template-rows: 30% 30% 30%;
     margin-left: 10%;
-    gap: 4%;
+    margin-right: 0%;
+    padding: 0%;
+    row-gap: 2%;
+    column-gap: 4%;
 }
 
 
@@ -120,7 +122,7 @@ form input {
 
 #enviar {
     width: 20%;
-    height: 10%;
+    height: 20%;
     margin-left: 0%;
     margin-top: 2%;
     background-color: #070000;
@@ -143,10 +145,9 @@ form input {
 
 footer {
     width: 80%;
-    margin: 5% 10%;
-    padding: 1%;
-    border-top-style: solid;
-    border-bottom-width: 2px;
+    margin: 0% 10%;
+    padding: 3%;
+        border-bottom-width: 2px;
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     /*  text-align: center; font-weight: bold;*/
@@ -252,6 +253,9 @@ footer img:hover {
         margin: 2% 0%;
         text-align: center;
     }
+    .imagen{
+        width: 100%;
+    }
 
     .imagen button {
         width: 100%;
@@ -292,12 +296,8 @@ footer img:hover {
         margin: 0px 5px;
         vertical-align: center;
     }
-
     footer img:hover {
         opacity: 50%;
         scale: 120%;
     }
-
-
-
 }

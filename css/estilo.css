@@ -124,3 +124,47 @@ footer img:hover {
     opacity: 50%;
     scale: 120%;
 }
+
+@media only screen and (max-width:600px) {
+    .contenedor {
+        display: grid;
+        grid-template-areas: 'area1'
+            'area2'
+            'area3'
+            'area4';
+        grid-template-columns: 100%;
+        margin-top: 1%;
+        width: 100%;
+    }
+
+    .navegacion a {
+        font-weight: bold;
+        text-decoration: none;
+        font-family: 'Calligraffitti';
+        font-size: 5vw;
+        margin-right: 5%;
+        color: black;
+    }
+    header a{
+        font-size: 2vw;
+    }
+    .miPedido a {
+        color: white;
+        text-align: center;
+        vertical-align: center;
+        text-decoration: none;
+        font-family: 'Calligraffitti';
+        font-weight: bold;
+        font-size: 4vw;
+    }
+
+    footer span{
+        font-size: 2.5vw;
+
+    }
+
+    footer img {
+        width: 3vw;
+    }
+
+}
