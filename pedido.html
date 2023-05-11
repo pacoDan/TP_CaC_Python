@@ -1,43 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pedidos de Restaurante</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos de Restaurante</title>
+
 </head>
 <body>
-  <div id="app">
+<div id="app">
     <h1>Pedido de Restaurante</h1>
     <form @submit.prevent="submitForm">
-      <label for="product">Producto:</label>
-      <select id="product" v-model="selectedProduct">
-        <option v-for="product in products" :value="product">{{ product }}</option>
-      </select>
-      
-      <label for="name">A nombre de:</label>
-      <input id="name" type="text" v-model="customerName">
-      
-      <button type="submit">Realizar Pedido</button>
-    </form>
-  </div>
+        <label for="product">Producto:</label>
+        <select id="product" v-model="selectedProduct">
+            <option v-for="product in products" :value="product">{{ product }}</option>
+        </select>
 
-  <script>
+        <label for="name">A nombre de:</label>
+        <input id="name" type="text" v-model="customerName">
+
+        <button type="submit">Realizar Pedido</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script>
     new Vue({
-      el: '#app',
-      data: {
-        products: ['Producto 1', 'Producto 2', 'Producto 3'], // Ejemplo de lista de productos
-        selectedProduct: '',
-        customerName: ''
-      },
-      methods: {
-        submitForm() {
-          // Aquí puedes enviar el pedido al servidor o hacer cualquier otra acción necesaria
-          console.log('Producto seleccionado:', this.selectedProduct);
-          console.log('Nombre del cliente:', this.customerName);
+        el: '#app',
+        data: {
+            products: ['Producto 1', 'Producto 2', 'Producto 3'], // Ejemplo de lista de productos
+            selectedProduct: '',
+            customerName: ''
+        },
+        methods: {
+            submitForm() {
+                // Aquí puedes enviar el pedido al servidor o hacer cualquier otra acción necesaria
+                console.log('Producto seleccionado:', this.selectedProduct);
+                console.log('Nombre del cliente:', this.customerName);
+            }
         }
-      }
     });
-  </script>
+</script>
 </body>
 </html>
