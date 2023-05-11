@@ -1,0 +1,62 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: cambiarColor; /*cambiar a cambiarColor2 / cambiarColor3*/
+    animation-duration: 2s;
+    animation-timing-function: linear; /*cambiar a linear*/
+    animation-iteration-count: infinite;
+}
+
+.corazon{
+    display: inline;
+    font-size: 16px;
+    animation: corazon 2s linear infinite;
+}
+
+.carita{
+    font-size: 30px;
+    animation: desplazamiento 1s infinite;
+}
+
+@keyframes cambiarColor {
+    0% {background: red; width: 200px;}         /* Primer fotograma */
+    50% {background: yellow; width: 400px;}     /* Segundo fotograma */
+    100% {background: green; width: 600px;}     /* Último fotograma */    
+}
+
+@keyframes cambiarColor2 {
+    0% {background: red; width: 200px;}         /* Primer fotograma */
+    25% {background: yellow; width: 400px;}     /* Segundo fotograma */
+    50% {background: green; width: 600px;}     /* Tercer fotograma */    
+    75% {background: yellow; width: 400px;}     /* Cuarto fotograma */
+    0% {background: red; width: 200px;}         /* Último fotograma */
+}
+
+@keyframes corazon {
+    0% {font-size: 16px;}
+    25% {font-size: 20px;}
+    50% {font-size: 24px}
+    75% {font-size: 20px;}
+    100% {font-size: 16px;}
+}
+@keyframes rodar {
+    0% {transform: translateX(0px) rotate(0deg);}
+    100% {transform: translateX(20px) rotate(10deg);}
+}
+
+/* Define la animación "desplazamiento-giro" */
+@keyframes desplazamiento {
+    /* Define los pasos de la animación */
+    0% {
+      transform: translateX(0px);
+    }
+    50% {
+      transform: translatex(100px);
+    }
+    100% {
+      transform: translatex(0px);
+    }
+
+  }
+  

@@ -1,0 +1,42 @@
+*{font-family: Verdana;}
+.codigo {
+    font-family: 'Courier New';
+    background-color: lightblue;
+    font-weight: bold;
+}
+
+/*containerh: Es el elemento padre que tendrá en su interior cada uno de los ítems flexibles. */
+.flex-containerh {
+    display: flex;   /* Esta propiedad define al div como contenedor flex*/
+    flex-direction: row;
+    /* flex-wrap: wrap; */ /*¿que ocurre si utilizamos esta opcion? */
+    background-color: lightblue;     
+    align-items: stretch;  
+}
+
+/*Cada uno de los hijos flexibles que tendrá el contenedor horizontal en su interior. */
+.flex-containerh > div {  /*Utilizamos selectores avanzados en lugar de clases */
+    color: white;
+    background-color: blue;
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+    width: 120px;
+
+    /* Para ver mejor como funciona flex-basis, quitar paddin, margin, etc */
+    flex-basis:1vw; /*Podemos usar content, px, %, em, vw, etc */
+}
+#grow-1{
+    flex-grow: 1;
+    background-color:orange;
+
+}
+#grow-2{
+    flex-grow: 2;
+    background-color: olive;
+}
+
+#firma{
+    text-align: right;
+    color: blue;
+}

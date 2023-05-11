@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="5Flexbox-alineacion-eje-secundario.css">
+    <title>Flex 5 - Alineación sobre el eje secundario</title>
+</head>
+
+<body>
+
+    <h1>Flexbox | Alineación sobre el eje secundario</h1>
+    <p>Otra propiedad importante de este apartado es <span class="codigo">align-items</span>, que se encarga de alinear los ítems en el eje secundario del contenedor. Hay que tener cuidado de no confundirla con <span class="codigo">align-content</span>, puesto que el primero actúa sobre cada una de las líneas de un contenedor multilínea (no tiene efecto sobre contenedores de una sola línea), mientras que <span class="codigo">align-items</span> lo hace sobre la línea actual.</p>
+       
+    <h2>align-items</h2>   
+    <p>Los valores que puede tomar son los siguientes:</p>
+    
+    <p><span class="codigo">align-items: flex-start</span>: Agrupa los items al principio de eje secundario.</p>
+    <div class="flex-containerh alignitems-start">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+    </div>
+
+    <p><span class="codigo">align-items:flex-end</span>: Agrupa los items al final de eje secundario.</p>
+    <div class="flex-containerh alignitems-end">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+    </div>
+
+    <p><span class="codigo">align-items: center</span>: Agrupa los items al centro del eje secundario.</p>
+    <div class="flex-containerh alignitems-center">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+    </div>
+
+    <p><span class="codigo">align-items: strech</span>: Alinea los items estirándolos de modo que cubran desde el inicio hasta el final del contenedor.</p>
+    <div class="flex-containerh alignitems-stretch">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+    </div> 
+    
+    <p><span class="codigo">align-items: baseline</span>: Alinea los items en el contenedor según la base del contenido de los ítems del contenedor.</p>
+    <div class="flex-containerh alignitems-baseline">
+        <div style="font-size: 60px;">Item1</div>
+        <div style="font-size: 40px;">Item2</div>
+        <div>Item3</div>
+        <div style="font-size: 20px;">Item4</div>
+        <div style="font-size: 10px;">Item5</div>
+    </div>  
+    <p id="firma">Ejemplo desarrollado por el <b> Prof. Ariel Palazzesi</b> <br>
+        Adaptación: Juan Pablo Nardone</p>   
+</body>
+
+</html>

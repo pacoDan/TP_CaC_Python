@@ -1,0 +1,26 @@
+* {
+    margin: 0px;
+    font-family: Verdana;
+    padding: 10px;
+}
+header, footer{
+    background-color: lightblue;
+}
+nav{
+    background-color: lightyellow;
+}
+main{
+    background-color: lightsalmon;
+}
+section{
+    background-color: lightseagreen;
+}
+article{
+    background-color: lightgreen;
+}
+aside{
+    background-color: gray;
+}
+aside section{
+    background-color:lightgray;
+}

@@ -1,0 +1,36 @@
+/*BOX-SIZING: Permite definir el modelo de caja
+  Fuente: https://www.youtube.com/watch?v=VeFwTquoVUY
+*/
+* {
+    font-family: Verdana;
+}
+
+.content {
+    box-sizing: content-box;
+    width: 400px;
+    padding: 50px;
+    border: 15px solid red;
+}
+
+.border {
+    box-sizing: border-box;
+    width: 400px;
+    padding: 50px;
+    border: 15px solid blue;
+}
+
+.inline-content {
+    box-sizing: content-box;
+    display: inline-block;
+    width: 33%;
+    padding: 5px;
+    border: 10px solid red;
+}
+
+.inline-border {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 33%;
+    padding: 5px;
+    border: 10px solid blue;
+}

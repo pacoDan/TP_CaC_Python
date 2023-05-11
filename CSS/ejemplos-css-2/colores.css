@@ -1,0 +1,22 @@
+body {
+    font-family: Verdana;
+}
+
+h1 {
+    border-top: 2px dotted;
+    border-bottom: 2px dotted;
+    background-color: lightgrey;
+}
+
+h2 {
+    border-top: 1px dotted;
+    border-bottom: 1px solid;
+    background-color: lightblue;
+}
+
+.subtitulo {
+    margin-left: 30px;
+    border-top: 1px dotted;
+    border-bottom: 1px solid;
+    background-color: rgb(219, 241, 248);
+}

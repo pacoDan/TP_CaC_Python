@@ -1,0 +1,24 @@
+/*----------- PSEUDOCLASES --------------*/
+/*Quitar comentario a cada regla CSS para ver su aplicación*/
+
+/*Selecciona al primer hijo de su padre*/
+/* li:first-child {background-color: lightskyblue;} */
+
+/*Selecciona al ultimo hijo de su padre*/
+/* li:last-child {background-color: lightskyblue;} */
+
+/*Selecciona cada elemento que es el n- ésimo hijo*/
+/* li:nth-child(3) {background-color: lightskyblue;} */
+
+/*Selecciona a los elementos 3, 6, 9...*/
+/* li:nth-child(3n) {background-color: lightskyblue;} */
+
+/*Selecciona a los elementos 2, 4, 6... */
+/* li:nth-child(2n) {background-color: lightgreen;} */
+
+/*Selecciona, de a 3 elementos, a partir del 4to elemento*/
+/* li:nth-child(3n+4) {background-color: lightseagreen;} */
+
+/*Even: selecciona los pares. Odd: selecciona los impares*/
+/* li:nth-child(even) {background-color: lightcoral;} */
+/* li:nth-child(odd) {background-color: lightgreen;} */

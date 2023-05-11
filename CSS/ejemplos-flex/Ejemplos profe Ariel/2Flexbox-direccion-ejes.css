@@ -1,0 +1,76 @@
+*{font-family: Verdana;}
+
+.codigo {
+    font-family: 'Courier New';
+    background-color: lightblue;
+    font-weight: bold;
+}  
+
+/*containerh: Es el elemento padre que tendrá en su interior cada uno de los ítems flexibles. */
+.flex-containerh {
+    display: flex; /* Esta propiedad define al div como contenedor flex*/
+    flex-direction: row;
+    background-color: lightblue;
+}
+
+/*containerv: Es el elemento padre que tendrá en su interior cada uno de los ítems flexibles. */
+.flex-containerv {
+    display: flex;   /* Esta propiedad define al div como contenedor flex*/
+    flex-direction: column;
+    /* probar con column-reverse*/
+    background-color: lightblue;
+}
+
+.flex-reverseh {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: lightblue;
+}
+
+.flex-reversev {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: lightblue;
+}
+
+.flex-containerh-nowrap {
+    display: flex; /* Esta propiedad define al div como contenedor flex*/
+    flex-direction: row;
+    background-color: lightblue;
+    flex-wrap: nowrap;
+}
+
+.flex-containerh-wrap {
+    display: flex; /* Esta propiedad define al div como contenedor flex*/
+    flex-direction: row;
+    background-color: lightblue;
+    flex-wrap: wrap;
+}
+
+/*Cada uno de los hijos flexibles que tendrán los contenedores horizontal / verticales en su interior. */
+.flex-containerh > div,
+.flex-containerv > div,
+.flex-reverseh > div,
+.flex-reversev > div,
+.flex-containerh-nowrap > div,
+.flex-containerh-wrap > div {  /*Utilizamos selectores avanzados en lugar de clases */
+    color: white;
+    background-color: blue;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+}
+
+/*Cada uno de los hijos flexibles que tendrá el contenedor vertical en su interior. */
+.flex-containerv > div {  /*Utilizamos selectores avanzados en lugar de clases */
+    color: white;
+    background-color: blue;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+}
+
+#firma{
+    text-align: right;
+    color: blue;
+}      

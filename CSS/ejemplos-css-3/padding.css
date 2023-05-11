@@ -1,0 +1,27 @@
+body{
+    font-family: Arial;
+}
+div {
+    border: 1px solid black;
+}
+.ejemplo_1, .ejemplo_2, .ejemplo_3, .ejemplo_4, .ejemplo_5{
+    background-color:lightgreen;
+}
+.ejemplo_1{
+    padding-top: 10px;
+    padding-right: 50px;
+    padding-bottom: 30px;
+    padding-left: 100px;
+}
+.ejemplo_2{
+    padding: 10px;
+}
+.ejemplo_3{
+    padding: 25px 60px;
+}
+.ejemplo_4{
+    padding: 50px 15px 25px;
+}
+.ejemplo_5{
+    padding: 100px 75px 50px 25px;
+}

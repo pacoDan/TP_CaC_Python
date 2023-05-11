@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS GRID Básico</title>
+
+    <style>
+        .grid-container {
+            /*Convierte el contenedor en una grilla */
+            display: grid;   /* display: inline-grid; */     
+            
+            /*Forma en que se distribuyen los elementos*/
+            grid-template-columns:  30px 20% 1fr 2fr auto; 
+           
+            
+            /*Espacios entre los hijos*/
+            gap: 10px;     
+  
+            /*Coloco un espacio alrededor del conjunto de hijos*/            
+            padding: 10px;  
+
+            background-color: coral;
+        }
+
+        .grid-item {
+            background-color: burlywood; /*Color de fondo de los hijos */
+            padding:10px;
+            border: 2px solid black;     /*Borde de los elementos hijos */
+            text-align: center;            /*Contenido de los hijos centrado en x */
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS GRID Básico</h2>
+
+    <p>Esta es la configuración típica de Grid.</p>
+    <p>La propiedad <mark><code>grid-template-columns</code></mark> define cantidad y tamaño de las columnas.</p>
+
+    <p>La propiedad <mark><code>grid-template-rows</code></mark> define el tamaño de las filas.</p>   
+    
+    <p>Hay que tener en cuenta que estas propiedades interactuan tanto con <mark><code>width</code></mark> como con <mark><code>height</code></mark>.</p>  
+
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">1.1</div>
+        <div class="grid-item">1.2</div>
+        <div class="grid-item">1.3</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+
+
+    </div>
+    <p>Por supuesto, ademas de <b>px</b> se pueden utilizar otras medidas (<b>%</b>, <b>vw</b>, <b>mm</b>, etc). La unidad especial de Grid CSS <b>fr</b> (fraction) simboliza una fracción de espacio restante en el grid.</p>
+    <p>Nota: probar la propiedad <mark><code>display: inline-grid;</code></mark> y ver que pasa si se coloca un segundo elemento contenedor grid usando tanto <mark><code>display: grid;</code></mark> como <mark><code>display: inline-grid;</code></mark>.</p>
+</body>
+</html>

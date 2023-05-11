@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<body>
+    <h1>Clase 4 - Formularios</h1>
+    <form action="" method="POST">
+        <fieldset>
+            <legend>Datos personales</legend>
+            <label for="nombre">Nombre: *</label>
+            <input type="text" name="nombre" id="nombre" size="10" maxlength="10">
+    
+            <label for="apellido">Apellido: </label>
+            <input type="text" name="apellido" id="apellido">
+    
+            <label for="dni">DNI:</label>
+            <input type="number" name="dni" id="dni">
+    
+            <label for="tramite">Nro trámite DNI:</label>
+            <input type="password" name="tramite" id="tramite">
+            <br><br>
+            
+            <label for="fecnac">Fecha de nacimiento:</label>
+            <input type="date" id="fecnac" name="fecnac">
+    
+            <label for="correo">E-Mail:</label>
+            <input type="email" id="correo" name="correo">
+    
+            <label for="adjunto">Adjuntar foto:</label>
+            <input type="file" name="adjunto" id="adjunto">
+            <br><br>
+            <label for="colorfav">Color favorito:</label>
+            <input type="color" id="colorfav" name="colorfav">
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Datos para la inscripción</legend>
+            <label for="turno">Seleccione el turno que prefiera:</label>
+            <select name="turno" id="turno">
+                <option value="1">Mañana</option>
+                <option value="2" selected>Tarde</option>
+                <option value="3">Vespertino</option>
+                <option value="4">Noche</option>
+            </select>
+            <br>
+            <label for="cp">Conocimientos previos:</label>
+            <input type="checkbox" name="cp" value="1"> HTML
+            <input type="checkbox" name="cp" value="2"> CSS
+            <input type="checkbox" name="cp" value="3" checked> JS
+            <br>
+            <label for="rb">Estoy interesado en...</label>
+            <input type="radio" name="rb" value="1"> Full Stack - Python
+            <input type="radio" name="rb" value="2" checked> Full Stack - Java
+            <input type="radio" name="rb" value="3"> Full Stack - PHP
+            <input type="radio" name="rb" value="4"> Diseño UX/UI
+            <br><br>
+        </fieldset>
+        <br>
+        <label for="com">Escriba su consulta:</label>
+        <br>
+        <textarea name="com" id="com" cols="30" rows="10" placeholder="Escriba..."></textarea>
+        <br><br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Borrar">
+    </form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if-elseif-else</title>
+    <style>
+        .rojo{color:red;}
+        .amarillo{color:yellowgreen;}
+        .verde{color:green;}
+    </style>
+</head>
+
+<body>
+    <h1>Directiva v-if-elseif-else</h1>
+    <div id="ejemploVif">
+        <ul>
+            <li v-for="alimento in alimentos">
+                {{ alimento.nombre }} - {{ alimento.cantidad }}
+                <span v-if="alimento.cantidad===0"> (Sin Stock)</span>
+                <span v-else-if="alimento.cantidad<5"> (Stock Bajo)</span>
+                <span v-else="alimento.cantidad>=5"> (Stock Alto)</span>
+
+                <!-- Opcional: agregar colores: -->
+                <!-- <span v-if="alimento.cantidad===0" v-bind:class="claseRojo">(Sin Stock)</span> -->
+                <!-- <span v-else-if="alimento.cantidad<5" v-bind:class="claseAmarillo">(Stock Bajo)</span> -->
+                <!-- <span v-else="alimento.cantidad>=5" v-bind:class="claseVerde">(Stock Alto)</sp -->
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const ejemploVif = Vue.createApp({
+            data() {
+                return {
+                    alimentos: [
+                        { nombre: "galletitas", cantidad: 10 },
+                        { nombre: "café", cantidad: 0 },
+                        { nombre: "leche", cantidad: 3 },
+                        { nombre: "fideos", cantidad: 5 },
+                        { nombre: "arroz", cantidad: 4 },
+                        { nombre: "té", cantidad: 11 },
+                        { nombre: "atún", cantidad: 6 },
+                        { nombre: "choclo", cantidad: 7 }
+                    ],
+                    claseRojo: 'rojo',
+                    claseAmarillo: 'amarillo',
+                    claseVerde: 'verde'
+                }
+            }
+        }).mount("#ejemploVif")
+    </script>
+</body>
+
+</html>

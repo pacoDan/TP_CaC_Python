@@ -1,0 +1,39 @@
+  /* Aplica la primera animación */
+  #elemento {
+    background-color: aqua;
+    animation:
+        animacion1 1s linear 0s,
+        animacion2 2.5s linear 1s,
+        animacion3 2s linear 3.5s,
+        animacion4 2s linear 5.5s;
+  }
+
+/* Define la primera animación */
+@keyframes animacion1 {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.5);}
+    100% {transform: scale(1);}
+  }
+  
+
+  
+  /* Define la segunda animación */
+  @keyframes animacion2 {
+    0% {transform: translateX(0);}
+    50% {transform: translateX(100px);}
+    100% {transform: translateX(0);}
+  }
+  /* Define la tercera animación */
+  @keyframes animacion3 {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;} 
+  }
+  /* Define la cuarta animación */
+  @keyframes animacion4 {
+    0% {transform: rotate(0);}
+    50% {transform: rotate(180deg);}
+    80% {transform: rotate(180deg);}
+    100% {transform: rotate(0);}
+  }
+  

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+</head>
+
+<body>
+    <h1>Formulario de contacto</h1>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="quienessomos.html">Quienes somos</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+    <br><br>
+    <form action="">
+        <label for="firstname">Nombre: </label>
+        <input size="30" type="text" name="firstname" placeholder="Ingrese su nombre aqui...">
+        <label for="lastname">Apellido:</label>
+        <input size="30" type="text" name="lastname" placeholder="Ingrese su apellido aqui...">
+        <br><br>
+        <label for="street">Mail:</label>
+        <input type="text" name="address" placeholder="Ingrese su email aqui...">
+        <p>Tipo de consulta:
+            <input type="radio" name="rb" value="jugadores" checked> Sobre jugadores
+            <input type="radio" name="rb" value="tecnico">Sobre el cuerpo técnico
+            <input type="radio" name="rb" value="otra"> Otra consulta
+        </p>
+        <label for="comentarios">Consulta: </label>
+        <textarea name="comentarios" rows="5" cols="30" placeholder="Escriba su consulta..."></textarea>
+        <br><br>
+        <input type="submit" value="Enviar">
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>

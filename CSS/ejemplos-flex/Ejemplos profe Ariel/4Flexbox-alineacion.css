@@ -1,0 +1,41 @@
+*{font-family: Verdana;}
+.codigo {
+    font-family: 'Courier New';
+    background-color: lightblue;
+    font-weight: bold;
+}
+
+/*containerh: Es el elemento padre que tendrá en su interior cada uno de los ítems flexibles. */
+.flex-containerh {
+    display: flex;
+    /* Esta propiedad define al div como contenedor flex*/
+    flex-direction: row;
+    flex-wrap: wrap;
+    /*No olvidar! (permite el "desbordamiento" hacia la linea siguiente) */
+    background-color: lightblue;
+    height: 400px;
+    /*Le damos espacio al contenedor para que el contenido fluya en su interior */
+}
+
+/*Cada uno de los hijos flexibles que tendrá el contenedor horizontal en su interior. */
+.flex-containerh>div {
+    /*Utilizamos selectores avanzados en lugar de clases */
+    color: white;
+    background-color: blue;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.aligncontent-start{align-content: flex-start;}
+.aligncontent-end{align-content: flex-end;}
+.aligncontent-center{align-content: center;}
+.aligncontent-space-between{align-content: space-between;}
+.aligncontent-space-around{align-content: space-around;}
+.aligncontent-space-evenly{align-content: space-evenly;}
+.aligncontent-stretch{align-content: stretch;}
+
+#firma{
+    text-align: right;
+    color: blue;
+}   

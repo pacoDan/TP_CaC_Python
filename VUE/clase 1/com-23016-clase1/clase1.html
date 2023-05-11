@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro a VUE</title>
+    <style>
+        .naranja{
+            color: orange;
+            border-bottom: 2px dotted orange;
+        }
+        .enlace{
+            background-color: coral;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comenzando con VUE</h1>
+    <div id="app">
+        <p> {{mensaje}} {{comision}} </p>
+        <p>Aprendiendo VUE en {{curso}} con {{profesor}}</p>
+        <p v-text="descripcion"></p>
+        <div v-html="subtitulo"></div>
+        <img v-bind:src="foto" alt="imagenVue" v-bind:width="tamanio">
+        <a v-bind:href="url" v-bind:class="claseCSS">Ir a Google</a>
+        <p v-show="oculto">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla quis ipsa numquam nesciunt repellendus ea vel in provident veritatis ex aspernatur id ipsam exercitationem rem consequuntur aperiam, pariatur vitae est.</p>
+        <h3 v-once> {{otro_titulo}} </h3>
+        <h3> {{otro_titulo}} </h3>
+        <button v-on:click="otro_titulo = 'Soy otro título cambiado!'">Cambiar</button>
+    </div>
+
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="clase1.js"></script>
+</body>
+</html>

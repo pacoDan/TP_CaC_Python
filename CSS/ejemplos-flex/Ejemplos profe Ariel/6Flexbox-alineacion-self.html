@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="6Flexbox-alineacion-self.css">
+    <title>Flex 6 - Alineación de elementos hijos</title>
+</head>
+
+<body>
+    <h1>Flexbox | Alineación de elementos hijos</h1>
+    <p>La propiedad <span class="codigo">align-self</span> actúa exactamente igual que <span class="codigo">align-items</span>, <b>sin embargo es la primera propiedad de flexbox que vemos que se utiliza sobre un ítem hijo específico y no sobre el elemento contenedor. </b> Gracias a ese detalle, align-self nos permite cambiar el comportamiento de <span class="codigo">align-items</span> y sobreescribirlo con comportamientos específicos para ítems concretos que no queremos que se comporten igual que el resto.</p>
+       
+    <h2>align-items</h2>   
+    
+    <p>Los valores que puede tomar son los siguientes:</p>
+        
+    <p><span class="codigo">align-self: flex-start</span>: Alinea los items al principio del contenedor.</p>
+    <div class="flex-containerh">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div class="alignself-start" id="destacado">Item3</div>
+        <div>Item4</div>        
+    </div>
+
+    <p><span class="codigo">align-self: flex-end</span>: Alinea los items al principio del contenedor.</p>
+    <div class="flex-containerh">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div class="alignself-end" id="destacado">Item3</div>
+        <div>Item4</div>        
+    </div>
+
+    <p><span class="codigo">align-self: center</span>: Alinea los items al centro del contenedor.</p>
+    <div class="flex-containerh">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div class="alignself-center" id="destacado">Item3</div>
+        <div>Item4</div>        
+    </div>
+
+    <p><span class="codigo">align-self: stretch</span>: Alinea los items estirandolos al tamaño del contenedor.</p>
+    <div class="flex-containerh">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div class="alignself-stretch" id="destacado">Item3</div>
+        <div>Item4</div>        
+    </div>
+
+    <p><span class="codigo">align-self: baseline</span>: Alinea los items en el contenedor según la linea base de los items.</p>
+    <div class="flex-containerh" style="align-items: baseline;">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div style="background-color: olive; font-size: 60px;">Item3</div>
+        <div style="background-color: navy; font-size: 10px;">Item4</div>        
+    </div>
+    <p id="firma">Ejemplo desarrollado por el <b> Prof. Ariel Palazzesi</b> <br>
+        Adaptación: Juan Pablo Nardone</p> 
+</body>
+
+</html>

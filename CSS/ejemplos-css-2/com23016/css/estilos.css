@@ -1,0 +1,30 @@
+*{font-family: Verdana;}
+h1{
+    color:blue;
+    background-color: lightblue;
+}
+h2{color:green;}
+
+.grande-px{font-size: 24px;}
+.chico-px{font-size: 8px;}
+
+/*Medidas relativas (em)
+  Para calcular de px a em:
+  16px    1em
+  40px    40/16 = 2.5em
+
+  Para calcular em a px:
+  1em     16px
+  2em     16*2 = 32px*/
+.fuente-em1{font-size: 2.5em;} /*40px*/
+.fuente-em2{font-size: 1.875em;} /*30px*/
+.fuente-em3{font-size: 0.875em;} /*14px*/
+
+/*Medida relativa rem*/
+:root{font-size: 20px;} /*Tamaño base*/
+.fuente-rem1{font-size: 2.5rem;} /*2.5 veces más el tamaño base (50px)*/
+.fuente-rem2{font-size: 0.5rem;} /*0.5 veces menos el tamaño base (10px)*/
+
+/*Medidas relativas (%)*/
+.fuente-porc1{font-size: 200%;} /*32px*/
+.fuente-porc2{font-size: 75%;} /*12px*/

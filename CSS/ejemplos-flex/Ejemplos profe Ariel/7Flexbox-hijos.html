@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="7Flexbox-hijos.css">
+    <title>Flex 7 - Propiedades de elementos hijos</title>
+</head>
+
+<body>
+    <h1>Flexbox | Propiedades de hijos</h1>
+
+    <h2>flex-grow</h2> 
+    <p>En primer lugar, tenemos la propiedad  <span class="codigo">flex-grow</span> para indicar el factor de crecimiento de los ítems en el caso de que no tengan un ancho específico. Por ejemplo, si con <span class="codigo">flex-grow</span> indicamos un valor de 1 a todos sus ítems, tendrían el mismo tamaño cada uno de ellos. Pero si colocamos un valor de 1 a todos los elementos, salvo a uno de ellos, que le indicamos 2, ese ítem será más grande que los anteriores. Los ítems a los que no se le especifique ningún valor, tendrán por defecto valor de 0.</p>
+    <div class="flex-containerh">
+        <div>Item1</div>
+        <div id="grow-2">Item2</div>
+        <div>Item3</div>        
+    </div><br>
+
+    <div class="flex-containerh">
+        <div>Item1</div>
+        <div id="grow-1">Item2</div>
+        <div id="grow-2">Item3</div>
+    </div>
+
+    <h2>flex-shrink</h2>
+    <a href="https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/#propiedades-de-hijos" target="_blank">https://lenguajecss.com/css/maquetacion-y-colocacion/flexbox/#propiedades-de-hijos</a>
+    
+    <!-- SEGUIR DESDE ACÁ -->
+    <p>En segundo lugar, tenemos la propiedad  <span class="codigo">flex-shrink</span> que es la opuesta a <span class="codigo">flex-grow</span>. Mientras  que la anterior indica un factor de crecimiento,  <span class="codigo">flex-shrink</span> hace justo lo contrario, aplica un factor de decrecimiento. De esta forma, los ítems que tengan un valor numérico más grande, serán más pequeños, mientras que los que tengan un valor numérico más pequeño serán más grandes, justo al contrario de como funciona la propiedad <span class="codigo">flex-grow</span>.</p>
+    <div class="flex-containerh">
+        <div>Item1</div>
+        <div style="background-color: orange; flex-shrink: 8">Item2</div>
+        <div style="background-color: orange; flex-shrink: 3">Item3</div>     
+    </div><br>
+
+
+    <h2>flex-basis</h2>   
+    <p>Por último, tenemos la propiedad <span class="codigo">flex-basis</span>, que define el tamaño por defecto (de base) que tendrán los ítems antes de aplicarle la distribución de espacio. Generalmente, se aplica un tamaño (unidades, porcentajes, etc...), pero también se puede aplicar la palabra clave <span class="codigo">content</span> que ajusta automáticamente el tamaño al contenido del ítem, que es su valor por defecto.</p>
+    <div class="flex-containerh">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div> 
+        <div>4</div>
+        <div>5</div>                
+    </div><br>    
+
+
+    <h2>Atajo: Propiedades de hijos</h2>   
+    <p>Existe una propiedad llamada <span class="codigo">flex-basis</span>, que sirve de atajo para estas tres propiedades de los ítems hijos (En el aula virtual tienes material para seguir aprendiendo sobre este tema)</p>    
+    <p id="firma">Ejemplo desarrollado por el <b> Prof. Ariel Palazzesi</b> <br>
+        Adaptación: Juan Pablo Nardone</p> 
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS GRID gaps</title>
+
+    <style>
+        .grid-container {
+            display: grid;                           /*Convierte el contenedor en una grilla */
+         /* display: inline-grid; */        
+            grid-template-columns: auto auto auto;   /*Forma en que se distribuyen los elementos*/
+            column-gap: 10px;                        /*Espacios entre las columnas de hijos*/
+            row-gap: 40px;                           /*Espacios entre las filas de hijos*/            
+            /* gap:3%; */
+            background-color: blue;                /*Color de fondo del contenedor */
+            padding: 10px;    
+            text-align: center;                      /* Contenido de los hijos centrado en x */                       /*Coloco un espacio alrededor del conjunto de hijos*/
+            /*height: 400px;*/
+        }
+
+        .grid-item {
+            background-color: lightblue;  /* Color de fondo de los hijos */
+            color:black;               /* Color del texto de los hijos */
+            padding:10px;
+            border: 2px solid black;   /* Borde de los elementos hijos */
+        }
+
+    </style>
+</head>
+<body>
+    <h2>CSS GRID gaps</h2>
+
+    <p>Es el espacio entre los ítems. Se pueden ajustar los tamaños de gap con las siguientes propiedades:</p>
+    <p><mark><code>grid-column-gap</code></mark>,  <mark><code>grid-row-gap</code></mark>  y <mark><code>grid-gap</code></mark></p>
+
+    <p>Sin embargo, dichas propiedades estan siendo reemplazadas por:</p>
+    <p><mark><code>column-gap</code></mark>,  <mark><code>row-gap</code></mark>  y <mark><code>gap</code></mark></p>
+
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>        
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+        <div class="grid-item">10</div>
+        <div class="grid-item">11</div>
+        <div class="grid-item">12</div>        
+    </div>
+
+    <p>Por supuesto, ademas de <b>px</b> se pueden utilizar otras medidas (<b>%</b>, <b>vw</b>, <b>mm</b>, etc)</p>
+
+</body>
+</html>

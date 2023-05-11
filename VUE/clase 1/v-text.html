@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-text</title>
+</head>
+
+<body>
+<div id="app">
+    Estamos estudiando con <span v-text="profesor"></span> en la comisión N° <span v-text="comision"></span>
+</div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    profesor: 'Juan Pablo',
+                    comision: 22606,
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>

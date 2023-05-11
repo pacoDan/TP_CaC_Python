@@ -1,0 +1,17 @@
+.contenedor{
+    background-color: navy;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    /* justify-content: space-evenly; */
+    height: 500px;
+    grid-template-rows: 100px 100px;
+    align-content: start;
+
+}
+.caja{
+    background-color: lightblue;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid white;
+}

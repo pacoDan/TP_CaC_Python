@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Posicionamiento relativo</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .caja1 {
+            border: 1px solid red;
+            position: relative; /*cambiar a absolute para ver la diferencia*/
+            left: 20px;
+            top: 20px;
+            height: 40px;
+            width: 100px;
+        }
+        .caja2 {
+            border: 2px solid blue;
+            position: relative; 
+            left: 50px;
+            top: 50px;
+            height: 40px;
+            width: 100px;
+        }
+        /*Con absolute estará a 50px del documento completo,
+          con relative estará a 50px en relación a donde estaba colocado al principio,
+          cuando no estaba posicionado*/
+    </style>
+</head>
+
+<body>
+    <div class="caja1"> Caja 1</div>
+    <div class="caja2"> Caja 2</div>
+</body>
+
+</html>

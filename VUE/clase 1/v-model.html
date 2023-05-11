@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-model</title>
+</head>
+
+<body>
+    <h1>Directiva v-model</h1>
+    <div id="vmodel">
+        <label>Nombre:</label> <input v-model="nombre"><br><br>
+        <label>Apellido:</label> <input v-model="apellido">
+        <p style="border: 1px solid blue; padding: 5px; width: 300px;">Tu nombre es: {{ nombre }} {{ apellido }}</p>
+    </div>
+    <hr>
+    <div id="vmodel2">
+        <h2>Formulario de consulta</h2>
+        <form>
+            <label>Nombre:</label> <input v-model="nombre"><br>
+            <label>Apellido:</label> <input v-model="apellido"><br>
+            <label>Edad:</label> <input size="3" v-model="edad">
+        </form>
+        <h3>Datos de su cursada</h3>
+        <span v-if="apellido!==''&&nombre!==''">Apellido y nombre: {{ apellido }}, {{ nombre }}</span>
+        <span v-if="edad!==''"> ({{ edad }} años)</span>
+        <div v-if="apellido!==''&&nombre!==''&&edad!==''">
+            <h4>Cursos modulo {{modulo}} </h4>
+            <ul>
+                <li v-for="curso in cursos">
+                    {{curso.nro}}: {{curso.nombre}}
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const ejemplovmodel = Vue.createApp({
+            data() {
+                return {
+                    nombre: 'Juan Pedro',
+                    apellido: 'Fernández'
+                }
+            }
+        }).mount('#vmodel')
+
+        const ejemplovmodel2 = Vue.createApp({
+            data() {
+                return {
+                    nombre: 'f',
+                    apellido: '',
+                    edad: '',
+                    cursos: [
+                        { nro: 1, nombre: 'HTML' },
+                        { nro: 2, nombre: 'CSS' },
+                        { nro: 3, nombre: 'JS' }
+                    ],
+                    modulo: 'Front-end'
+                }
+            }
+        }).mount('#vmodel2')
+    </script>
+</body>
+
+</html>

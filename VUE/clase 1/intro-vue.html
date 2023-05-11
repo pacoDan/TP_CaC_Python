@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro a VUE 3</title>
+</head>
+
+<body>
+    <!-- Renderización declarativa -->
+    <!-- Con ID app conectamos el div con mi archivo JS -->
+    <!-- Esta va a ser la referencia que va a usar VUE para comunicarse con este contenido de mi documento -->   
+    <div id="app">
+        <!-- Entre {{}} coloco una referencia que voy a usar desde JS para colocar contenido aquí dentro, modificaremos contenido de mi HTML a través de JS utilizando VUE -->
+        <p> {{mensaje}} </p>
+        <p>Aprendiendo VUE en {{curso}}</p>
+    </div>
+    
+    <!-- Conexión con CDN Vue y con nuestro archivo .js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="intro-vue.js"></script>
+</body>
+
+</html>

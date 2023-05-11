@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function modifyText() { // Función que modifica el contenido de #t2
+            var t2 = document.getElementById("t2")
+            t2.firstChild.nodeValue = "Tocado!"
+        }
+        function load() { // Función que establece el EventListener()
+            var el = document.getElementById("t2")
+            el.addEventListener("click", modifyText, false)
+        }
+        // Al cargar el documento, agregamos el EventListener()
+        document.addEventListener("DOMContentLoaded", load, false)
+    </script>
+</head>
+
+<body>
+    <p id="t2">¡Haz click aquí!</p>
+</body>
+
+</html>

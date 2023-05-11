@@ -1,0 +1,59 @@
+*{font-family: Verdana;}
+.codigo {
+    font-family: 'Courier New';
+    background-color: lightblue;
+    font-weight: bold;
+}
+/*containerh: Es el elemento padre que tendrá en su interior cada uno de los ítems flexibles. */
+.flex-containerh {
+    display: inline-flex;   /* Esta propiedad define al div como contenedor flex*/
+    flex-direction: row;
+    column-gap:40px;
+    background-color: lightblue;
+}
+
+/*Cada uno de los hijos flexibles que tendrá el contenedor horizontal en su interior. */
+.flex-containerh > div {  /*Utilizamos selectores avanzados en lugar de clases */
+    color: white;
+    background-color: blue;
+    padding: 20px;
+    font-size: 30px;
+}
+
+/*containerv: Es el elemento padre que tendrá en su interior cada uno de los ítems flexibles. */
+.flex-containerv {
+    display: inline-flex;   /* Esta propiedad define al div como contenedor flex*/
+    flex-direction: column;
+    row-gap: 40px;
+    background-color: lightblue;
+}
+
+/*Cada uno de los hijos flexibles que tendrá el contenedor vertical en su interior. */
+.flex-containerv > div {  /*Utilizamos selectores avanzados en lugar de clases */
+    color: white;
+    background-color: blue;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+}
+
+/*Ejemplo multicolumnas */
+.flex-container {
+    display: inline-flex;   /* Esta propiedad define al div como contenedor flex*/
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 60px;
+    background-color: lightblue;
+
+}
+.flex-container > div {  /*Utilizamos selectores avanzados en lugar de clases */
+    color: white;
+    background-color: blue;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;            
+}
+#firma{
+    text-align: right;
+    color: blue;
+}
