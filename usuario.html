@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ingresar a pedidos</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>{{ title }}</h1>
+    <form @submit.prevent="login">
+      <label for="username">Usuario:</label>
+      <input type="text" id="username" v-model="username" required>
+      <br>
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" v-model="password" required>
+      <br>
+      <button type="submit">Ingresar</button>
+    </form>
+    <p v-if="loginSuccess" style="color: green;">Inicio de sesión exitoso</p>
+    <p v-if="loginError" style="color: red;">Inicio de sesión fallido</p>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        title: 'Ingresar a pedidos',
+        username: '',
+        password: '',
+        loginSuccess: false, // Estado de inicio de sesión exitoso
+        loginError: false // Estado de inicio de sesión fallido
+      },
+      created() {
+        // Realizar la llamada GET para obtener la lista de usuarios
+        fetch('http://localhost:3000/logins')
+          .then(response => response.json())
+          .then(data => {
+            this.users = data;
+          })
+          .catch(error => {
+            console.error('Error al obtener la lista de usuarios', error);
+          });
+      },
+      methods: {
+        login() {
+          const user = this.users.find(user => user.username === this.username);
+          if (user && user.password === this.password) {
+            // Usuario autenticado correctamente
+            this.loginSuccess = true;
+            this.loginError = false;
+          } else {
+            // Credenciales inválidas
+            this.loginSuccess = false;
+            this.loginError = true;
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
