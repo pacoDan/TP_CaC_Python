@@ -32,7 +32,7 @@
       },
       created() {
         // Realizar la llamada GET para obtener la lista de usuarios
-        fetch('http://localhost:3000/logins')
+        fetch('https://raw.githubusercontent.com/pacodan/restaurant/main/datos/login.json')
           .then(response => response.json())
           .then(data => {
             this.users = data;
