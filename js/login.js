@@ -1,3 +1,4 @@
+var datos_login="https://raw.githubusercontent.com/pacodan/restaurant/main/datos/login.json"
 new Vue({
     el: "#app",
     data: {
@@ -10,7 +11,7 @@ new Vue({
     },
     created() {
         // Realizar la llamada GET para obtener la lista de usuarios
-        fetch("https://raw.githubusercontent.com/pacodan/restaurant/main/datos/login.json")
+        fetch(datos_login)
             .then((response) => response.json())
             .then((data) => {
                 this.users = data;
