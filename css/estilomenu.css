@@ -1,29 +1,30 @@
 body {
     background-color: rgb(255, 255, 255);
     margin: 0;
+
 }
 
 @media screen and (max-width: 600px) {
     .contenedor {
-       /* background-color: rgb(240, 228, 5);*//*para darse cuenta cuando cambia pantalla*/
+        gap: 10px;
+        /* background-color: rgb(240, 228, 5);*/
+        /*para darse cuenta cuando cambia pantalla*/
         width: 100%;
         height: 100%;
         margin: 0px;
         max-width: 1000px;
         display: grid;
-        grid-template-areas: 'miAreac miArea'
-            'miAreac miArea'
-            'miAreac miArea'
-            'miAreac miArea'
-            'miArea2 miArea2'
-            'miArea3 miArea4'
-            'miArea5  miArea6'
-            'miArea8 miArea9'
-            'miArea10  miArea11'
-            'miArea7 miArea7';
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 5vh 5vh 5vh 5vh 10vh 10vh 10vh 15vh 15vh auto;
-        gap: 10px;
+        grid-template-areas: 'miArea miArea miArea miArea'
+            'miAreac miAreac miAreac miAreac'
+            'miArea2 miArea2 miArea2 miArea2'
+            'miArea3 miArea3 miArea4 miArea4'
+            'miArea5 miArea5  miArea6 miArea6'
+            'miArea8 miArea8 miArea9 miArea9'
+            'miArea10 miArea10  miArea11 miArea11'
+            'miArea7 miArea7 miArea7 miArea7';
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 5vh 50vh 15vh 15vh 15vh 15vh 15vh auto;
+
     }
 
     .cabecera {
@@ -36,16 +37,16 @@ body {
     }
 
     .navegacion ul li {
-        display: block;
-        margin-left: 0%;
-        text-align: left;
+        display: inline;
+        margin-left: 5%;
+        text-align: center;
     }
 
     .navegacion ul li a {
         font-weight: bold;
         text-decoration: none;
         font-family: 'Calligraffitti', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
-        font-size: 4vw;
+        font-size: 3vw;
         color: black;
         margin-top: 0;
         align-content: center;
@@ -70,8 +71,8 @@ body {
 
     .cabecera {
         background-image: url("../img/logo_560.jpg");
-        background-position: top left;
-        background-size: 30vw;
+        background-position: top center;
+        background-size: 70vw;
         background-repeat: no-repeat;
     }
 
@@ -79,14 +80,13 @@ body {
         /* box-sizing: border-box;*/
         grid-area: miArea2;
         text-align: center;
-        margin-top: 0;
         font-weight: bold;
         text-decoration: none;
         font-family: 'Calligraffitti', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
         font-size: 6vw;
         line-height: 0;
         color: black;
-        /* height: fit-content;*/
+        /* height: fit-content;margin-top: 0;*/
     }
 
     .contenido {
@@ -158,16 +158,13 @@ body {
         text-decoration: none;
         font-family: 'Calligraffitti', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif;
         font-size: 6vw;
-        line-height: 1;
+        line-height: 10vw;
         color: rgb(0, 0, 0);
         align-content: center;
     }
 
 
-    .submenu3 p,
-    .submenu4 p,
-    .submenu5 p,
-    .submenu6 p {
+    /*  .descargar {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         text-align: center;
         font-weight: lighter;
@@ -177,15 +174,20 @@ body {
         color: rgb(125, 125, 125);
         align-content: center;
     }
+*/
     .transparente {
         cursor: pointer;
-        fill-opacity: 0%;
+        fill-opacity: 100%;
         border: 0;
-        background-color: transparent;
+        background-color: transparent
+            /**/
+        ;
+        /*opacity: 100%;*/
         width: 100%;
         height: 100%;
     }
-    @keyframes cambiarColor {
+
+    /*  @keyframes cambiarColor {
         from {
             filter: brightness(100%);
         }
@@ -194,16 +196,7 @@ body {
             filter: brightness(400%);
         }
     }
-    
 
-    /* .contenido img {
-        align-self: stretch;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-image: url("img/menu-trago-02.jpg");
-   
-    }*/
 
     .submenu8 a:hover,
     .submenu9 a:hover,
@@ -211,12 +204,11 @@ body {
     .submenu11 a:hover {
         animation: cambiarColor 1s linear 0.5s 4 normal forwards running;
     }
-
+*/
     .pie {
         grid-area: miArea7;
         text-align: center;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        /*  text-align: center; font-weight: bold;*/
         text-decoration: none;
         font-size: 3vw;
         color: black;
@@ -235,13 +227,14 @@ body {
     }
 }
 
+/*pantalla media*/
+@media screen and (min-width: 601px) {
 
-@media screen and (min-width: 601px) { 
-
-    /*pantalla media*/
+    
     .contenedor {
-       /* background-color: rgb(255, 127, 227);*//*para darse cuenta cuando cambia pantalla*/
-        
+        /*background-color: rgb(255, 127, 227); */
+        /*para darse cuenta cuando cambia pantalla*/
+
         width: 100%;
         height: 100%;
         margin: 0px;
@@ -260,16 +253,13 @@ body {
 
     .cabecera {
         grid-area: miAreac;
-            background-image: url("../img/logo_560.jpg");
+        background-image: url("../img/logo_560.jpg");
         background-position: top left;
         background-size: 50%;
         background-repeat: no-repeat;
-        margin-left: 15px ;
+        margin-left: 15px;
     }
-   /*.cabecera img {
-        width: 30%;
-        margin: 10px;
-    }*/
+
 
     .navegacion {
         display: inline;
@@ -309,7 +299,7 @@ body {
         text-decoration: none;
     }
 
- 
+
     .titulo {
         /* box-sizing: border-box;*/
         grid-area: miArea2;
@@ -369,18 +359,48 @@ body {
 
     .submenu10 {
         grid-area: miArea10;
-        background-image: url("../img/menu-mila.jpg");  background-position: top center;
+        background-image: url("../img/menu-mila.jpg");
+        background-position: top center;
         background-size: auto 100%;
         background-repeat: no-repeat;
     }
 
     .submenu11 {
         grid-area: miArea11;
-        background-image: url("../img/menu-playa.jpg");  background-position: top center;
+        background-image: url("../img/menu-playa.jpg");
+        background-position: top center;
         background-size: auto 100%;
         background-repeat: no-repeat;
     }
 
+    .transparente {
+        cursor: pointer;
+        fill-opacity: 0%;
+        border: 0;
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+    }
+
+    .transparente1 {
+        animation: cambiarColor 1s linear 0.5s 4 normal forwards running;
+    }
+
+
+    @keyframes cambiarColor {
+
+        /*animación de las imágenes*/
+        from {
+            filter: blur(0px);
+            -webkit-filter: blur(0px);
+
+        }
+
+        to {
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+        }
+    }
 
     .submenu3 a,
     .submenu4 a,
@@ -395,10 +415,7 @@ body {
     }
 
 
-    .submenu3 p,
-    .submenu4 p,
-    .submenu5 p,
-    .submenu6 p {
+    /* .descargar{
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         text-align: center;
         font-weight: lighter;
@@ -408,41 +425,20 @@ body {
         color: rgb(125, 125, 125);
         align-content: center;
     }
+*/
 
-    @keyframes cambiarColor {
 
-        /*animación de las imágenes*/
-        from {
-            filter: brightness(100%);
-        }
-
-        to {
-            filter: brightness(400%);
-        }
-    }
-
-   /* .contenido img {
+    /* .contenido img {
         align-self: stretch;
         display: flex;
         align-items: center;
         justify-content: center;
         scale: 20%;
-    }*/
-    .transparente {
-        cursor: pointer;
-        fill-opacity: 0%;
-        border: 0;
-        background-color: transparent;
-        width: 100%;
-        height: 100%;
-    }
+    }  
+   */
 
-    .submenu8 a:hover,
-    .submenu9 a:hover,
-    .submenu10 a:hover,
-    .submenu11 a:hover {
-        animation: cambiarColor 1s linear 0.5s 4 normal forwards running;
-    }
+
+
 
     .pie {
         grid-area: miArea7;
@@ -467,12 +463,17 @@ body {
     }
 }
 
+
+
+
 @media only screen and (min-width: 1000px) {
 
 
     .contenedor {
-       /* background-color: aquamarine;*/ /*para darse cuenta cuando cambia pantalla*/
-    
+        /*para darse cuenta cuando cambia pantalla*/
+        /*background-color: aquamarine; */
+
+
         width: 100%;
         height: 100%;
         margin: 0px;
@@ -493,12 +494,12 @@ body {
 
     .cabecera {
         grid-area: miAreac;
-            background-image: url("../img/logo_560.jpg");
-            background-position: top left;
-            margin-left: 15px ;
-            background-size: 50%;
-            background-repeat: no-repeat;
-    
+        background-image: url("../img/logo_560.jpg");
+        background-position: top left;
+        margin-left: 15px;
+        background-size: 50%;
+        background-repeat: no-repeat;
+
     }
 
     .navegacion {
@@ -539,7 +540,7 @@ body {
         text-decoration: none;
     }
 
-  
+
 
     .titulo {
         /* box-sizing: border-box;*/
@@ -584,28 +585,32 @@ body {
     .submenu8 {
         grid-area: miArea8;
 
-        background-image: url("../img/menu-trago-02.jpg");  background-position: top center;
-        background-size:auto 100%;
+        background-image: url("../img/menu-trago-02.jpg");
+        background-position: top center;
+        background-size: auto 100%;
 
     }
 
     .submenu9 {
         grid-area: miArea9;
-        background-image: url("../img/menu-cafe.jpg");  background-position: top center;
-        background-size:auto 100%;
+        background-image: url("../img/menu-cafe.jpg");
+        background-position: top center;
+        background-size: auto 100%;
 
     }
 
     .submenu10 {
         grid-area: miArea10;
-        background-image: url("../img/menu-mila.jpg");  background-position: top center;
+        background-image: url("../img/menu-mila.jpg");
+        background-position: top center;
         background-size: auto 100%;
     }
 
     .submenu11 {
         grid-area: miArea11;
-        background-image: url("../img/menu-playa.jpg");  background-position: top center;
-        background-size:auto 100%;
+        background-image: url("../img/menu-playa.jpg");
+        background-position: top center;
+        background-size: auto 100%;
     }
 
     .submenu3 a,
@@ -620,11 +625,7 @@ body {
         align-content: center;
     }
 
-
-    .submenu3 p,
-    .submenu4 p,
-    .submenu5 p,
-    .submenu6 p {
+    /*.descargar{
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         text-align: center;
         font-weight: lighter;
@@ -632,8 +633,9 @@ body {
         font-size: 1vw;
         color: rgb(125, 125, 125);
         align-content: center;
-    }
+    }*/
 
+    /*ÉSTO ERA PARA CUANDO CAMBIABAN DE COLOR LAS IMAGENES 
     @keyframes cambiarColor {
         from {
             filter: brightness(100%);
@@ -642,14 +644,19 @@ body {
         to {
             filter: brightness(400%);
         }
+    } 
+    .transparente a:hover {
+        animation: cambiarColor 1s linear 0.5s 4 normal forwards running;
     }
+*/
 
     /*.contenido img {
         align-self: stretch;
         display: flex;
         align-items: center;
         justify-content: center;
-    }*/
+    }
+    
     .transparente {
         cursor: pointer;
         fill-opacity: 0%;
@@ -657,11 +664,10 @@ body {
         background-color: transparent;
         width: 100%;
         height: 100%;
-    }
 
-    .transparente a:hover {
-        animation: cambiarColor 1s linear 0.5s 4 normal forwards running;
-    }
+    }*/
+
+
 
 
     /*.submenu8 a:hover,
