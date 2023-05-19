@@ -94,6 +94,8 @@ body {
     letter-spacing: 3px;
     color: rgb(47, 47, 47);
     align-content: center;
+    vertical-align: baseline;
+
 }
 
 /*título*/
@@ -367,7 +369,7 @@ body {
             'miArea7 miArea7  miArea7  miArea7';
         grid-template-columns: 30% 20% 30% 20%;
         gap: 0px;
-        grid-template-rows: 10vh 15vh 15vh 55vh auto;
+        grid-template-rows: 10vh 15vh 10vh 55vh auto;
 
     }
 
