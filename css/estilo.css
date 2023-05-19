@@ -62,9 +62,6 @@ nav ul {
     width: auto;
 }
 
-.imagen {
-    grid-area: area4;
-}
 
 .contenedor {
     display: grid;
@@ -125,6 +122,61 @@ footer img:hover {
     scale: 120%;
 }
 
+/* Animación!!! */
+.imganimada {
+    width: auto;
+    grid-area: area4;
+    background-position: center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    transition-property: all;
+    animation: animacion1 10s infinite;
+
+}
+
+@keyframes animacion1 {
+    0% {
+        background-image: url(../img/imagen-02.jpg);
+        opacity: 0;
+    }
+
+    2% {
+        background-image: url(../img/imagen-02.jpg);
+        opacity: 1;
+    }
+
+    45% {
+        background-image: url(../img/imagen-02.jpg);
+        opacity: 1;
+    }
+
+    50% {
+        background-image: url(../img/imagen-02.jpg);
+        opacity: 0;
+    }
+
+    51% {
+        background-image: url(../img/imagen-03.jpg);
+        opacity: 0;
+    }
+
+    53% {
+        background-image: url(../img/imagen-03.jpg);
+        opacity: 1;
+    }
+
+    98% {
+        background-image: url(../img/imagen-03.jpg);
+        opacity: 1;
+    }
+
+    100% {
+        background-image: url(../img/imagen-03.jpg);
+        opacity: 0;
+    }
+}
+
+
 @media only screen and (max-width:600px) {
     .contenedor {
         display: grid;
@@ -145,9 +197,11 @@ footer img:hover {
         margin-right: 5%;
         color: black;
     }
-    header a{
+
+    header a {
         font-size: 2vw;
     }
+
     .miPedido a {
         color: white;
         text-align: center;
@@ -158,7 +212,7 @@ footer img:hover {
         font-size: 4vw;
     }
 
-    footer span{
+    footer span {
         font-size: 2.5vw;
 
     }
