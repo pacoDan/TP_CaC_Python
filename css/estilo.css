@@ -221,4 +221,8 @@ footer img:hover {
         width: 3vw;
     }
 
+    .imganimada {
+        min-height: 50vh;
+    }
+
 }
