@@ -1,3 +1,4 @@
+var ñlistasDeUsuarios=[{}]
 const app = Vue.createApp({
     data() {
         return {
