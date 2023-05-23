@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Calligraffitti">
-    <link rel="stylesheet" href="css/estilos3.css">
+    <link rel="stylesheet" href="estilos3.css">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <style>
         .error {
@@ -106,8 +106,10 @@
 
                     if (emailValue === '') {
                         this.emailError = 'Ingrese su dirección de email';
-                    } else if (!emailRegex.test(emailValue)) {
+                    
+                    } else if (emailValue.includes('.com') && !emailValue.includes('@')) {
                         this.emailError = 'Ingrese una dirección de email válida';
+
                     } else {
                         this.emailError = '';
                     }
