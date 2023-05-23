@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Clima!</title>
+</head>
+
+<body>
+
+    <p id="datos"></p>
+    <div class="weather-content"><p class="result"></p></div>
+    <script>
+        let url = 'http://api.openweathermap.org/data/2.5/weather?q=Lin%20Calel,AR&appid=41d1d7f5c2475b3a16167b30bc4f265c' //variable donde hacemos referencia al origen de los datos
+        fetch(url) //solicitud a la url
+            .then(response => response.json()) //se resuelve la promesa, al obtener la respuesta la pasa a un determinado formato (json). Extraemos el contenido JSON desde la respuesta.
+            .then(data => {
+                console.log(data) //mostramos el objeto data por consola
+                document.getElementById("datos").innerHTML = `ID: ${data.weather.description} <br> Clima: ${data.weather.icon} <br> TEMP: ${data.main.temp}°C` //Mostramos datos del array
+            })
+            .catch(error => console.log("Ocurrió un error", error)) // si hay un error será atrapado por catch
+
+
+
+            const result = document.querySelector('.result');
+
+        // ----------------------------------------------------------------------------------
+        function showWeather(data) {
+            const { main: { temp }, weather: [arr] } = data;
+
+            const degrees = kelvinToCentigrade(temp);
+
+            const content = document.createElement('div');
+            content.innerHTML = `
+       
+        <img src="https://openweathermap.org/img/wn/${arr.icon}@2x.png" alt="icon">
+        <h2>${degrees}°C</h2>
+          `;
+        }
+        result.appendChild(content);
+
+        /**/
+
+        function kelvinToCentigrade(temp) {
+            return parseInt(temp - 273.15);
+        }
+
+        function clearHTML() {
+            result.innerHTML = '';
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
