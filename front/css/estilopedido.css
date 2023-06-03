@@ -1,0 +1,30 @@
+*{
+    background-color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1vw;
+    color:white
+}
+.pedido{
+    width: 70%;
+}
+h1{
+    text-align: left;
+    width: 50%;
+    font-size: 5vw;
+    font-family: 'Calligraffitti'
+
+}
+h2{
+    font-size: 2vw;
+}
+header {
+    text-align: right;
+    width: 80%;
+    margin: 3% 5%;
+    padding: 1%;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+main{
+    margin-left: 5%;
+}
