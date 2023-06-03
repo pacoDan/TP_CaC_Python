@@ -1,11 +1,25 @@
 from flask import Flask, jsonify, request
 import json
+import os
+
+# Obtener el directorio actual (donde se encuentra app.py)
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
+# Construir la ruta completa al archivo db.json
+db_path = os.path.join(dir_path, 'db.json')
+
+print(db_path)  # Imprimir la ruta completa
+
+# Cargar datos desde db.json
+with open(db_path, 'r') as file:
+    data = json.load(file)
+
 
 app = Flask(__name__)
 
-# Cargar datos desde db.json
-with open('db.json', 'r') as file:
-    data = json.load(file)
+# # Cargar datos desde db.json
+# with open(db_path, 'r') as file:
+#     data = json.load(file)
 
 # Ruta para obtener todos los datos
 @app.route('/<resource>', methods=['GET'])
@@ -59,4 +73,5 @@ def delete(resource, id):
         return jsonify({'message': 'Resource or ID not found'})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=8080)
+

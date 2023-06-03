@@ -8,7 +8,11 @@ conda activate cac_env
 conda install -c anaconda flask
 
 
+
+
+
 # instalar flask con pip
+pip install Flask
 
 # ahora la api rest
 pip install Flask Flask-RESTful
