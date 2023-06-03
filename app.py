@@ -72,6 +72,10 @@ def delete(resource, id):
     else:
         return jsonify({'message': 'Resource or ID not found'})
 
+@app.route("/")
+def hello_world():
+    return "<p>Hello, World!</p>"
+
 if __name__ == '__main__':
     app.run(debug=True, port=8080)
 
