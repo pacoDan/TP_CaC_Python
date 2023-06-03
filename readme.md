@@ -17,3 +17,7 @@ pip install Flask
 # ahora la api rest
 pip install Flask Flask-RESTful
 
+
+# para obtener requirements.txt
+pip freeze > requirements.txt
+
