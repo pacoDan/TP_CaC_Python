@@ -1,80 +1,68 @@
-from flask import Flask, jsonify, request, render_template
-import json
-import os
+from modelo.Inventario import Inventario
+from modelo.Carrito import Carrito
 
-# Obtener el directorio actual (donde se encuentra app.py)
-dir_path = os.path.dirname(os.path.realpath(__file__))
+# # Programa principal
+# producto = Producto(1, 'Teclado USB 101 teclas', 10, 4500)
 
-# Construir la ruta completa al archivo db.json
-db_path = os.path.join(dir_path, 'db.json')
+# # Accedemos a los atributos del objeto
+# print(f'{producto.codigo} | {producto.descripcion} | {producto.cantidad} | {producto.precio}')
 
-print(db_path)  # Imprimir la ruta completa
-
-# Cargar datos desde db.json
-with open(db_path, 'r') as file:
-    data = json.load(file)
+# # Modificar los datos del producto
+# producto.modificar('Teclado Mecánico USB', 20, 4800)
+# print(f'{producto.codigo} | {producto.descripcion} | {producto.cantidad} | {producto.precio}')
 
 
-app = Flask(__name__)
 
-# # Cargar datos desde db.json
-# with open(db_path, 'r') as file:
-#     data = json.load(file)
 
-# Ruta para obtener todos los datos
-@app.route('/<resource>', methods=['GET'])
-def get_all(resource):
-    if resource in data:
-        return jsonify(data[resource])
-    else:
-        return jsonify({'message': 'Resource not found'})
 
-# Ruta para obtener un dato específico
-@app.route('/<resource>/<id>', methods=['GET'])
-def get_single(resource, id):
-    if resource in data and id in data[resource]:
-        return jsonify(data[resource][id])
-    else:
-        return jsonify({'message': 'Resource or ID not found'})
+# # Programa principal
+# # Crear una instancia de la clase Inventario
+# mi_inventario = Inventario()
+# # Agregar productos
+# mi_inventario.agregar_producto(1, 'Teclado USB 101 teclas', 10, 4500)
+# mi_inventario.agregar_producto(2, 'Mouse USB 3 botones', 5, 2500)
+# mi_inventario.agregar_producto(3, 'Monitor LCD 22 pulgadas', 15, 52500)
+# mi_inventario.agregar_producto(4, 'Monitor LCD 27 pulgadas', 25, 78500)
+# mi_inventario.agregar_producto(5, 'Mouse Pad color azul', 5, 500)
+# # Consultar un producto
+# producto = mi_inventario.consultar_producto(3)
+# if producto != False:
+#     print(f'Producto encontrado:\nCódigo: {producto.codigo}\nDescripción: {producto.descripcion}\nCantidad: {producto.cantidad}\nPrecio:{producto.precio}')
+# else:
+#     print("Producto no encontrado.")
+# # Modificar un producto
+# mi_inventario.modificar_producto(3, 'Monitor LCD 24 pulgadas', 5, 62000)
+# # Listar todos los productos
+# mi_inventario.listar_productos()
+# # Eliminar un producto
+# mi_inventario.eliminar_producto(2)
+# # Confirmamos que haya sido eliminado
+# mi_inventario.listar_productos()
 
-# Ruta para crear un nuevo dato
-@app.route('/<resource>', methods=['POST'])
-def create(resource):
-    new_data = request.get_json()
-    if resource in data:
-        data[resource].append(new_data)
-    else:
-        data[resource] = [new_data]
-    with open('db.json', 'w') as file:
-        json.dump(data, file, indent=4)
-    return jsonify({'message': 'Data created successfully'})
 
-# Ruta para actualizar un dato existente
-@app.route('/<resource>/<id>', methods=['PUT'])
-def update(resource, id):
-    updated_data = request.get_json()
-    if resource in data and id in data[resource]:
-        data[resource][id].update(updated_data)
-        with open('db.json', 'w') as file:
-            json.dump(data, file, indent=4)
-        return jsonify({'message': 'Data updated successfully'})
-    else:
-        return jsonify({'message': 'Resource or ID not found'})
-
-# Ruta para eliminar un dato
-@app.route('/<resource>/<id>', methods=['DELETE'])
-def delete(resource, id):
-    if resource in data and id in data[resource]:
-        del data[resource][id]
-        with open('db.json', 'w') as file:
-            json.dump(data, file, indent=4)
-        return jsonify({'message': 'Data deleted successfully'})
-    else:
-        return jsonify({'message': 'Resource or ID not found'})
-
-@app.route('/')
-def index():
-  return render_template('index.html')
-
-if __name__ == '__main__':
-  app.run(port=5000)
+# Programa principal
+# ---------------------------------------------------------------------
+# Ejemplo de uso de las clases y objetos definidos antes:
+# ---------------------------------------------------------------------
+# Crear una instancia de la clase Inventario
+mi_inventario = Inventario()
+# Crear una instancia de la clase Carrito
+mi_carrito = Carrito()
+# Crear 3 productos y agregarlos al inventario
+mi_inventario.agregar_producto(1, 'Teclado USB 101 teclas', 10, 4500)
+mi_inventario.agregar_producto(2, 'Mouse USB 3 botones', 5, 2500)
+mi_inventario.agregar_producto(3, 'Monitor LCD 22 pulgadas', 15, 52500)
+# Listar todos los productos del inventario
+mi_inventario.listar_productos()
+# Agregar 2 productos al carrito
+mi_carrito.agregar(1, 2, mi_inventario) # Agregar 2 unidades del producto con código 1 al carrito
+mi_carrito.agregar(3, 4, mi_inventario) # Agregar 1 unidad del producto con código 3 al carrito
+mi_carrito.quitar (1, 1, mi_inventario) # Quitar 1 unidad del producto con código 1 al carrito
+# Listar todos los productos del carrito
+mi_carrito.mostrar()
+# Quitar 1 producto al carrito
+mi_carrito.quitar (1, 1, mi_inventario) # Quitar 1 unidad del producto con código 1 al carrito
+# Listar todos los productos del carrito
+mi_carrito.mostrar()
+# Mostramos el inventario
+mi_inventario.listar_productos()

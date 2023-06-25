@@ -1,30 +1,32 @@
-# install requirements
-pip install -r requirements.txt
-# Para ejecutar la aplicacion en local 
-flask --app main run
-
-# flask
-A minimal Flask web application.
-
-For a step-by-step guide to deploying on [Railway](https://railway.app/?referralCode=alphasec), see [this](https://alphasec.io/how-to-deploy-a-python-flask-app-on-railway/) post, or click the button below.
-
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/igzwwg?referralCode=alphasec)
+# gitignore sacado de aca 
+https://www.toptal.com/developers/gitignore/api/flask
 
 
-# Crear entorno virtual
-conda create --name cac_env python=3.8
 
-# Activar el entorno virtual
-conda activate cac_env
+Para estructurar tu proyecto utilizando TDD (Desarrollo Dirigido por Pruebas) y MVC (Modelo-Vista-Controlador), puedes seguir una estructura de carpetas comúnmente utilizada en proyectos de Python. Aquí tienes una sugerencia para organizar tus archivos y carpetas:
 
-# Instalar Flask
-conda install -c anaconda flask
+proyecto/
+    |- controlador/
+        |- __init__.py
+        |- controlador.py
+    |- modelo/
+        |- __init__.py
+        |- producto.py
+    |- vista/
+        |- __init__.py
+        |- vista.py
+    |- pruebas/
+        |- __init__.py
+        |- test_producto.py
+    |- main.py
+Explicación de cada carpeta y archivo:
 
-# instalar flask con pip
-pip install Flask
+La carpeta controlador contendría los archivos relacionados con la lógica de control y la interacción entre el modelo y la vista. El archivo controlador.py sería responsable de manejar las acciones del usuario y actualizar el modelo y la vista en consecuencia.
 
-# ahora la api rest
-pip install Flask Flask-RESTful
+La carpeta modelo contendría los archivos relacionados con la definición del modelo de datos y su lógica. El archivo producto.py sería donde se encuentra la implementación de la clase Producto que has mencionado.
 
-# para obtener requirements.txt
-pip freeze > requirements.txt
+La carpeta vista contendría los archivos relacionados con la interfaz de usuario y la presentación de los datos. El archivo vista.py se encargaría de mostrar la información al usuario y recibir la entrada.
+
+La carpeta pruebas contendría los archivos de prueba unitaria para cada componente del proyecto. El archivo test_producto.py sería donde escribirías las pruebas para la clase Producto.
+
+El archivo main.py sería el punto de entrada principal de tu programa. Aquí puedes instanciar el controlador y comenzar a interactuar con el sistema.
