@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Calligraffitti">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Buena Vista</title>
+</head>
+
+<body>
+    <header>
+        <div id="cityBanner" style="text-align: left;">Desde tu ciudad <span id="city"></span>, tenemos estos menús para
+            ti</div>
+        <a href="usuario.html" style="float: right;">Mi cuenta</a>
+    </header>
+    <nav class="contenedor" id="app">
+        <button class="miPedido"> <a href="pedido.html">Mi Pedido</a></button>
+
+        <div class="logo-busqueda">
+            <div class="Logo">
+                <h1><img src="img/logo_560.jpg" alt="Logo de Restaurante Buena Vista"></h1>
+            </div>
+
+            <!-- Formulario de búsqueda -->
+            <form @submit.prevent="buscar" class="buscador">
+                <input type="search" v-model="terminoBusqueda" placeholder="Buscar...">
+                <input type="submit" value="Buscar">
+            </form>
+
+            <div class="imganimada">
+                <!-- Aquí puedes colocar la imagen con transición o algún código JS para la transición -->
+            </div>
+        </div>
+
+
+        <ul class="navegacion">
+            <li><a href="quienessomos.html">Quiénes somos</a></li>
+            <li><a href="contacto.html">Escribinos</a></li>
+            <li><a href="menu.html"> Menú</a></li>
+        </ul>
+
+        <div class="imganimada">
+        </div>
+    </nav>
+
+
+
+    <footer>
+        <span>
+            Buena Vista Claromecó
+        </span>
+        <img src="img/favicon.ico">
+        <span>
+            Avenida 26 y Calle 3
+        </span>
+        <span><a href="https://www.instagram.com/buenavista.claromeco/" target="_blank"><img
+                    src="img/social_instagram_43.png"></a></span>
+        <span><a href="https://www.facebook.com/profile.php?id=100059661769147&sk=about" target="_blank"><img
+                    src="img/social_facebook_fb_35.png"></a>
+        </span>
+    </footer>
+
+    <script src="/js/geolocalizacion.js"></script>
+    <script src="https://unpkg.com/vue@2"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                terminoBusqueda: ''
+            },
+            methods: {
+                buscar() {
+                    alert(`Buscando "${this.terminoBusqueda}"`);
+                    // Aquí puedes agregar la lógica de búsqueda
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
+
+<style>
+    .logo-busqueda {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* Esto centrará el buscador verticalmente */
+        margin-bottom: 1em;
+        position: relative;
+        width: 100%;
+        /* Esto hará que el contenedor del buscador ocupe todo el ancho disponible */
+    }
+
+    .buscador {
+        width: 60%;
+        /* Esto hará que el buscador ocupe el 60% del ancho del contenedor .logo-busqueda */
+        display: flex;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        /* Esto agregará un color de fondo blanco con transparencia al buscador */
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        /* Esto agregará una sombra alrededor del buscador */
+        padding: 1em;
+        /* Esto agregará un poco de espacio alrededor del buscador */
+        border-radius: 5px;
+        /* Esto agregará bordes redondeados al buscador */
+        margin: 2em 0;
+        /* Esto agregará margen arriba y abajo del buscador */
+    }
+
+    .buscador input[type="search"] {
+        flex-grow: 1;
+        margin-right: 1em;
+        height: 2.5em;
+        /* Aumentamos el tamaño del input */
+        padding: 0.5em;
+        font-size: 1.2em;
+        /* Aumentamos el tamaño de la fuente */
+    }
+
+    .buscador input[type="submit"] {
+        height: 2.5em;
+        /* Aumentamos el tamaño del botón */
+        padding: 0.5em;
+        font-size: 1.2em;
+        /* Aumentamos el tamaño de la fuente */
+        border-radius: 5px;
+        /* Esto agregará bordes redondeados al botón */
+        background-color: #FF6B6B;
+        /* Color del fondo del botón */
+        color: white;
+        /* Color del texto del botón */
+        border: none;
+        /* Remueve el borde del botón */
+        cursor: pointer;
+        /* Cambia el cursor cuando se pasa sobre el botón */
+    }
+
+    .buscador input[type="submit"]:hover {
+        background-color: #FC354C;
+        /* Cambia el color del fondo cuando se pasa sobre el botón */
+    }
+
+    .imganimada {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-image: url('/img/background.jpg');
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+    }
+    /* Estilo responsivo */
+@media (max-width: 600px) {
+    .buscador {
+        width: 90%;  /* Aumenta el tamaño del buscador para pantallas pequeñas */
+    }
+
+    .buscador input[type="search"] {
+        height: 3em;  /* Aumenta el tamaño del input en pantallas pequeñas */
+        font-size: 1.5em;  /* Aumenta el tamaño de la fuente del input en pantallas pequeñas */
+    }
+
+    .buscador input[type="submit"] {
+        height: 3em;  /* Aumenta el tamaño del botón en pantallas pequeñas */
+        font-size: 1.5em;  /* Aumenta el tamaño de la fuente del botón en pantallas pequeñas */
+    }
+}
+</style>
