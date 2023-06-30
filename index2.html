@@ -92,63 +92,44 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        /* Esto centrará el buscador verticalmente */
         margin-bottom: 1em;
         position: relative;
         width: 100%;
-        /* Esto hará que el contenedor del buscador ocupe todo el ancho disponible */
     }
 
     .buscador {
-        width: 60%;
-        /* Esto hará que el buscador ocupe el 60% del ancho del contenedor .logo-busqueda */
+        width: 80%;
         display: flex;
         justify-content: center;
         background-color: rgba(255, 255, 255, 0.8);
-        /* Esto agregará un color de fondo blanco con transparencia al buscador */
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-        /* Esto agregará una sombra alrededor del buscador */
         padding: 1em;
-        /* Esto agregará un poco de espacio alrededor del buscador */
         border-radius: 5px;
-        /* Esto agregará bordes redondeados al buscador */
         margin: 2em 0;
-        /* Esto agregará margen arriba y abajo del buscador */
     }
 
     .buscador input[type="search"] {
         flex-grow: 1;
         margin-right: 1em;
         height: 2.5em;
-        /* Aumentamos el tamaño del input */
         padding: 0.5em;
         font-size: 1.2em;
-        /* Aumentamos el tamaño de la fuente */
     }
 
     .buscador input[type="submit"] {
         height: 2.5em;
-        /* Aumentamos el tamaño del botón */
         padding: 0.5em;
         font-size: 1.2em;
-        /* Aumentamos el tamaño de la fuente */
         border-radius: 5px;
-        /* Esto agregará bordes redondeados al botón */
         background-color: #FF6B6B;
-        /* Color del fondo del botón */
         color: white;
-        /* Color del texto del botón */
         border: none;
-        /* Remueve el borde del botón */
         cursor: pointer;
-        /* Cambia el cursor cuando se pasa sobre el botón */
     }
 
     .buscador input[type="submit"]:hover {
         background-color: #FC354C;
-        /* Cambia el color del fondo cuando se pasa sobre el botón */
     }
-
     .imganimada {
         position: absolute;
         top: 0;
@@ -160,6 +141,82 @@
         background-position: center;
         z-index: -1;
     }
+
+
+
+    /*.logo-busqueda {*/
+    /*    display: flex;*/
+    /*    flex-direction: column;*/
+    /*    align-items: center;*/
+    /*    justify-content: center;*/
+    /*    !* Esto centrará el buscador verticalmente *!*/
+    /*    margin-bottom: 1em;*/
+    /*    position: relative;*/
+    /*    width: 100%;*/
+    /*    !* Esto hará que el contenedor del buscador ocupe todo el ancho disponible *!*/
+    /*}*/
+
+    /*.buscador {*/
+    /*    width: 60%;*/
+    /*    !* Esto hará que el buscador ocupe el 60% del ancho del contenedor .logo-busqueda *!*/
+    /*    display: flex;*/
+    /*    justify-content: center;*/
+    /*    background-color: rgba(255, 255, 255, 0.8);*/
+    /*    !* Esto agregará un color de fondo blanco con transparencia al buscador *!*/
+    /*    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);*/
+    /*    !* Esto agregará una sombra alrededor del buscador *!*/
+    /*    padding: 1em;*/
+    /*    !* Esto agregará un poco de espacio alrededor del buscador *!*/
+    /*    border-radius: 5px;*/
+    /*    !* Esto agregará bordes redondeados al buscador *!*/
+    /*    margin: 2em 0;*/
+    /*    !* Esto agregará margen arriba y abajo del buscador *!*/
+    /*}*/
+
+    /*.buscador input[type="search"] {*/
+    /*    flex-grow: 1;*/
+    /*    margin-right: 1em;*/
+    /*    height: 2.5em;*/
+    /*    !* Aumentamos el tamaño del input *!*/
+    /*    padding: 0.5em;*/
+    /*    font-size: 1.2em;*/
+    /*    !* Aumentamos el tamaño de la fuente *!*/
+    /*}*/
+
+    /*.buscador input[type="submit"] {*/
+    /*    height: 2.5em;*/
+    /*    !* Aumentamos el tamaño del botón *!*/
+    /*    padding: 0.5em;*/
+    /*    font-size: 1.2em;*/
+    /*    !* Aumentamos el tamaño de la fuente *!*/
+    /*    border-radius: 5px;*/
+    /*    !* Esto agregará bordes redondeados al botón *!*/
+    /*    background-color: #FF6B6B;*/
+    /*    !* Color del fondo del botón *!*/
+    /*    color: white;*/
+    /*    !* Color del texto del botón *!*/
+    /*    border: none;*/
+    /*    !* Remueve el borde del botón *!*/
+    /*    cursor: pointer;*/
+    /*    !* Cambia el cursor cuando se pasa sobre el botón *!*/
+    /*}*/
+
+    /*.buscador input[type="submit"]:hover {*/
+    /*    background-color: #FC354C;*/
+    /*    !* Cambia el color del fondo cuando se pasa sobre el botón *!*/
+    /*}*/
+
+    /*.imganimada {*/
+    /*    position: absolute;*/
+    /*    top: 0;*/
+    /*    left: 0;*/
+    /*    height: 100%;*/
+    /*    width: 100%;*/
+    /*    background-image: url('/img/background.jpg');*/
+    /*    background-size: cover;*/
+    /*    background-position: center;*/
+    /*    z-index: -1;*/
+    /*}*/
     /* Estilo responsivo */
 @media (max-width: 600px) {
     .buscador {
