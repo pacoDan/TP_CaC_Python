@@ -1,5 +1,16 @@
-flask --app main run
+# para ejecutar
+flask --app app.py run
+# para ejecutar el archivo app5.py
+flask --app app/app5.py run  
 
+
+
+
+
+
+
+
+-- EXTRA, INSTRUCTIVO
 # Proyecto de API de Productos
 
 Este proyecto contiene una API simple para manejar productos utilizando Flask y CORS.
