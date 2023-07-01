@@ -1,11 +1,51 @@
 flask --app main run
 
+# Proyecto de API de Productos
 
-# gitignore sacado de aca 
-https://www.toptal.com/developers/gitignore/api/flask
+Este proyecto contiene una API simple para manejar productos utilizando Flask y CORS.
+
+## Requisitos previos
+
+Para ejecutar este proyecto necesitarás tener instalado:
+
+- Python 3.6 o superior.
+- Flask y flask-cors.
+
+## Instalación
+
+Puedes instalar las dependencias necesarias para este proyecto con pip, el gestor de paquetes de Python. En tu terminal, ejecuta los siguientes comandos:
+
+    pip install Flask
+    pip install -U flask-cors
+
+
+## Ejecución del Proyecto
+
+Para ejecutar la aplicación Flask, debes situarte en la carpeta raíz del proyecto y ejecutar el siguiente comando en la terminal:
+
+    flask run
+
+
+Por defecto, la aplicación se iniciará y podrá ser accedida desde un navegador web en `http://localhost:5000`. Puedes ver la lista de productos visitando `http://localhost:5000/productos`.
+
+## Estructura del Proyecto
+
+El proyecto consta de los siguientes archivos y carpetas:
+
+- `app.py`: Contiene el código principal de la aplicación Flask. En este archivo se definen las rutas de la API y se inicializan los datos de los productos.
+- `models/Producto.py`: Este archivo contiene la definición de la clase Producto que se utiliza para crear nuevos productos.
+
+## Autor
+
+Jhon Daniel
 
 
 
+
+--------------------------------------------
+
+
+EXTRAS:
 Para estructurar tu proyecto utilizando TDD (Desarrollo Dirigido por Pruebas) y MVC (Modelo-Vista-Controlador), puedes seguir una estructura de carpetas comúnmente utilizada en proyectos de Python. Aquí tienes una sugerencia para organizar tus archivos y carpetas:
 
 proyecto/
