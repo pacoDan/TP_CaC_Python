@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Productos</title>
+    <script>
+        // Cuando la página cargue, ejecuta esta función.
+        window.onload = function() {
+            // Realiza una solicitud GET a la API de Flask.
+            fetch('http://localhost:5000/productos')
+                .then(response => response.json())  // Convierte la respuesta en JSON.
+                .then(data => {                     // Maneja los datos recibidos.
+                    let lista = document.getElementById('listaProductos');
+
+                    // Por cada producto en los datos recibidos...
+                    data.forEach(producto => {
+                        let li = document.createElement('li');
+                        li.textContent = `Código: ${producto.codigo}, Descripción: ${producto.descripcion}, Cantidad: ${producto.cantidad}, Precio: ${producto.precio}`;
+                        lista.appendChild(li);
+                    });
+                });
+        };
+    </script>
+</head>
+<body>
+    <h1>Productos</h1>
+    <ul id="listaProductos"></ul> <!-- Aquí se insertarán los productos. -->
+</body>
+</html>

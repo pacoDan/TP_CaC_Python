@@ -1,3 +1,6 @@
+flask --app main run
+
+
 # gitignore sacado de aca 
 https://www.toptal.com/developers/gitignore/api/flask
 
