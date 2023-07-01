@@ -14,7 +14,8 @@
 <body>
     <header>
         <div class="Logo">
-            <h1><a href="/"><img src="img/logo_560.jpg" alt="Logo de Restaurante Buena Vista" style="max-width:100%; height:auto;"></a></h1>
+            <h1><a href="/"><img src="img/logo_560.jpg" alt="Logo de Restaurante Buena Vista"
+                        style="max-width:100%; height:auto;"></a></h1>
         </div>
         <div id="cityBanner" style="text-align: left;">Desde tu ciudad <span id="city"></span>, tenemos estos menús para
             ti</div>
@@ -23,17 +24,24 @@
     <nav class="contenedor" id="app">
         <button class="miPedido"> <a href="pedido.html">Mi Pedido</a></button>
 
-        <div class="logo-busqueda" id="backgroundSlider">
-            <!-- Formulario de búsqueda -->
+        <!-- Formulario de búsqueda -->
+        <div id="header" class="logo-busqueda">
+            <div class="Logo">
+                <h1><a href="/"><img src="img/logo_560.jpg" alt="Logo de Restaurante Buena Vista"
+                            style="max-width:100%; height:auto;"></a></h1>
+            </div>
             <form @submit.prevent="buscar" class="buscador">
-                <input type="search" v-model="terminoBusqueda" placeholder="Buscar...">
+                <input type="search" v-model="terminoBusqueda" placeholder="Buscar..." @focus="focusBuscador"
+                    @blur="blurBuscador">
                 <input type="submit" value="Buscar">
             </form>
-
-            <div class="imganimada">
-                <!-- Aquí puedes colocar la imagen con transición o algún código JS para la transición -->
-            </div>
         </div>
+
+        <!-- Resultados de la búsqueda -->
+        <div v-if="buscando" class="resultados">
+            <!-- Aquí puedes mostrar los resultados de la búsqueda -->
+        </div>
+
         <ul class="navegacion">
             <li><a href="quienessomos.html">Quiénes somos</a></li>
             <li><a href="contacto.html">Escribinos</a></li>
@@ -42,8 +50,6 @@
         <div class="imganimada">
         </div>
     </nav>
-
-
 
     <footer>
         <span>
@@ -61,45 +67,42 @@
     </footer>
 
     <script src="/js/geolocalizacion.js"></script>
-    <script src="https://unpkg.com/vue@2"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+
     <script>
-        new Vue({
-            el: '#app',
-            data: {
-                terminoBusqueda: ''
+        const app = Vue.createApp({
+            data() {
+                return {
+                    terminoBusqueda: '',
+                    buscando: false,
+                };
             },
             methods: {
                 buscar() {
+                    this.buscando = true;
                     alert(`Buscando "${this.terminoBusqueda}"`);
                     // Aquí puedes agregar la lógica de búsqueda
-                }
-            }
+                    // Y usar this.buscando para controlar cuándo se muestran los resultados
+                },
+                focusBuscador() {
+                    this.buscando = true;
+                },
+                blurBuscador() {
+                    if (this.terminoBusqueda.trim() === '') {
+                        this.buscando = false;
+                    }
+                },
+            },
         });
-    </script>
-    <script>
-        // El resto de tu JS...
-        // Lista de tus imágenes
-        var images = ["img/imagen1.jpg", "img/imagen2.jpg", "img/imagen3.jpg"]; // Agrega todas las imágenes que necesites aquí
 
-        var currentIndex = 0;
-        var backgroundSliderElement = document.getElementById('backgroundSlider');
-
-        function changeBackgroundImage() {
-            currentIndex++;
-            if (currentIndex == images.length) {
-                currentIndex = 0;
-            }
-            backgroundSliderElement.style.backgroundImage = "url('" + images[currentIndex] + "')";
-        }
-
-        // Cambiar la imagen de fondo cada 5 segundos
-        setInterval(changeBackgroundImage, 5000);
+        app.mount('#app');
     </script>
 
 
 </body>
 
 </html>
+
 <style>
     .logo-busqueda {
         display: flex;
@@ -181,11 +184,25 @@
     }
 
     .Logo {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 999;
-    width: 100px; /* Modifica esto para ajustar el tamaño del logo */
-    height: auto;
-}
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 999;
+        width: 100px;
+        /* Modifica esto para ajustar el tamaño del logo */
+        height: auto;
+    }
+
+    .ocultar {
+        display: none;
+    }
+
+    .resultados {
+        /* Estilo para los resultados de la búsqueda, puedes ajustarlo a tus necesidades */
+        width: 100%;
+        background-color: #FF6B6B;
+        padding: 1em;
+        border-radius: 5px;
+        margin: 2em 0;
+    }
 </style>
