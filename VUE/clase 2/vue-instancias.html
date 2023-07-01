@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.instancias</title>
+</head>
+<body>
+    <h1>Formas de crear una instancia de Vue</h1>
+    <div id="forma1">
+        <h2> {{ subtitulo }}</h2>
+        <p> {{ descripcion }}</p>
+    </div>
+    <hr>
+    <div id="forma2">
+        <h2> {{ subtitulo }}</h2>
+        <p> {{ descripcion }}</p> 
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const { createApp } = Vue
+        createApp({
+            data() {
+                return {
+                    subtitulo: 'Forma 1',
+                    descripcion: `Creamos una constante que es un objeto de tipo Vue.
+                    Luego creamos la instancia y le pasamos data.
+                    Finalmente la montamos en el elemento HTML que necesitamos`
+                }
+            }
+        }).mount('#forma1')
+
+        const formaDos = Vue.createApp({
+            data(){
+                return{
+                    subtitulo: 'Forma 2',
+                    descripcion: `Creamos una constante que es un objeto de tipo Vue y en la misma
+                    acción creamos la instancia del objeto y le pasamos data.
+                    Finalmente la montamos en el elemento HTML que necesitamos`
+                }
+            }
+        }).mount("#forma2")
+    </script>
+</body>
+</html>

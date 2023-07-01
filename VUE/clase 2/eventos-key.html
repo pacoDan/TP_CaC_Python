@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Key</title>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <p>Escribe algo y presiona Enter</p>
+        <!-- En keyup.enter invertimos el valor lógico de "data"-->
+        <input v-on:keyup.enter="data1 = !data1"></input><br><br>
+        <span v-if="data1">Soltaste Enter</span>
+    </div>
+    <p>
+        Más modificadores de teclas 
+        <a href="https://lenguajejs.com/vuejs/directivas-vue/v-on/#modificadores-de-teclas-keyalias" target="_blank">aquí</a>
+    </p>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const miAplicacion = Vue.createApp({
+            data() {
+                return { data1: false }
+            }
+        }).mount("#app")
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computados 2</title>
+    <style>
+        table, th, td{
+            text-align: center;
+            border: 1px solid blue;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        tr > th{
+            background-color: lightblue;
+        }
+        .numero{width:30px;}
+    </style>
+</head>
+
+<body>
+    <h1>Campos computados II</h1>
+    <div id="computados2">
+        Escriba un producto:
+        <input type="text" v-model="nuevoProducto" @keydown.Enter="agregarProductoConIf()">
+        <button v-on:click=agregarProductoConIf()>Agregar</button>
+        <span v-show="aviso" style="color:red;">Falta producto!</span>
+        <br><br>
+        <table border="1">
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Agregar/Quitar</th>
+            </tr>
+            <tr v-for="producto in productos">
+                <td>{{ producto.nombre }}</td>
+                <td>
+                    <!-- {{ producto.cantidad }} -->
+                    <input type="number" class="numero" v-model.number="producto.cantidad">
+                </td>
+                <td>
+                    <button @click=producto.cantidad++>+</button>
+                    <button @click=producto.cantidad-->-</button>
+                </td>
+            </tr>
+        </table>
+        <h4>Total: {{sumarProductos}}</h4>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="computados-2.js"></script>
+</body>
+
+</html>
