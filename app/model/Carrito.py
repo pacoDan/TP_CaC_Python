@@ -1,5 +1,6 @@
 from app.model.Producto import Producto
 
+
 class Carrito:
     # Definimos el constructor e inicializamos los atributos de instancia
     def __init__(self):
@@ -9,7 +10,7 @@ class Carrito:
     def agregar(self, codigo, cantidad, inventario):
         # Nos aseguramos que el producto esté en el inventario
         producto = inventario.consultar_producto(codigo)
-        if producto is False: 
+        if producto is False:
             print("El producto no existe.")
             return False
 
@@ -55,9 +56,9 @@ class Carrito:
         return False
 
     def mostrar(self):
-        print("-"*50)
+        print("-" * 50)
         print("Lista de productos en el carrito:")
         print("Código\tDescripción\t\tCant\tPrecio")
         for item in self.items:
             print(f'{item.codigo}\t{item.descripcion}\t{item.cantidad}\t{item.precio}')
-        print("-"*50)
+        print("-" * 50)
