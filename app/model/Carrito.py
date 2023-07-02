@@ -1,7 +1,4 @@
-
-
-from models.Producto import Producto
-
+from app.model.Producto import Producto
 
 class Carrito:
     # Definimos el constructor e inicializamos los atributos de instancia

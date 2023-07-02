@@ -1,5 +1,4 @@
-
-from models.Producto import Producto
+from app.model.Producto import Producto
 
 
 class Inventario:
