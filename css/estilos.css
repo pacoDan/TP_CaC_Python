@@ -1,0 +1,49 @@
+*{
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0px;
+
+}
+.cabecera{grid-area: area1;}
+.cabecera img{
+    width: 20vw;
+    text-align: center;
+    vertical-align: top;
+}
+.titulo{grid-area: area2;
+}
+div h3{
+    
+}
+table{
+    border: 5px;
+    border-color: slategrey;
+}
+
+.contenedor {
+    background-image: url("../img/Logo_Buenavista_B.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 10vh;
+    display: grid;
+    gap:10px;
+    grid-template-areas: 'area1'
+        'area2'
+        'area3';
+    grid-template-columns: 100%;
+    margin-top: 1%;
+    width: 100%;
+}
+h1{
+    
+}
+.navegacion a {
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Calligraffitti';
+    font-size: 3vw;
+    margin-right: 5%;
+    color: white;
+}
