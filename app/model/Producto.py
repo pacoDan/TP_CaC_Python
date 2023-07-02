@@ -11,3 +11,11 @@ class Producto:
         self.descripcion = nueva_descripcion  # Modifica la descripción
         self.cantidad = nueva_cantidad        # Modifica la cantidad
         self.precio = nuevo_precio            # Modifica el precio
+
+    def to_dict(self):
+        return {
+            "codigo": self.codigo,
+            "descripcion": self.descripcion,
+            "cantidad": self.cantidad,
+            "precio": self.precio
+        }
