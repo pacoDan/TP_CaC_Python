@@ -4,8 +4,8 @@ from flask import Flask, g
 # Crear el objeto de la aplicación Flask
 app = Flask(__name__)
 
-# # Conectar con la base de datos SQLite
-# db = sqlite3.connect('productos.db', check_same_thread=False)
+# Conectar con la base de datos SQLite
+db = sqlite3.connect('productos.db', check_same_thread=False)
 
 # Crear la tabla productos si no existe
 def create_table():
