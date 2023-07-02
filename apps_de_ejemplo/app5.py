@@ -188,7 +188,7 @@ inventario = Inventario()   # Instanciamos un inventario
 
 #CONFIGURAMOS RUTAS
 # Ruta para obtener los datos de un producto según su código, en FLASK y poderlo ver del HTML via JSON
-# @app.   DECORADOR PARA LA VISTA DE FLASK (lo vimos en fetch)   https://www.nadiapoulsen.pythonanywhere.com/
+# @apps_de_ejemplo.   DECORADOR PARA LA VISTA DE FLASK (lo vimos en fetch)   https://www.nadiapoulsen.pythonanywhere.com/
 
 @app.route('/productos/<int:codigo>', methods=['GET'])
 def obtener_producto(codigo):
@@ -258,6 +258,6 @@ def quitar_pedido():
 def obtener_pedido():
     return pedido.mostrar()
 
-# Finalmente, si estamos ejecutando este archivo, lanzamos app.
+# Finalmente, si estamos ejecutando este archivo, lanzamos apps_de_ejemplo.
 if __name__ == '__main__':
     app.run()

@@ -1,6 +1,6 @@
 
 
-from modelo.Producto import Producto
+from models.Producto import Producto
 
 
 class Carrito:
