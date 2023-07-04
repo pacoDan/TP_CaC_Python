@@ -31,28 +31,23 @@
                 <h1><a href="/"><img src="img/logo_560.jpg" alt="Logo de Restaurante Buena Vista"
                             style="max-width:100%; height:auto;"></a></h1>
             </div>
-            <!-- <form @submit.prevent="buscar" class="buscador">
-                <input type="search" v-model="terminoBusqueda" placeholder="Buscar..." @focus="focusBuscador"
-                    @blur="blurBuscador">
-                <input type="submit" value="Buscar">
-            </form> -->
+          
             <form @submit.prevent="buscar" class="buscador">
                 <input type="search" v-model="terminoBusqueda" placeholder="Buscar..." @focus="focusBuscador"
                     @blur="blurBuscador">
                 <input type="submit" value="Buscar">
-
-                <!-- Resultados de la búsqueda -->
-                <div v-if="buscando" class="resultados">
-                    <div v-for="resultado in resultados" :key="resultado.codigo" class="resultado">
-                        <p>Código: {{ resultado.codigo }}</p>
-                        <p>Descripción: {{ resultado.descripcion }}</p>
-                        <p>Precio: {{ resultado.precio }}</p>
-                        <p>Cantidad: {{ resultado.cantidad }}</p>
-                    </div>
-
-                </div>
-
             </form>
+        
+            <!-- Resultados de la búsqueda -->
+            <div v-if="buscando" class="resultados">
+                <div v-for="resultado in resultados" :key="resultado.codigo" class="resultado">
+                    <p>Código: {{ resultado.codigo }}</p>
+                    <p>Descripción: {{ resultado.descripcion }}</p>
+                    <p>Precio: {{ resultado.precio }}</p>
+                    <p>Cantidad: {{ resultado.cantidad }}</p>
+                </div>
+            </div>
+        
 
 
         </div>
@@ -120,49 +115,6 @@
 
         app.mount('#app');
     </script>
-
-
-    <!-- <script>
-        const app = Vue.createApp({
-            data() {
-                return {
-                    terminoBusqueda: '',
-                    buscando: false,
-                    resultados: [], // Array para almacenar los resultados
-                };
-            },
-            methods: {
-                buscar() {
-                    this.buscando = true;
-                    console.log('buscando: ' + this.buscando);
-                    axios.get(`http://127.0.0.1:5000/productos?descripcion=${this.terminoBusqueda}`).then(response => {
-                        console.log(response.data);
-                        this.resultados = response.data; // Actualizar los resultados con la respuesta
-                        this.buscando = false;
-                        console.log('buscando: ' + this.buscando);
-                    }).catch(error => {
-                        console.error(error);
-                        this.buscando = false;
-                        console.log('buscando: ' + this.buscando);
-                    });
-                },
-                focusBuscador() {
-                    this.buscando = true;
-                    console.log('buscando: ' + this.buscando);
-                },
-                blurBuscador() {
-                    if (this.terminoBusqueda.trim() === '') {
-                        this.buscando = false;
-                        console.log('buscando: ' + this.buscando);
-                    }
-                },
-
-            },
-        });
-
-        app.mount('#app');
-    </script> -->
-
 
 </body>
 
