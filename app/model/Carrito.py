@@ -62,3 +62,4 @@ class Carrito:
         for item in self.items:
             print(f'{item.codigo}\t{item.descripcion}\t{item.cantidad}\t{item.precio}')
         print("-" * 50)
+
