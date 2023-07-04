@@ -43,12 +43,13 @@
 
                 <!-- Resultados de la búsqueda -->
                 <div v-if="buscando" class="resultados">
-                    <div v-for="resultado in resultados" :key="resultado.codigo">
+                    <div v-for="resultado in resultados" :key="resultado.codigo" class="resultado">
                         <p>Código: {{ resultado.codigo }}</p>
                         <p>Descripción: {{ resultado.descripcion }}</p>
                         <p>Precio: {{ resultado.precio }}</p>
                         <p>Cantidad: {{ resultado.cantidad }}</p>
                     </div>
+
                 </div>
 
             </form>
@@ -116,10 +117,10 @@
                 },
             },
         });
-    
+
         app.mount('#app');
     </script>
-    
+
 
     <!-- <script>
         const app = Vue.createApp({
@@ -267,6 +268,18 @@
         background-color: #FF6B6B;
         padding: 1em;
         border-radius: 5px;
-        margin: 2em 0;
+        /* margin: 2em 0; */
+        /* ...otras reglas de estilo... */
+        max-width: 800px;
+        /* puedes ajustar este valor */
+        margin: 0 auto;
+    }
+
+    .resultado {
+        background-color: #ffffff;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 </style>
