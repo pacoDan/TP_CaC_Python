@@ -15,3 +15,10 @@ def obtener_todos():
 def obtener_por_id(id):
     producto = service.obtener_por_id(id)
     return jsonify(producto.to_dict() if producto else {})
+
+@bp.route('/productos/descripcion', methods=['GET'])
+def obtener_por_descripcion():
+    descripcion = request.args.get('descripcion')
+    # productos = service.obtener_por_descripcion(descripcion)
+    productos=service.obtener_todos()
+    return jsonify([producto.to_dict() for producto in productos])

@@ -1,10 +1,13 @@
 from flask import Flask
+from flask_cors import CORS
+
 
 from db import create_database
 from .controller import producto_controller, carrito_controller  # Importa carrito_controller
 
 def create_app():
     app = Flask(__name__)
+    CORS(app)
     app.register_blueprint(producto_controller.bp)
     app.register_blueprint(carrito_controller.bp)  # Registra el Blueprint de carrito_controller
 
