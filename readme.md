@@ -1,11 +1,15 @@
 # para ejecutar
 flask --app app.py run
-# para ejecutar el archivo app5.py
-flask --app app/app5.py run  
+<!-- # para ejecutar el archivo app5.py -->
+<!-- flask --app app/app5.py run   -->
 
 
+## Instalación
 
+Puedes instalar las dependencias necesarias para este proyecto con pip, el gestor de paquetes de Python. En tu terminal, ejecuta los siguientes comandos:
 
+    pip install Flask
+    pip install -U flask-cors
 
 
 
@@ -22,13 +26,6 @@ Para ejecutar este proyecto necesitarás tener instalado:
 - Python 3.6 o superior.
 - Flask y flask-cors.
 
-## Instalación
-
-Puedes instalar las dependencias necesarias para este proyecto con pip, el gestor de paquetes de Python. En tu terminal, ejecuta los siguientes comandos:
-
-    pip install Flask
-    pip install -U flask-cors
-
 
 ## Ejecución del Proyecto
 
@@ -43,14 +40,12 @@ Por defecto, la aplicación se iniciará y podrá ser accedida desde un navegado
 
 El proyecto consta de los siguientes archivos y carpetas:
 
-- `app.py`: Contiene el código principal de la aplicación Flask. En este archivo se definen las rutas de la API y se inicializan los datos de los productos.
+- `run.py`: Contiene el código principal de la aplicación Flask. En este archivo se definen las rutas de la API y se inicializan los datos de los productos.
 - `models/Producto.py`: Este archivo contiene la definición de la clase Producto que se utiliza para crear nuevos productos.
 
 ## Autor
 
 Jhon Daniel
-
-
 
 
 --------------------------------------------
