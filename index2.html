@@ -31,13 +31,13 @@
                 <h1><a href="/"><img src="img/logo_560.jpg" alt="Logo de Restaurante Buena Vista"
                             style="max-width:100%; height:auto;"></a></h1>
             </div>
-          
+
             <form @submit.prevent="buscar" class="buscador">
                 <input type="search" v-model="terminoBusqueda" placeholder="Buscar..." @focus="focusBuscador"
                     @blur="blurBuscador">
                 <input type="submit" value="Buscar">
             </form>
-        
+
             <!-- Resultados de la búsqueda -->
             <div v-if="buscando" class="resultados">
                 <div v-for="resultado in resultados" :key="resultado.codigo" class="resultado">
@@ -45,9 +45,11 @@
                     <p>Descripción: {{ resultado.descripcion }}</p>
                     <p>Precio: {{ resultado.precio }}</p>
                     <p>Cantidad: {{ resultado.cantidad }}</p>
+                    <button @click="restarCantidad(resultado)">-</button>
+                    <button @click="sumarCantidad(resultado)">+</button>
                 </div>
             </div>
-        
+
 
 
         </div>
@@ -110,10 +112,21 @@
                         this.buscando = false;
                     }
                 },
+                sumarCantidad(resultado) {
+                    resultado.cantidad += 1;
+                    console.log(`Se dio + a este producto: ${resultado.descripcion}`);
+                },
+                restarCantidad(resultado) {
+                    if (resultado.cantidad > 0) {
+                        resultado.cantidad -= 1;
+                        console.log(`Se dio - a este producto: ${resultado.descripcion}`);
+                    }
+                },
             },
         });
 
         app.mount('#app');
+
     </script>
 
 </body>
