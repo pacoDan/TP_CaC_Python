@@ -8,37 +8,36 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Calligraffitti">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <title>Buena Vista</title>
 </head>
 
 <body>
-    <header>
-        <div class="Logo">
-            <h1><a href="/"><img src="img/logo_560.jpg" alt="Logo de Restaurante Buena Vista"
-                        style="max-width:100%; height:auto;"></a></h1>
-        </div>
-        <div id="cityBanner" style="text-align: left;">Desde tu ciudad <span id="city"></span>, tenemos estos menús para
-            ti</div>
-        <a href="usuario.html" style="float: right;">Mi cuenta</a>
-    </header>
-    <nav class="contenedor" id="app">
-        <button class="miPedido"> <a href="pedido.html">Mi Pedido</a></button>
 
-        <!-- Formulario de búsqueda -->
-        <div id="header" class="logo-busqueda">
-            <div class="Logo">
-                <h1><a href="/"><img src="img/logo_560.jpg" alt="Logo de Restaurante Buena Vista"
-                            style="max-width:100%; height:auto;"></a></h1>
-            </div>
 
+<header>
+    <div class="Logo">
+        <h1><a href="/"><img src="img/logo_560.jpg" alt="Logo de Restaurante Buena Vista"
+                             style="max-width:100%; height:auto;"></a></h1>
+    </div>
+    <div id="cityBanner" style="text-align: left;">Desde tu ciudad <span id="city"></span>, tenemos estos menús para
+        ti</div>
+    <a href="usuario.html" style="float: right;">Mi cuenta</a>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-6" id="izquierda">
+             Div izquierda
+
+            <!-- Aquí agregamos el formulario de búsqueda -->
             <form @submit.prevent="buscar" class="buscador">
                 <input type="search" v-model="terminoBusqueda" placeholder="Buscar..." @focus="focusBuscador"
-                    @blur="blurBuscador">
+                       @blur="blurBuscador">
                 <input type="submit" value="Buscar">
             </form>
 
-            <!-- Resultados de la búsqueda -->
+            <!-- Aquí agregamos los resultados de la búsqueda -->
             <div v-if="buscando" class="resultados">
                 <div v-for="resultado in resultados" :key="resultado.codigo" class="resultado">
                     <p>Código: {{ resultado.codigo }}</p>
@@ -49,86 +48,74 @@
                     <button @click="sumarCantidad(resultado)">+</button>
                 </div>
             </div>
-
-
-
         </div>
-
-        <!-- Resultados de la búsqueda -->
-        <div v-if="buscando" class="resultados">
-            <!-- Aquí puedes mostrar los resultados de la búsqueda -->
+        <div class="col-sm-12 col-md-6">
+             Div derecha
+            <button class="miPedido"> <a href="pedido.html">Mi Pedido</a></button>
         </div>
+    </div>
+</div>
 
-        <ul class="navegacion">
-            <li><a href="quienessomos.html">Quiénes somos</a></li>
-            <li><a href="contacto.html">Escribinos</a></li>
-            <li><a href="menu.html"> Menú</a></li>
-        </ul>
-        <!-- <div class="imganimada">
-        </div> -->
-    </nav>
-
-    <footer>
+<footer>
         <span>
             Buena Vista Claromecó
         </span>
-        <img src="img/favicon.ico">
-        <span>
+    <img src="img/favicon.ico">
+    <span>
             Avenida 26 y Calle 3
         </span>
-        <span><a href="https://www.instagram.com/buenavista.claromeco/" target="_blank"><img
-                    src="img/social_instagram_43.png"></a></span>
-        <span><a href="https://www.facebook.com/profile.php?id=100059661769147&sk=about" target="_blank"><img
-                    src="img/social_facebook_fb_35.png"></a>
+    <span><a href="https://www.instagram.com/buenavista.claromeco/" target="_blank"><img
+            src="img/social_instagram_43.png"></a></span>
+    <span><a href="https://www.facebook.com/profile.php?id=100059661769147&sk=about" target="_blank"><img
+            src="img/social_facebook_fb_35.png"></a>
         </span>
-    </footer>
+</footer>
 
-    <script src="/js/geolocalizacion.js"></script>
-    <script src="https://unpkg.com/vue@3"></script>
+<script src="/js/geolocalizacion.js"></script>
+<script src="https://unpkg.com/vue@3"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
-    <script>
-        const app = Vue.createApp({
-            data() {
-                return {
-                    terminoBusqueda: '',
-                    buscando: false,
-                    resultados: [], // Array para almacenar los resultados
-                };
+<script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                terminoBusqueda: '',
+                buscando: false,
+                resultados: [], // Array para almacenar los resultados
+            };
+        },
+        methods: {
+            buscar() {
+                this.buscando = true;
+                axios.get('https://grupocodo15.pythonanywhere.com/productos')
+                    .then(response => {
+                        this.resultados = response.data;
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
             },
-            methods: {
-                buscar() {
-                    this.buscando = true;
-                    // axios.get(`http://127.0.0.1:5000/productos?descripcion=${this.terminoBusqueda}`)
-                    axios.get('https://grupocodo15.pythonanywhere.com/productos')
-                        .then(response => {
-                            this.resultados = response.data; // Actualizar los resultados con la respuesta
-                        })
-                        .catch(error => {
-                            console.error(error);
-                        });
-                },
-                blurBuscador() {
-                    if (this.terminoBusqueda.trim() === '') {
-                        this.buscando = false;
-                    }
-                },
-                sumarCantidad(resultado) {
-                    resultado.cantidad += 1;
-                    console.log(`Se dio + a este producto: ${resultado.descripcion}`);
-                },
-                restarCantidad(resultado) {
-                    if (resultado.cantidad > 0) {
-                        resultado.cantidad -= 1;
-                        console.log(`Se dio - a este producto: ${resultado.descripcion}`);
-                    }
-                },
+            blurBuscador() {
+                if (this.terminoBusqueda.trim() === '') {
+                    this.buscando = false;
+                }
             },
-        });
+            sumarCantidad(resultado) {
+                resultado.cantidad += 1;
+                console.log(`Se dio + a este producto: ${resultado.descripcion}`);
+            },
+            restarCantidad(resultado) {
+                if (resultado.cantidad > 0) {
+                    resultado.cantidad -= 1;
+                    console.log(`Se dio - a este producto: ${resultado.descripcion}`);
+                }
+            },
+        },
+    });
 
-        app.mount('#app');
+    app.mount('#izquierda');
 
-    </script>
+</script>
 
 </body>
 
