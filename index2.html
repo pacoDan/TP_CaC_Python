@@ -64,8 +64,8 @@
             <li><a href="contacto.html">Escribinos</a></li>
             <li><a href="menu.html"> Menú</a></li>
         </ul>
-        <div class="imganimada">
-        </div>
+        <!-- <div class="imganimada">
+        </div> -->
     </nav>
 
     <footer>
@@ -99,7 +99,8 @@
             methods: {
                 buscar() {
                     this.buscando = true;
-                    axios.get(`http://127.0.0.1:5000/productos?descripcion=${this.terminoBusqueda}`)
+                    // axios.get(`http://127.0.0.1:5000/productos?descripcion=${this.terminoBusqueda}`)
+                    axios.get('https://grupocodo15.pythonanywhere.com/productos')
                         .then(response => {
                             this.resultados = response.data; // Actualizar los resultados con la respuesta
                         })
