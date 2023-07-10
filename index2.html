@@ -31,7 +31,7 @@
             Div izquierda
 
             <!-- Aquí agregamos el formulario de búsqueda -->
-            <form @submit.prevent="buscar" class="buscador w-100">
+            <form @submit.prevent="buscar" class="buscador w-100" @click="focusInput">
                 <input type="search" v-model="terminoBusqueda" placeholder="Buscar..." @focus="focusBuscador"
                        @blur="blurBuscador" @keydown.enter.prevent="buscar">
                 <input type="submit" value="Buscar">
@@ -51,10 +51,11 @@
         </div>
         <div class="col-sm-12 col-md-6" id="derecha">
             Div derecha
-            <button class="miPedido btn-block"><a href="menuprincipal.html">Menu Principal</a></button>
+            <a href="menuprincipal.html" class="miPedido btn btn-primary btn-lg btn-block">Menu Principal</a>
         </div>
     </div>
 </div>
+
 
 
 <footer>
@@ -124,6 +125,14 @@
 </body>
 
 </html>
+<style>
+    .miPedido.btn-block {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+</style>
 
 <style>
     .logo-busqueda {
