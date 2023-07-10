@@ -87,10 +87,10 @@
         methods: {
             buscar() {
                 this.buscando = true;
-                // axios.get(`http://127.0.0.1:5000/productos?descripcion=${this.terminoBusqueda}`)
-                axios.get('https://grupocodo15.pythonanywhere.com/productos')
-                    .then(response => {
-                        this.resultados = response.data;
+                fetch('https://grupocodo15.pythonanywhere.com/productos')
+                    .then(response => response.json())
+                    .then(data => {
+                        this.resultados = data;
                         this.resultados = this.resultados.filter((resultado) => {
                             return resultado.descripcion.toLowerCase().includes(this.terminoBusqueda.toLowerCase());
                         });
@@ -118,7 +118,6 @@
     });
 
     app.mount('#izquierda');
-
 </script>
 
 </body>
