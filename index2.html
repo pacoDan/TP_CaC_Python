@@ -31,14 +31,14 @@
             Div izquierda
 
             <!-- Aquí agregamos el formulario de búsqueda -->
-            <form @submit.prevent="buscar" class="buscador">
+            <form @submit.prevent="buscar" class="buscador w-100">
                 <input type="search" v-model="terminoBusqueda" placeholder="Buscar..." @focus="focusBuscador"
                        @blur="blurBuscador" @keydown.enter.prevent="buscar">
                 <input type="submit" value="Buscar">
             </form>
 
             <!-- Aquí agregamos los resultados de la búsqueda -->
-            <div v-if="buscando" class="resultados">
+            <div v-if="buscando" class="resultados w-100">
                 <div v-for="resultado in resultados" :key="resultado.codigo" class="resultado">
                     <p>Código: {{ resultado.codigo }}</p>
                     <p>Descripción: {{ resultado.descripcion }}</p>
@@ -51,11 +51,11 @@
         </div>
         <div class="col-sm-12 col-md-6" id="derecha">
             Div derecha
-<!--            <button class="miPedido"><a href="pedido.html">Mi Pedido</a></button>-->
-            <button class="miPedido"><a href="menuprincipal.html">Menu Principal</a></button>
+            <button class="miPedido btn-block"><a href="menuprincipal.html">Menu Principal</a></button>
         </div>
     </div>
 </div>
+
 
 <footer>
         <span>
