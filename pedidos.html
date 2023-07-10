@@ -6,42 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inventario</title>
   <script src="https://unpkg.com/vue@next"></script>
-  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="css/estilos_back.css">
 </head>
 
 <body>
   <div id="app">
-    <div class="cabecera"><img src="img/logo_560.jpg" alt="Logo de Restaurante Buena Vista"></div>
+    <div class="derecha"><img src="img/Logo_Buenavista_B.png" alt="Logo de Restaurante Buena Vista"></div>
     <h3>Su pedido</h3>
-    <table>
-      <thead>
-        <tr>
-          <th>Código</th>
-          <th>Nombre</th>
-          <th>Descripción</th>
-          <th>Cantidad</th>
-          <th>Precio</th>
-          <th>Pedido</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="producto in productos" :key="producto.codigo">
-          <td>{{ producto.codigo }}</td>
-          <td>{{ producto.nombre }}</td>
-          <td>{{ producto.descripcion }}</td>
-          <td align="right">{{ producto.cantidad }}</td>
-          <td align="right">&nbsp; &nbsp; {{ producto.precio }}</td>
-          <td>
-            <button @click="agregarAlPedido(producto)">&nbsp;&nbsp;<b>+</b>&nbsp;&nbsp;</button>
-            <button @click="restarDelPedido(producto)">&nbsp;&nbsp;<b>-</b>&nbsp;&nbsp;</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div v-if="mostrarPedido">
-      <h3>Productos en el pedido:</h3>
-      <table>
+    <div class="container">
+      <table class="table">
         <thead>
           <tr>
             <th>Código</th>
@@ -49,26 +22,57 @@
             <th>Descripción</th>
             <th>Cantidad</th>
             <th>Precio</th>
+            <th>Pedido</th>
           </tr>
         </thead>
-        <tbody>
-          <tr v-for="item in pedido" :key="item.codigo">
-            <td>{{ item.codigo }}</td>
-            <td>{{ item.nombre }}</td>
-            <td>{{ item.descripcion }}</td>
-            <td align="right">{{ item.cantidad }}</td>
-            <td align="right">&nbsp; &nbsp; {{ item.precio }}</td>
+        <tbody class="tbody">
+          <tr v-for="producto in productos" :key="producto.codigo">
+            <td>{{ producto.codigo }}</td>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.descripcion }}</td>
+            <td align="right">{{ producto.cantidad }}</td>
+            <td align="right">&nbsp; &nbsp; {{ producto.precio }}</td>
+            <td>
+              <button @click="agregarAlPedido(producto)" class="btn-mym btn-verde">&nbsp;&nbsp;<b class="a">+</b>&nbsp;&nbsp;</button>
+              <button @click="restarDelPedido(producto)" class="btn-mym btn-rojo">&nbsp;&nbsp;<b class="a">-</b>&nbsp;&nbsp;</button>
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
 
+    <div v-if="mostrarPedido">
+      <h3>Productos en el pedido:</h3>
+      <div class="container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody class="tbody">
+            <tr v-for="item in pedido" :key="item.codigo">
+              <td>{{ item.codigo }}</td>
+              <td>{{ item.nombre }}</td>
+              <td>{{ item.descripcion }}</td>
+              <td align="right">{{ item.cantidad }}</td>
+              <td align="right">&nbsp; &nbsp; {{ item.precio }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <div v-if="!mostrarPedido" class="contenedor-centrado">
-      <button @click="obtenerPedido">Mostrar pedido</button>
+      <button @click="obtenerPedido" class="btn btn-verde">Mostrar pedido</button>
     </div>
 
     <div class="contenedor-centrado">
-      <a href="menuprincipal.html">Menu principal</a>
+      <a href="menuprincipal.html" class="amenu">Menu principal</a>
     </div>
 
   </div>
