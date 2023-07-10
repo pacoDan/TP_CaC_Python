@@ -6,28 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de Productos</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Calligraffitti">
+    <link rel="stylesheet" href="css/estilos_back.css">
 </head>
 
 <body>
-    <div><img src="img/Logo_Buenavista_B.png" alt="Logo de Restaurante Buena Vista"></div>
-    <h3>Listado de Productos</h3> 
-    <table>
-        <thead>
-            <tr>
-                <th>Código</th>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Cantidad</th>
-                <th align="right">Precio</th>
-            </tr>
-        </thead>
-        <tbody id="tablaProductos">
-        </tbody>
-    </table>
+    <div class="derecha"><img src="img/Logo_Buenavista_B.png" alt="Logo de Restaurante Buena Vista"></div>
+    <h3 style="text-align: left;">Listado de Productos</h3> 
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Cantidad</th>
+                    <th align="right">Precio</th>
+                </tr>
+            </thead>
+        <tbody id="tablaProductos" class="tbody" class="tr"></tbody>
+        </table>
+    </div>
 
     <div class="contenedor-centrado">
-        <a href="menuprincipal.html">Menu principal</a>
+        <a href="menuprincipal.html" class="amenu">Menu principal</a>
     </div>
 
     <script>
