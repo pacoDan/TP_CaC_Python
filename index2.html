@@ -33,7 +33,7 @@
                 <!-- Aquí agregamos el formulario de búsqueda -->
                 <form @submit.prevent="buscar" class="buscador">
                     <input type="search" v-model="terminoBusqueda" placeholder="Buscar..." @focus="focusBuscador"
-                        @blur="blurBuscador">
+                        @blur="blurBuscador"  @keydown.enter.prevent="buscar">
                     <input type="submit" value="Buscar">
                 </form>
 
