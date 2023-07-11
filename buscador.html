@@ -53,7 +53,6 @@
 </div>
 
 
-
 <footer>
         <span>
             Buena Vista Claromecó
@@ -132,22 +131,6 @@
 </style>
 
 <style>
-    .logo-busqueda {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1em;
-        position: relative;
-        width: 100%;
-        /* Agregamos la primera imagen como fondo */
-        background-image: url('img/imagen1.jpg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        transition: background 1s ease-in-out;
-    }
-
     .buscador {
         width: 90%;
         /* Aumentar el tamaño del buscador */
@@ -177,7 +160,9 @@
         border-radius: 5px;
         background-color: white;
         /* Cambio de color de botón a blanco para contrastar con el buscador */
-        color: #FF6B6B;
+        /*color: #FF6B6B;*/
+        color: black;
+
         /* Cambio de color de texto a igual que el fondo del buscador */
         border: none;
         cursor: pointer;
@@ -189,9 +174,6 @@
 
     /* Reglas CSS para tamaño de pantalla pequeño (por debajo de 600px) */
     @media (max-width: 600px) {
-        .logo-busqueda {
-            flex-direction: column;
-        }
 
         .buscador {
             flex-direction: column;
@@ -222,14 +204,11 @@
         height: auto;
     }
 
-    .ocultar {
-        display: none;
-    }
-
     .resultados {
         /* Estilo para los resultados de la búsqueda, puedes ajustarlo a tus necesidades */
         width: 100%;
-        background-color: #FF6B6B;
+        /*background-color: #FF6B6B;*/
+        background-color: black;
         padding: 1em;
         border-radius: 5px;
         /* margin: 2em 0; */
