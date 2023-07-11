@@ -36,7 +36,7 @@
             <!-- Aquí agregamos los resultados de la búsqueda -->
             <div v-if="buscando" class="resultados w-100">
                 <div v-for="resultado in resultados" :key="resultado.codigo" class="resultado">
-                    <p>Código: {{ resultado.codigo }}</p>
+<!--                    <p>Código: {{ resultado.codigo }}</p>-->
                     <p>Descripción: {{ resultado.descripcion }}</p>
                     <p>Precio: {{ resultado.precio }}</p>
                     <p>Cantidad: {{ resultado.cantidad }}</p>
@@ -47,7 +47,11 @@
         </div>
         <div class="col-sm-12 col-md-6" id="derecha">
             <a href="menuprincipal.html" class="miPedido btn btn-primary btn-lg btn-block">Menu Principal</a>
+
+            <div id="tablaPedidos"></div>
+
         </div>
+
     </div>
 </div>
 
@@ -70,6 +74,86 @@
 <script src="/js/geolocalizacion.js"></script>
 <script src="https://unpkg.com/vue@3"></script>
 <script>
+    var pedidos = [];
+    function generarTablaPedidos() {
+        // Obtener una referencia al elemento donde se generará la tabla
+        const tablaPedidos = document.getElementById('tablaPedidos');
+
+        // Vaciar el contenido anterior de la tabla
+        tablaPedidos.innerHTML = '';
+
+        // Si no hay pedidos, salir de la función
+        if (pedidos.length === 0) {
+            return;
+        }
+
+        // Crear la estructura de la tabla
+        const tabla = document.createElement('table');
+        const thead = document.createElement('thead');
+        const tbody = document.createElement('tbody');
+        const tfoot = document.createElement('tfoot');
+
+        // Crear la fila de encabezado
+        const encabezado = document.createElement('tr');
+        encabezado.innerHTML = `
+    <th>Descripción</th>
+    <th>Precio</th>
+    <th>Cantidad de veces</th>
+  `;
+        thead.appendChild(encabezado);
+
+        // Calcular la cantidad de veces que aparece cada objeto
+        const cantidadObjetos = {};
+        pedidos.forEach(pedido => {
+            if (cantidadObjetos[pedido.codigo]) {
+                cantidadObjetos[pedido.codigo]++;
+            } else {
+                cantidadObjetos[pedido.codigo] = 1;
+            }
+        });
+
+        // Crear las filas de los pedidos sin repetir
+        const pedidosUnicos = [...new Set(pedidos.map(pedido => pedido.codigo))];
+        pedidosUnicos.forEach(codigo => {
+            const pedido = pedidos.find(pedido => pedido.codigo === codigo);
+            const filaPedido = document.createElement('tr');
+            filaPedido.innerHTML = `
+      <td>${pedido.descripcion}</td>
+      <td>${pedido.precio}</td>
+      <td>${cantidadObjetos[pedido.codigo]}</td>
+      <td><button onclick="eliminarPedido(${pedido.codigo})">Eliminar</button></td>
+    `;
+            tbody.appendChild(filaPedido);
+        });
+
+        // Crear la fila para el nombre del cliente y el botón "Pedir!"
+        const filaCliente = document.createElement('tr');
+        filaCliente.innerHTML = `
+    <td><input type="text" id="nombreCliente" placeholder="Nombre del cliente"></td>
+    <td></td>
+    <td></td>
+    <td><button onclick="realizarPedido()">Pedir!</button></td>
+  `;
+        tfoot.appendChild(filaCliente);
+
+        // Agregar el encabezado, las filas y el pie al cuerpo de la tabla
+        tabla.appendChild(thead);
+        tabla.appendChild(tbody);
+        tabla.appendChild(tfoot);
+
+        // Agregar la tabla generada al elemento contenedor
+        tablaPedidos.appendChild(tabla);
+    }
+
+    // Función para eliminar un pedido
+    function eliminarPedido(codigo) {
+        const indicePedido = pedidos.findIndex(pedido => pedido.codigo === codigo);
+        if (indicePedido !== -1) {
+            pedidos.splice(indicePedido, 1);
+            generarTablaPedidos();
+        }
+    }
+
     const app = Vue.createApp({
         data() {
             return {
@@ -101,11 +185,15 @@
             sumarCantidad(resultado) {
                 resultado.cantidad += 1;
                 console.log(`Se dio + a este producto: ${resultado.descripcion}`);
+                pedidos.push(resultado);
+                generarTablaPedidos();
             },
             restarCantidad(resultado) {
                 if (resultado.cantidad > 0) {
                     resultado.cantidad -= 1;
                     console.log(`Se dio - a este producto: ${resultado.descripcion}`);
+                    pedidos.remove(resultado);
+                    generarTablaPedidos();
                 }
             },
         },
@@ -222,6 +310,7 @@
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+
     /* Estilos personalizados para el div cityBanner */
     #cityBanner {
         background-color: #f2f2f2;
