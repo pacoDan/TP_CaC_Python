@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla Dinámica con Vue 3</title>
+  <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.prod.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="izquierda">
+      <h2>Panel de Control</h2>
+      <div>
+        <label for="descripcion">Descripción:</label>
+        <input type="text" id="descripcion" v-model="nuevaDescripcion">
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" id="cantidad" v-model="nuevaCantidad">
+        <button @click="sumarCantidad">Sumar</button>
+        <button @click="restarCantidad">Restar</button>
+      </div>
+    </div>
+
+    <div class="derecha">
+      <h2>Tabla</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Descripción</th>
+            <th>Cantidad</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item, index) in items" :key="index">
+            <td>{{ item.descripcion }}</td>
+            <td>{{ item.cantidad }}</td>
+            <td>
+              <button @click="restarCantidad(index)">Restar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          items: [],
+          nuevaDescripcion: '',
+          nuevaCantidad: 0,
+        };
+      },
+      methods: {
+        sumarCantidad() {
+          this.items.push({ descripcion: this.nuevaDescripcion, cantidad: this.nuevaCantidad });
+          this.nuevaDescripcion = '';
+          this.nuevaCantidad = 0;
+        },
+        restarCantidad(index) {
+          this.items[index].cantidad--;
+
+          if (this.items[index].cantidad === 0) {
+            this.items.splice(index, 1);
+          }
+        },
+      },
+    });
+
+    const vm = app.mount('#container');
+  </script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Calligraffitti">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <title>Buena Vista</title>
+</head>
+
+<body>
+
+<header>
+    <div class="Logo">
+        <h1><a href="/"><img src="img/logo_560.jpg" alt="Logo de Restaurante Buena Vista"
+                             style="max-width:100%; height:auto;"></a></h1>
+    </div>
+    <div id="cityBanner" style="text-align: left;">Desde tu ciudad <span id="city"></span>, tenemos estos menús para
+        ti
+    </div>
+    <a href="usuario.html" style="float: right;">Mi cuenta</a>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-6" id="izquierda">
+            <form @submit.prevent="buscar" class="buscador w-100" @click="focusInput">
+                <input type="search" v-model="terminoBusqueda" placeholder="Buscar..." @focus="focusBuscador"
+                       @blur="blurBuscador" @keydown.enter.prevent="buscar">
+                <input type="submit" value="Buscar">
+            </form>
+
+            <!-- Aquí agregamos los resultados de la búsqueda -->
+            <div v-if="buscando" class="resultados w-100">
+                <div v-for="resultado in resultados" :key="resultado.codigo" class="resultado">
+                    <p>Código: {{ resultado.codigo }}</p>
+                    <p>Descripción: {{ resultado.descripcion }}</p>
+                    <p>Precio: {{ resultado.precio }}</p>
+                    <p>Cantidad: {{ resultado.cantidad }}</p>
+                    <button @click="restarCantidad(resultado)">-</button>
+                    <button @click="sumarCantidad(resultado)">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6" id="derecha">
+            <a href="menuprincipal.html" class="miPedido btn btn-primary btn-lg btn-block">Menu Principal</a>
+        </div>
+    </div>
+</div>
+
+
+
+<footer>
+        <span>
+            Buena Vista Claromecó
+        </span>
+    <img src="img/favicon.ico">
+    <span>
+            Avenida 26 y Calle 3
+        </span>
+    <span><a href="https://www.instagram.com/buenavista.claromeco/" target="_blank"><img
+            src="img/social_instagram_43.png"></a></span>
+    <span><a href="https://www.facebook.com/profile.php?id=100059661769147&sk=about" target="_blank"><img
+            src="img/social_facebook_fb_35.png"></a>
+        </span>
+</footer>
+
+<script src="/js/geolocalizacion.js"></script>
+<script src="https://unpkg.com/vue@3"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                terminoBusqueda: '',
+                buscando: false,
+                resultados: [], // Array para almacenar los resultados
+            };
+        },
+        methods: {
+            buscar() {
+                this.buscando = true;
+                fetch('https://grupocodo15.pythonanywhere.com/productos')
+                    .then(response => response.json())
+                    .then(data => {
+                        this.resultados = data;
+                        this.resultados = this.resultados.filter((resultado) => {
+                            return resultado.descripcion.toLowerCase().includes(this.terminoBusqueda.toLowerCase());
+                        });
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+            },
+            blurBuscador() {
+                if (this.terminoBusqueda.trim() === '') {
+                    this.buscando = false;
+                }
+            },
+            sumarCantidad(resultado) {
+                resultado.cantidad += 1;
+                console.log(`Se dio + a este producto: ${resultado.descripcion}`);
+            },
+            restarCantidad(resultado) {
+                if (resultado.cantidad > 0) {
+                    resultado.cantidad -= 1;
+                    console.log(`Se dio - a este producto: ${resultado.descripcion}`);
+                }
+            },
+        },
+    });
+
+    app.mount('#izquierda');
+</script>
+
+</body>
+
+</html>
+<style>
+    .miPedido.btn-block {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+</style>
+
+<style>
+    .logo-busqueda {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1em;
+        position: relative;
+        width: 100%;
+        /* Agregamos la primera imagen como fondo */
+        background-image: url('img/imagen1.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: background 1s ease-in-out;
+    }
+
+    .buscador {
+        width: 90%;
+        /* Aumentar el tamaño del buscador */
+        display: flex;
+        justify-content: center;
+        background-color: #FF6B6B;
+        /* Color más llamativo */
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        padding: 1em;
+        border-radius: 5px;
+        margin: 2em 0;
+    }
+
+    .buscador input[type="search"] {
+        flex-grow: 1;
+        margin-right: 1em;
+        height: 2.5em;
+        padding: 0.5em;
+        font-size: 1.2em;
+    }
+
+    .buscador input[type="submit"] {
+        height: 2.5em;
+        padding: 0.5em;
+        font-size: 1.2em;
+        border-radius: 5px;
+        background-color: white;
+        /* Cambio de color de botón a blanco para contrastar con el buscador */
+        color: #FF6B6B;
+        /* Cambio de color de texto a igual que el fondo del buscador */
+        border: none;
+        cursor: pointer;
+    }
+
+    .buscador input[type="submit"]:hover {
+        background-color: #FC354C;
+    }
+
+    /* Reglas CSS para tamaño de pantalla pequeño (por debajo de 600px) */
+    @media (max-width: 600px) {
+        .logo-busqueda {
+            flex-direction: column;
+        }
+
+        .buscador {
+            flex-direction: column;
+            align-items: center;
+            /* Asegura que los elementos hijos se centran */
+        }
+
+        .buscador input[type="search"] {
+            width: 100%;
+            /* Asegura que el input de búsqueda llena el ancho completo */
+            margin-bottom: 0.5em;
+            /* Espacio extra entre el input de búsqueda y el botón en pantallas pequeñas */
+        }
+
+        .buscador input[type="submit"] {
+            width: auto;
+            /* Asegura que el botón no se estira para llenar el ancho completo */
+        }
+    }
+
+    .Logo {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 999;
+        width: 100px;
+        /* Modifica esto para ajustar el tamaño del logo */
+        height: auto;
+    }
+
+    .ocultar {
+        display: none;
+    }
+
+    .resultados {
+        /* Estilo para los resultados de la búsqueda, puedes ajustarlo a tus necesidades */
+        width: 100%;
+        background-color: #FF6B6B;
+        padding: 1em;
+        border-radius: 5px;
+        /* margin: 2em 0; */
+        /* ...otras reglas de estilo... */
+        max-width: 800px;
+        /* puedes ajustar este valor */
+        margin: 0 auto;
+    }
+
+    .resultado {
+        background-color: #ffffff;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+</style>

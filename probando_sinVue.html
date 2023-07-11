@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla Dinámica sin Vue</title>
+</head>
+<body>
+  <div class="izquierda">
+    <h2>Panel de Control</h2>
+    <div>
+      <label for="descripcion">Descripción:</label>
+      <input type="text" id="descripcion">
+      <label for="cantidad">Cantidad:</label>
+      <input type="number" id="cantidad">
+      <button onclick="sumarCantidad()">Sumar</button>
+      <button onclick="restarCantidad()">Restar</button>
+    </div>
+  </div>
+
+  <div class="derecha">
+    <h2>Tabla</h2>
+    <table id="tabla">
+      <thead>
+        <tr>
+          <th>Descripción</th>
+          <th>Cantidad</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const sumarCantidad = () => {
+      const descripcion = document.getElementById('descripcion').value;
+      const cantidad = document.getElementById('cantidad').value;
+
+      if (descripcion && cantidad) {
+        const tbody = document.getElementById('tbody');
+        const newRow = document.createElement('tr');
+
+        const descCell = document.createElement('td');
+        descCell.textContent = descripcion;
+        newRow.appendChild(descCell);
+
+        const cantCell = document.createElement('td');
+        cantCell.textContent = cantidad;
+        newRow.appendChild(cantCell);
+
+        const actionCell = document.createElement('td');
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Restar';
+        deleteBtn.onclick = function() {
+          const row = this.parentNode.parentNode;
+          row.parentNode.removeChild(row);
+        };
+        actionCell.appendChild(deleteBtn);
+        newRow.appendChild(actionCell);
+
+        tbody.appendChild(newRow);
+      }
+    };
+
+    const restarCantidad = () => {
+      const rows = document.querySelectorAll('#tbody tr');
+      if (rows.length > 0) {
+        const lastRow = rows[rows.length - 1];
+        lastRow.parentNode.removeChild(lastRow);
+      }
+    };
+  </script>
+</body>
+</html>
