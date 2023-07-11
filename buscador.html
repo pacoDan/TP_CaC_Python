@@ -19,8 +19,7 @@
         <h1><a href="/"><img src="img/logo_560.jpg" alt="Logo de Restaurante Buena Vista"
                              style="max-width:100%; height:auto;"></a></h1>
     </div>
-    <div id="cityBanner" style="text-align: left;">Desde tu ciudad <span id="city"></span>, tenemos estos menús para
-        ti
+    <div id="cityBanner" style="text-align: left;">Notamos Queee <span id="city"></span> asi que aprovechalos!
     </div>
     <a href="usuario.html" style="float: right;">Mi cuenta</a>
 </header>
@@ -70,8 +69,6 @@
 
 <script src="/js/geolocalizacion.js"></script>
 <script src="https://unpkg.com/vue@3"></script>
-
-<!--<script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>-->
 <script>
     const app = Vue.createApp({
         data() {
@@ -225,4 +222,28 @@
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+    /* Estilos personalizados para el div cityBanner */
+    #cityBanner {
+        background-color: #f2f2f2;
+        padding: 10px;
+        font-size: 16px; /* Modificado a un tamaño de fuente más pequeño */
+        font-weight: bold;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    /* Estilos personalizados para el span city */
+    #city {
+        background-color: #f2f2f2;
+        padding: 10px;
+        font-size: 16px; /* Modificado a un tamaño de fuente más pequeño */
+        font-weight: bold;
+        color: #333;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
 </style>

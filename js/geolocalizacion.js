@@ -16,7 +16,7 @@ if ("geolocation" in navigator) {
         document.cookie = "city=" + city + "; path=/";
 
         // Muestra el nombre de la ciudad en el elemento 'city'
-        document.getElementById('city').textContent = 'Desde tu ciudad ' + city + ', tenemos estos menús para ti';
+        document.getElementById('city').textContent = 'desde tu ciudad ' + city + ', tenemos estos menús para ti';
       })
       .catch(error => console.error(error));
 
