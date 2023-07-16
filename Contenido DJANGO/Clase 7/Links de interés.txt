@@ -1,0 +1,3 @@
+https://lenguajecss.com/css/efectos/filtros-css/
+https://lenguajecss.com/css/responsive-web-design/media-queries/
+https://lenguajecss.com/css/responsive-web-design/preferencias-usuario/

@@ -1,0 +1,45 @@
+html{
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+*, *:before, *:after{
+	box-sizing: inherit;
+}
+
+body{
+    padding: 5rem;
+}
+
+h4{
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+p{
+    font-size: 1.6rem;
+}
+
+.container {
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-template-columns: repeat(3,1fr);
+    gap: 5rem;
+}
+
+.item{
+    width: 70%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 640px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 960px) {
+    .container {
+        grid-template-columns: repeat(2,1fr);
+    }
+}

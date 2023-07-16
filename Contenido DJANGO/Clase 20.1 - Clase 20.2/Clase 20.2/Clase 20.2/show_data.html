@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Información Enviada</title>
+		<link rel="stylesheet" href="style/style.css"/>
+	</head>
+	<body>
+		<h1>Información Enviada:</h1>
+		<script>
+			const queryString = window.location.search; //Se consiguen los parámetros de la URL.
+			const urlParams = new URLSearchParams(queryString);
+			const entries = urlParams.entries(); //Mostramos los pares clave:valor
+			let stringEntries = "";
+			for (const entry of entries) {
+				stringEntries += `<li><strong>${entry[0]}:</strong> ${entry[1]}</li>`;
+			}
+			document.write(`<ul class='form-response'>${stringEntries}</ul>`);
+		</script>
+		<noscript>
+			<p>JavaScript no soportado en el navegador</p>
+		</noscript>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+a {
+    background: #DDD;
+    color: #222;
+    padding: 2px;
+    border: 1px solid #AAA;
+}
+
+a:hover {
+    background: green;
+    color: white;
+    padding: 8px 14px;
+    border: 1px solid red;
+    transition: all 0.2s ease-in 2s;
+  /*   transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+    transition-delay: 2s; */
+}
+
+a::before {
+    content: "<<";
+}
+
+a::after {
+    content: ">>";
+}
+
+
+/* a:hover {
+    color: white;
+    background-color: black;
+} */
+
+/* a:visited {
+    color: yellow;
+    background-color: blue;
+}
+
+a:active {
+    color: red;
+    background-color: purple;
+} */
+
+body {
+    position: relative;
+}
+
+.parrafo {
+    position: absolute;
+    /* transform: translateY(200px); */
+    /* transform: scale(1, 2); */
+    /* transform: rotate(-30deg); */
+    transform: skew(10deg, 10deg);
+    z-index: -1000;
+}
+
+p::first-letter {
+    color: black;
+    font-family: 'Times New Roman', serif;
+    font-size: 62px;
+}
+
+p::first-line {
+    color: #999;
+}
+
+@media screen and (max-width:640px) {
+    p {
+        color: green;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:640px) and (max-width:1024px){
+    p {
+        color: red;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    p {
+        width: 50%;
+        color: #333;
+        font-family: Verdana, sans-serif;
+        font-size: 20px;
+        border: 1px solid black;
+        /* transform: scale(1, 1);
+        transform: rotate(90deg); */
+    }
+}

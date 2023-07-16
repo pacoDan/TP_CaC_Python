@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+
+<body>
+    <div id="ejemplo1">
+        <button v-on:click="contador++">Incrementar</button>
+        <button v-on:click="contador--">Decrementar</button>
+        <button v-on:click="contador2++">Incrementar 2do Contador</button>
+        <button v-on:click="contador2--">Decrementar 2do Contador</button>
+        <p>
+            Contador: {{contador}} | {{contador2}}
+        </p>
+        <p>
+            Resultado: {{resultado()}} | {{output}}
+        </p>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
