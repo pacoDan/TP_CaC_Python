@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    text-align: center;
+}
+
+h1{
+    color:red !important;
+}
+h1{
+    color:green;
+}
+
+/*El segundo nivel de especificidad lo dan los estilos
+en linea , o sea , dentro del tag*/
+
+/*despues vienen los id*/
+#titulo-principal{
+    color: blueviolet;
+}
+
+/*Despues las clases*/
+.clase-titulo{
+    color:cyan;
+}
+
+/*Modelo de cajas----BOX MODEL------------------*/
+
+.margin{
+    background-color: darkgreen;/*le damos color fondo*/
+    width: 200px; /*le podemos dar alto y ancho*/
+    height: 150px;/*ya q es un block*/
+    margin: 10px;/*margen a los 4 lados*/
+    margin-left: 50px;/*Con esto solo le meto margen left*/
+    margin:15px 20px 5px;/*esto es lo mismo pero 
+    el primer valor es arriba , derecha e izquierda y abajo*/
+    margin: 5px 10px;/*arriba y abajo| izqu y derecha*/
+    margin:5px 10px 3px 4px;/*Va como agujas de reloj*/
+
+}
+
+.padding{
+    text-align: center;
+    background-color: darkmagenta;
+    width: 200px;
+    height: 150px;
+    padding: 50px;
+    padding-left: 35px;
+    padding: 5px 10px 20px 30px;
+}
+
+.border{
+    background-color: darkorchid;
+    width: 200px;
+    height: 150px;
+    border:5px solid black;
+    /*igual...le puedo dar 4 valores*/
+}
+
+.caja-completa{
+    background-color: salmon;
+    width: 200px;
+    height: 150px;
+    margin: 30px;
+    padding: 50px;
+    border: 5px solid black;
+    box-sizing: border-box;
+    /* Las propiedades width y height incluyen el 
+    contenido, padding y borde pero no el margin.*/
+}

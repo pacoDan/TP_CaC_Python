@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body>
+    <script>
+                ////////SIMULANDO ASINCRONIA///////////////////
+    let empanadas =[
+        {
+            "id":1,
+            "nombre":"carne",
+            "precio":100
+        },
+        {
+            "id":2,
+            "nombre":"jyq",
+            "precio":135
+        }
+    ];
+ 
+    //Simulamos 1 segundo y medio de delay
+    const getEmpanadasAsync = ()=>{
+        setTimeout(()=>{
+        return empanadas;
+    },1500);    
+    }
+
+    //Error: Undefined..
+    console.log(getEmpanadasAsync());
+
+    </script>
+</body>
+</html>

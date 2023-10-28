@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue</title>
+</head>
+<body>
+    <h1>Vue</h1>
+    
+    <div id="formVue">
+
+        <p>formulario de tareas</p>
+
+        <form id="formVue" v-on:submit.prevent="guardarTarea">
+            <h4>Lista de tareas</h4>
+            <input type="text" v-model="nuevaTarea">
+            <input type="submit">
+
+            <ul>
+                <li v-for="tarea in tareas">
+                    {{tareas}}
+                </li>
+            </ul>
+
+            <p>{{$data}}</p>
+
+
+
+        </form>
+      
+    </div>  
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main15ListaTareas.js"></script>
+</body>
+</html>

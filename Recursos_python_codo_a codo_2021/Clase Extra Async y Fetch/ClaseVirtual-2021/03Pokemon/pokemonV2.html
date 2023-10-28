@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+   
+</head>
+<body>
+    <!--AHORA VOY A TRAER TOOOODOOOOO LOS POKEMONES
+    Primero con async
+    y despues uso .then-->
+    <h1>Todos los pokemones con .then</h1>
+     
+
+     <script>
+       const direccion = 'https://pokeapi.co/api/v2/pokemon/';
+        /*async function obtenerJson(){
+         const response = await fetch(direccion);
+        const data = await response.json();                 
+        console.log(data);
+         }
+        obtenerJson();*/
+
+         //Como hacer lo mismo con .then
+         
+         //FETCH devuelve .then si anda bien
+         //FETCH devuelve .catch si anda mal
+         fetch(direccion).then(function(response){   //then avanza cuando salio todo bien...y manda el response(todo lo que obtuvo)
+             return response.json();     //ese response lo parsea a un Json.. pero devuelve otra promesa , o sea
+         }).then(function(obj){ //como obtuve otra promesa tengo que poner .then
+             console.log(obj);
+         }).catch(function(error){
+             console.error('Fallo la obtencion de Pokemones');
+             console.error(error);
+         })
+
+        
+
+
+
+       
+     </script>
+    
+</body>
+</html>
+
+
+<!--https://pokeapi.co/api/v2/pokemon/1/-->

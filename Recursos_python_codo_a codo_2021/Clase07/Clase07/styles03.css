@@ -1,0 +1,54 @@
+
+html{
+    margin: 0;
+}
+
+.padre{
+    border: 1px solid black;
+    width: 50vw;
+    height: 50vh;
+    margin: auto;/*para centrarlo*/
+}
+
+.relative{
+    background-color: cadetblue;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    top: 50px;/*lo muevo para abajo 50px*/
+    left: 50px; /*Lo muevo para la derecha 50px*/
+}
+
+.absolute{
+    background-color: crimson;
+    width: 150px;
+    height: 150px;
+    position: absolute;/*Con esto va a buscar al padre que este posicionado y usa esa
+    posicion...en este caso ni el section ni body ni nada estaa posicionado , entonces
+    usa el body
+    si creo un section y lo posiciono como relative , cambia el comportamiento
+    section{
+    position: relative;
+    }*/
+    top: 10px;/*se mueve para abajo 10px...desde el padre que tenga posicionamiento*/
+}
+
+
+.fixed{
+    background-color: darkcyan;
+    width: 150px;
+    height: 150px;
+    position:fixed;/*se mantiene en el mismo lugar incluso
+    al scrollear la pagina*/
+    top: 50px;
+}
+
+.sticky{
+    background-color: darkslateblue;
+    width: 150px;
+    height: 150px;
+    position: sticky;
+    top: 20px;/*Se mueve hasta alcanzar un tope , en este
+    caso 20px*/
+
+}

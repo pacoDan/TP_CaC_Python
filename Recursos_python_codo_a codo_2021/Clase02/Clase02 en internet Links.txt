@@ -1,0 +1,15 @@
+Links imporantes para la clase 2
+
+1)	https://aulasvirtuales.bue.edu.ar
+
+2)	https://lenguajehtml.com/html/introduccion/que-es-html/
+
+3)	https://lenguajehtml.com/html/introduccion/estructura-etiqueta-html/
+
+4)	https://lenguajehtml.com/html/introduccion/atributos-comunes-html/
+
+5)	https://lenguajehtml.com/html/semantica/etiquetas-html-de-texto/
+
+6)	https://lenguajehtml.com/html/semantica/enlaces-o-hipervinculos/
+
+7)	https://lenguajehtml.com/html/multimedia/etiquetas-html-de-imagenes/

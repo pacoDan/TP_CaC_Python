@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Posicion del satelite</h1>
+    <!-- https://wheretheiss.at/
+    Api dice: llamar a https://api.wheretheiss.at/v1/satellites/25544 -->
+
+    <h3>
+        Latitud: <span id="lat"></span><br/>
+        Longitud:<span id="lon"></span><br/>
+        Velocidad:<span id="vel"></span>/Hora<br/>
+    </h3>
+
+    <script>
+        //vamos a traer la ubicacion de la estacion espacial
+        //por medio de la funcion fetch
+
+        //dejo en una constante la url a la api
+        const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
+
+        //creo la funcion con async , sino trae error
+        async function obtenerPosicion(){
+            const response = await fetch(api_url);//llamo a la api , y le digo Await , que espere
+            const data =  await response.json();//una vez que vino el response , lo transformamos en un json y lo metemos en la constaante data
+            //miro el json y veo las clave vaalor y elijo que traerme.
+            //voy a traer: lat , long , velocidad y unidades.
+            //todo eso lo obtengo de data , que es donde tengo el json en formato json
+            //por eso tiene que tener el mismo nombre cada clave
+            const {latitude, longitude, velocity , units} = data;
+            //podria ver si funciona haciendo un console.log de todo lo traido:
+            //ej:
+            console.log(latitude);
+            console.log(longitude);
+            console.log(velocity);
+            console.log(units);
+
+            //metemos los datos en el html
+            document.getElementById('lat').textContent=latitude;
+            document.getElementById('lon').textContent=longitude;
+            document.getElementById('vel').textContent=velocity;
+        }
+
+        obtenerPosicion();
+
+
+
+    </script>
+
+</body>
+</html>

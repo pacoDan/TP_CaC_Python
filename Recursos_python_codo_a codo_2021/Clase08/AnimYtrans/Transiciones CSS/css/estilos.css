@@ -1,0 +1,19 @@
+@keyframes changeColor {   
+    from { 
+        background: red; 
+    }  
+    /* Primer fotograma */   
+    to { 
+        background: green;
+     }  
+    /* Último fotograma */ 
+} 
+ 
+.anim {   
+    background: grey;   
+    color: #FFF;   
+    width: 150px;   
+    height: 150px;   
+    animation: changeColor 2s ease 0 infinite;  
+    /* Relaciona con @keyframes */ 
+} 

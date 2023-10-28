@@ -1,0 +1,62 @@
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    font-size: 3rem;
+}
+body{
+    background: linear-gradient(60deg , blue ,white);
+}
+
+.grid-container{
+    display: grid;
+    /*ej:Si queremos tener dos o mas columnas
+    grid-template-columns: 150px 150px 150px;*/
+
+    /*Si queres cambiar la altura de las filas
+    grid-template-rows:3rem 3rem 3rem 5rem;*/
+
+    /*Lo mismo pero resumido con grid-template*/
+    /*grid-template:3rem 3rem 3rem 5rem/150px 150px 150px ;*/
+
+    /*usando repeat, 3 columnas tamanio auto*/
+   /* grid-template-columns:repeat(3, auto) ;*/
+    grid-template-rows: repeat(4, 20vh);
+
+    /*Usando fr*/
+    grid-template-columns: 1fr 2fr 1fr;
+
+    /*Para separar un poco los items*/
+    grid-gap:5% ;
+
+    /*el gap puede ser de filas o de columnas*/
+    /*grid-column-gap: ;
+    grid-row-gap: ;*/
+
+}
+
+.grid-item{
+    border: 1px solid black;
+    background-color: violet;
+
+    /*grid y flex pueden trabajar juntos , por ej: si quiero 
+    centrar los numeros podria hacer asi:*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Si quiero que un item empiece en otro lugar*/
+#item-especial{
+    /*Con columnas*/
+    grid-column-start:2 ;
+    grid-column-end:4 ;
+
+    /*Tambien con filas*/
+    grid-row-start:2 ;
+    grid-row-end: 5;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <!--Como crear elementos extras en el DOM-->
+    <!--EJ:  QUIERO crear un titulo h3-->
+    <h1>Dom Basico</h1>
+
+    <div id="cajaParaTitulo">
+        
+        <p id="parrafo1">1--Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, eligendi?</p>
+        <p id="parrafo2">2--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, non blanditiis!</p>
+                <!--hijito-->
+       
+        <p id="parrafo3">3--Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <script>
+        //primero crear etiqueta
+        let nuevoElemento = document.createElement("h3");
+       
+        //ahora le meto contenido
+        let nuevoContenido = document.createTextNode("Nuevo H3");
+       
+        //REFERenciamos el contenido a la etiqueta creada
+        nuevoElemento.appendChild(nuevoContenido);
+
+        //le metemos estilos
+        nuevoElemento.setAttribute("color", "blue");
+
+        //document.getElementById("cajaParaTitulo").appendChild(nuevoElemento);
+        
+
+        //lo quiero entre el dos y el tres
+        let parrafos = document.getElementsByTagName("p")[1];
+        parrafos.appendChild(nuevoElemento);
+    
+    
+    </script>
+
+
+</body>
+</html>

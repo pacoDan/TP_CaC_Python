@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/e547f827f8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+    <div class="head">
+        <a href="index.html"><img src="img/logo.png" alt="Logo" class="logo"></a>
+        <ul class="nav-list">
+            <li>
+                <a href="productos.html">Productos</a>
+            </li>
+            <li>
+                <a href="clientes.html">Clientes</a>
+            </li>
+            <li>
+                <a href="contacto.html">Contacto</a>
+            </li>
+        </ul>
+    </div>
+    </header>
+    <main>
+        <h1>Contacto</h1>
+        <hr>
+        <p>Enviar e-mail a
+            <a href="mailto:hola@hola.com">hola@hola.com</a> o completar el siguiente formulario:
+        </p>
+        <div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.7768796585992!2d-58.393652163570955!3d-34.6098031198586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac2cd859503%3A0x75cdafaaef2b946!2sCongreso%20de%20la%20Naci%C3%B3n%20Argentina!5e0!3m2!1ses!2sar!4v1597609086753!5m2!1ses!2sar"
+                width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+            <form action="show_data.html">
+
+                <label>Nombre y Apellido:
+                        <input type="text" name="Nombre_Apellido" placeholder="Ingresa tu nombre" required>
+                    </label>
+
+                <label>Email:
+                        <input type="email" name="Email" placeholder="Ingresa tu e-mail" required>
+                    </label>
+
+                <label class="label-radio">Mujer
+                    <input type="radio" name="Sexo" value="M">
+                </label>
+                <label class="label-radio">Hombre
+                    <input type="radio" name="Sexo" value="H">
+                </label>
+                <br>
+                <br>
+
+                <label>Mensaje:
+                        <textarea name="Mensaje" cols="30" rows="10" placeholder="Ingresa tu mensaje" required></textarea>
+                    </label>
+
+                <label>Quiero una copia:
+                        <input type="checkbox" name="Copia" id="copia" checked>
+                </label>
+
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="foot">
+            <div class="links ">
+                <a href="# "><i class="fab fa-facebook-square fa-2x "></i></a>
+                <a href="# "><i class="fab fa-instagram fa-2x "></i></a>
+                <a href="# "><i class="fab fa-twitter-square fa-2x "></i></a>
+            </div>
+
+            Copyright 2020 &copy; Todos los derechos reservados.
+        </div>
+    </footer>
+</body>
+
+</html>

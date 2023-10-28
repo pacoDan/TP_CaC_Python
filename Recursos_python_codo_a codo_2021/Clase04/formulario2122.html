@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    
+    <header>
+        <h1>Formularios</h1>
+    </header>
+
+   
+    <form action="https://formspree.io/f/ponganElSuyo" method="POST" target="_blank">
+
+        <!-- <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre"/> -->
+
+        <label>Nombre:
+            <input name="nombre" type="text"/>
+        </label>
+
+        <label>Seleccione lenguaje
+            <select name="Selector">
+                <option value="elijio java">Java</option>
+                <option value="php">php</option>
+                <option value="web">web</option>
+            </select>
+        </label>
+
+        <label>
+            Comentarios:
+            <textarea name="comenatarios"  cols="30" rows="10"></textarea>
+        </label>
+
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <label>
+                Deporte:
+                <input type="text" name="Deporte"/>              
+            </label>
+            <label>Bicicleta:
+                <input type="text" name="Bicicleta" value="lo que sea">
+            </label>
+        </fieldset>
+
+        <input type="reset" name="reset" />
+
+
+        <input type="submit">
+
+
+    </form>
+</body>
+</html>

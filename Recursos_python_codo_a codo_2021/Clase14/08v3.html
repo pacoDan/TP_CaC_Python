@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <!--Aca tenemos 2 clases iguales en dos containers distintos
+    Como usamos querySelector?-->
+
+    <h2 id="title">Query Selector</h2>
+   
+    <div id="container1">
+        <div class="caja">Caja 1</div>
+    </div>
+    
+    <div id="container2">
+        <div class="caja">Caja 2</div>
+    </div>
+
+
+    <script>
+
+        //quiero la primera caja
+        const primeraCaja = document.querySelector(".caja");
+        console.log(primeraCaja.innerHTML);
+
+
+
+        ///contenido de la segunda caja
+        const container2 = document.querySelector("#container2");
+        const cajaDelSegundo = container2.querySelector(".caja"); 
+        console.log(cajaDelSegundo);
+    </script>
+
+
+</body>
+</html>

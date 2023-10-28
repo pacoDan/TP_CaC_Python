@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+   
+</head>
+<body>
+    <!--Aca voy a traer los datos de jsonplaceholder y ponerlos en PANTALLA.-->
+    <h1>JsonPlaceholder</h1>
+
+    <div id="lista-usuarios">  </div>
+    
+     <script>
+         const direccion = 'https://jsonplaceholder.typicode.com/posts';
+
+         const tabla = document.querySelector('#lista-usuarios')
+       
+        
+         function cargarPosts(){
+            fetch(direccion)//devuelve response
+            .then(respuesta => respuesta.json())//transformo en json
+            .then(posteos => { //cada uno los escribo en pantalla
+                posteos.forEach(element => {
+                    /*document.write("<br>");
+                    document.write(element.id  + " : ");
+                    document.write(element.title);
+                    document.write("<br>");
+                    document.write("<br>");
+                    document.write("<br>");*/
+                    const row = document.createElement('tr');
+                    row.innerHTML += `<td>${element.id}</td>
+                                      <td>${element.title}</td>
+                                      <td>${element.body}</td>`;
+                    
+                    tabla.appendChild(row);
+                });
+            })
+        }
+         cargarPosts();
+    
+     </script>
+    
+</body>
+</html>
+
+

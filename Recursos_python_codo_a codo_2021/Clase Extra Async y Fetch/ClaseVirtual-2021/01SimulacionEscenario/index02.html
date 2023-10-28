@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body>
+    <script>
+
+     //json mandado como json.
+    let empanadas =[
+        {
+            "id":1,
+            "nombre":"carne",
+            "precio":100
+        },
+        {
+            "id":2,
+            "nombre":"jyq",
+            "precio":135
+        }
+    ];
+ 
+    //Como logueamos las empanadas de forma Sincronica:
+
+    //creamos una funcion
+    const getEmpanadas = ()=>{
+        return empanadas;
+    }
+
+    
+    
+    //llamamos a la funcion y la logueamos
+    console.log(getEmpanadas());
+
+
+
+    //Stringify 
+    console.log( JSON.stringify(empanadas));
+
+
+
+    </script>
+</body>
+</html>

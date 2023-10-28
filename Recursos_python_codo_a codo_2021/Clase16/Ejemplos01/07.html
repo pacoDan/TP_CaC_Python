@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first Vue app</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <!--COMPONENTES REUTILIZABLES-->
+    <div id="app">
+        <todo-item></todo-item>
+        <todo-item></todo-item>
+
+        
+    </div>
+
+    <script>
+    
+  //En este componente , paso como primer parametro el nombre del componente
+  //y como segundo paso lo que quiero devolver de una..
+  //en el siguiente voy a pasar un objeto.
+  //Si aca quisiera pasar dos elementos , un h1 y un h2 me tiraria error
+  //no se pueden pasar mas de un elemento...la solucion es meter todo en un div
+    Vue.component('todo-item',{
+        template: '<h2>Este es un componente h2 </h2>'
+    })
+    
+    var app = new Vue({ 
+        el: "#app",      
+      })
+    </script>
+  </body>
+</html>

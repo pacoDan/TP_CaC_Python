@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+   
+</head>
+<body>
+    <!--Aca traigo solo el primer pokemon......-->
+    <!--El html lo hago al final...-->
+    <h1>Pokemon api</h1>
+     <h2>Primer Pokemon : </h2>
+     <div id="primero" style="border:5px solid black; display: inline-block;">
+     </div>
+
+     <script>
+         const direccion = 'https://pokeapi.co/api/v2/pokemon/1/';
+         async function obtenerJson(){
+             const response = await fetch(direccion);
+             const data = await response.json();
+             //VEO AHORA todos los resultados del primer pokemon
+             console.log(data);//veo como trae los resultados en consola para ver como llamarlos
+
+             console.log(data.name);
+             ///si quisiera el peso pondria data.weight
+             
+             document.getElementById("primero").innerHTML="<h4>"+data.name+"</h4>" ;
+
+        //Ahora vamos a crear de cero una etiqueta y meterle contenido
+        var divisor = document.getElementById("primero");
+        var img = document.createElement('img');
+        //las imagenes en el objeto json estan dentro de sprites
+        img.setAttribute("src", data.sprites.front_default);
+        divisor.appendChild(img);   
+         }
+
+    obtenerJson();
+       
+     </script>
+    
+</body>
+</html>
+
+
+<!--https://pokeapi.co/api/v2/pokemon/1/-->

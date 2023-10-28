@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <!--eventos en el DOM-->
+    <!--Como hago con eventos para agarrar texto de pantalla y 
+    calcular la cantidad de letras  "a"-->
+    <div>
+        <p>Loram ipsum dolor, sit amet cansectetur adipisicing elit. Voluptatibus a ab numquam molestiae, ad reiciendis ut laudantium magnam, eos officia nobis, expedita enim nihil harum at rerum aspernatur animi quod soluta qui?</p>
+        <button id="elBoton">Calcular Cantida letras</button>
+    </div>
+
+    <script>
+        let mensaje = function(){
+            let parrafos = document.getElementsByTagName("p");
+            let frase = parrafos[0].innerHTML;
+
+            let contador = 0;
+            for(let i=0;i<frase.length;i++){
+                {
+                    if(frase.substring(i,i+1)=='a'){
+                        contador++;
+                        document.write("\nencontre una a"); 
+
+                    }
+                }
+            }
+            document.write("encontramos " + contador + " letras a");
+        }
+
+        let boton = document.getElementById("elBoton");
+        boton.addEventListener("click",mensaje);
+
+
+        
+       
+
+    </script>
+</body>
+</html>

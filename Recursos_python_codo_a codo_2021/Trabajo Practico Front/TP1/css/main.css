@@ -1,0 +1,166 @@
+* {
+    font-family: sans-serif;
+}
+
+html {
+    background-color: #CCCCCC;
+    box-sizing: border-box;
+}
+
+a {
+    color: white;
+    transition: 1s;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+}
+
+body {
+    font-size: 20px;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    background-color: #1B262C;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.logo {
+    position: absolute;
+    left: 2;
+    height: 100px;
+}
+
+.nav-list {
+    position: absolute;
+    right: 0;
+    list-style: none;
+}
+
+.nav-list li {
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 30px;
+    color: white;
+    transition: 1s;
+    padding: 20px;
+}
+
+.nav-list li a:hover {
+    background-color: #cccccc;
+    color: black;
+}
+
+h1 {
+    display: block;
+    text-align: center;
+    margin-bottom: 1px;
+}
+
+main {
+    margin-bottom: 70px;
+}
+
+form {
+    background-color: #1B262C;
+    padding: 30px;
+    width: 47%;
+    margin-bottom: 50px;
+    display: inline-block;
+}
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+    resize: none;
+}
+
+.label-radio {
+    display: inline-block;
+}
+
+label {
+    color: #CCCCCC;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+iframe {
+    width: 45%;
+    display: inline-block;
+    margin-right: 2%;
+}
+
+.img-cliente {
+    height: 400px;
+    width: 30%;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.img-productos {
+    width: 25%;
+    display: block;
+    margin: 25px auto;
+    border: 3px solid #1B262C;
+    transition: 1s;
+}
+
+.img-main {
+    display: block;
+    margin: 0 auto;
+    transition: 1s;
+}
+
+.img-main:hover {
+    filter: grayscale(100%);
+}
+
+footer {
+    position: relative;
+   
+}
+
+.foot{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: #1B262C;
+    height: 30px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.links {
+    width: 50%;
+    text-align: left;
+    display: inline-block;
+}
+
+i {
+    margin-right: 1px;
+    transition: 1s;
+}
+
+i:hover {
+    color: red;
+}

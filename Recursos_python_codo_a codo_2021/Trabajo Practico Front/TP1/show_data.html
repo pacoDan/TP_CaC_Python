@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/e547f827f8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="head">
+        <a href="index.html"><img src="img/logo.png" alt="Logo" class="logo"></a>
+        <ul class="nav-list">
+            <li>
+                <a href="productos.html">Productos</a>
+            </li>
+            <li>
+                <a href="clientes.html">Clientes</a>
+            </li>
+            <li>
+                <a href="contacto.html">Contacto</a>
+            </li>
+        </ul>
+    </div>
+    </header>
+    <main>
+        <h1>Datos del formulario</h1>
+        <hr>Se envío la siguiente información:
+    </main>
+    <footer>
+        <div class="foot">
+            <div class="links">
+                <a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
+                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#"><i class="fab fa-twitter-square fa-2x"></i></a>
+            </div>
+
+            Copyright 2020 &copy; Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script>
+        let args = location.search.substr(1).split('&');
+        for (let i = 0; i < args.length; ++i) {
+            let parts = args[i].split('=');
+            if (parts != null) {
+                let field = parts[0];
+                let value = parts[1];
+                if (value == null) {
+                    value = "null"
+                } else {
+                    value = '"' + unescape(value.replace(/\+/g, ' ')) + '"';
+                }
+                document.writeln(`<strong>${field}</strong>: ${value}<br>`);
+            }
+        }
+    </script>
+</body>
+
+</html>

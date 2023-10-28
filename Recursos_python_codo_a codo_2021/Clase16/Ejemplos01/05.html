@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first Vue app</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+    <!--Como hacer EVENTOS  en vue-->
+    <div id="app">
+      <ol>
+        <p>{{ message }}</p>
+        <button v-on:click="mensajeAlReves">Reverse message</button>
+      </ol>
+    </div>
+
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          message: "Hola vue..!",
+        },
+        methods: {
+          mensajeAlReves: function () {
+            this.message = this.message.split("").reverse().join("");
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

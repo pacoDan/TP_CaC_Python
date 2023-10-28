@@ -1,0 +1,55 @@
+
+.cm{
+    font-size: 2cm;
+}
+.mm{
+    font-size: 5mm;
+}
+.px{
+    font-size: 15px;
+}
+.pt{
+    font-size: 10pt;
+}
+.in{
+    font-size: 1in;
+}
+.pc{
+    font-size: 1pc;
+}
+
+
+/*unidades absolutas*/
+
+section{/*section es padre de em*/
+    font-size: 24px;/*si hago esto cambio em*/
+}
+
+html{
+    font-size: 40px;/*si hago esto cambio rem*/
+}
+
+.em{
+    font-size: 1em;/*16px*/
+    /*va a valer 16px porque a ninguno de sus padres le 
+    cambie el valor.. ni html, ni section , ni body*/
+    /*me lo modifica cualquier padre*/
+}
+
+.rem{/*no depende de padres , sino de root html
+    o sea de *html {}  font-size:62.5%->10px
+    solo me lo modifica HTML*/
+    font-size: 1rem;
+}
+
+img{
+    width: 50vw;
+    height: 30vh;
+}
+
+div{
+    font-size: 2em;
+}
+p{
+    font-size: 2em;
+}

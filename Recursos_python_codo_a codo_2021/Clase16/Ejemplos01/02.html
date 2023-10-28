@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+  <div id="app">
+    <li v-for="todo in todos">
+      {{todo.text}}
+    </li>
+  </div>
+
+  
+  
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+       todos:[
+         {text:'Aprender js'},
+         {text:'Aprender vue'},
+         {text:'Aprender Angular'},
+       ]
+      },
+    });
+
+   
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <!--Aca vamos a usar QuerySelectorAll
+    querySelectorAll trae toooodas las referncias 
+    ..no solo la primera-->
+
+    <div class="caja">Caja UNO</div>
+    <div class="caja">Caja DOS</div>
+    <div class="caja">Caja TRES</div>
+
+    <script>
+        const cajas = document.querySelectorAll(".caja");
+        
+        cajas[1].style.color = 'blue';
+
+        //cambiar color a todos los nodos iterandolos
+        for(let i=0;i<cajas.length;i++){
+            cajas[i].style.color='blue';
+            cajas[i].innerHTML='blue';
+
+        }
+
+        //lo mismo forEach
+        cajas.forEach((a)=>{ 
+            a.style.color='green';})
+
+      
+    </script>
+
+
+</body>
+</html>

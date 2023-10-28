@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <!--Como accedo al li de la segunda lista?
+    Mostrar que aca quereselectorall me traeria 6 nodos-->>
+    <ul id="lista1">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <ul id="lista2">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    
+
+    <script>
+        //Como traigo los 6 nodos?
+        const items = document.querySelectorAll("li");
+
+
+       //Como accedo solo a los de la segunda lista?
+        const laListaDos = document.querySelector("#lista2");
+        const itemsDeLaDos = laListaDos.querySelectorAll("li");
+        console.log(itemsDeLaDos);
+
+       //como accedor al segundo?
+        console.log(itemsDeLaDos[1]);
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mi primera app</title>
+    <script src="https://unpkg.com/vue"></script>
+  </head>
+  <body>
+      <!--Como hacer un IF en vue-->
+    <div id="app">
+      <span v-if="seen">Valor true</span>
+    </div>
+
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          seen: true,
+        },
+      });
+
+      //si quiero cambiar el valor puedo hacer esto:
+      //app.seen = false;
+    </script>
+  </body>
+</html>

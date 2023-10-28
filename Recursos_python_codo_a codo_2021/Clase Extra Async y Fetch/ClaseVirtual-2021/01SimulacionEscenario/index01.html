@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body>
+    <script>
+
+     //json mandado como string.
+    let empanadasJson =[
+        {
+            "id":1,
+            "nombre":"carne",
+            "precio":100
+        },
+        {
+            "id":2,
+            "nombre":"jyq",
+            "precio":135
+        }
+    ]
+ 
+    console.log("en Array");
+    console.log(empanadasJson);
+
+    console.log("en Json , o sea , clave valor");
+    console.log(JSON.parse(empanadasJson));
+
+    console.log("La primera");
+    //con .id .precio o .nombre ingreso a esos valores
+    console.log(JSON.parse(empanadasJson)[0].cualquiera);
+
+    
+    </script>
+</body>
+</html>
